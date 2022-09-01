@@ -1,8 +1,8 @@
 .message .message-header img.chat-portrait-message-portrait-generic {
-  flex: 0 0 0px;
-  margin-right: 5px;
-  margin-bottom: 3px;
-  /* object-fit: cover; */
+	flex: 0 0 0px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+	/* object-fit: cover; */
 }
 
 /*
@@ -56,15 +56,15 @@
 */
 
 .chat-portrait-playerName-generic {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .chat-portrait-playerName-generic::before {
-  content: ' [';
+	content: " [";
 }
 
 .chat-portrait-playerName-generic::after {
-  content: ']';
+	content: "]";
 }
 
 /* Narrator Chat Module Support - Don't show portrait on Narrates */
@@ -75,47 +75,47 @@
 */
 
 .chat-portrait-text-size-name-generic {
-  display: flex;
-  margin: auto;
+	display: flex;
+	margin: auto;
 }
 
 .chat-portrait-image-size-name-generic {
-  /* display: flex;
+	/* display: flex;
   margin: auto; */
 }
 
 .chat-portrait-indicator-generic {
-  display: inline-block;
-  margin: 0 3px 0 0;
-  padding: 0 3px;
-  line-height: 1rem;
-  border: 1px solid #999;
-  border-radius: 3px;
-  background: #999;
+	display: inline-block;
+	margin: 0 3px 0 0;
+	padding: 0 3px;
+	line-height: 1rem;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background: #999;
 }
 
 .chat-portrait-whisper-to-generic * {
-  display: inline-block;
-  margin: 1px 3px 1px 0;
-  padding: 0 3px;
-  line-height: 1rem;
-  border: 1px solid #999;
-  border-radius: 3px;
-  background: #999;
+	display: inline-block;
+	margin: 1px 3px 1px 0;
+	padding: 0 3px;
+	line-height: 1rem;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background: #999;
 }
 
 .message .chat-portrait-message-header-generic {
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .message .chat-portrait-message-header-generic .message-metadata {
-  flex: 0 0 auto;
-  margin-left: 1rem;
+	flex: 0 0 auto;
+	margin-left: 1rem;
 }
 
 .message .chat-portrait-message-header-generic .chat-portrait-whisper-to-generic {
-  line-height: 1rem;
-  margin-bottom: 0.5rem;
+	line-height: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 /*

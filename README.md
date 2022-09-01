@@ -1,16 +1,16 @@
 # Chat Portrait
 
-![Latest Release Download Count](https://img.shields.io/github/downloads/ShoyuVanilla/FoundryVTT-Chat-Portrait/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) 
+![Latest Release Download Count](https://img.shields.io/github/downloads/p4535992/foundryvtt-chat-portrait/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) 
 
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fchat-portrait&colorB=006400&style=for-the-badge)](https://forge-vtt.com/bazaar#package=chat-portrait) 
 
-![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FShoyuVanilla%2FFoundryVTT-Chat-Portrait%2Fmaster%2Fsrc%2Fmodule.json&label=Foundry%20Version&query=$.compatibleCoreVersion&colorB=orange&style=for-the-badge)
+![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fp4535992%2Ffoundryvtt-chat-portrait%2Fmaster%2Fsrc%2Fmodule.json&label=Foundry%20Version&query=$.compatibleCoreVersion&colorB=orange&style=for-the-badge)
 
-![Latest Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FShoyuVanilla%2FFoundryVTT-Chat-Portrait%2Fmaster%2Fsrc%2Fmodule.json&label=Latest%20Release&prefix=v&query=$.version&colorB=red&style=for-the-badge)
+![Latest Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fp4535992%2Ffoundryvtt-chat-portrait%2Fmaster%2Fsrc%2Fmodule.json&label=Latest%20Release&prefix=v&query=$.version&colorB=red&style=for-the-badge)
 
 [![Foundry Hub Endorsements](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fchat-portrait%2Fshield%2Fendorsements&style=for-the-badge)](https://www.foundryvtt-hub.com/package/chat-portrait/)
 
-![GitHub all releases](https://img.shields.io/github/downloads/ShoyuVanilla/FoundryVTT-Chat-Portrait/total?style=for-the-badge)
+![GitHub all releases](https://img.shields.io/github/downloads/p4535992/foundryvtt-chat-portrait/total?style=for-the-badge)
 
 A Foundry VTT module that displays the Actor's portrait images on the chat messages.
 
@@ -29,7 +29,7 @@ To install this module manually:
 1.  Inside the Foundry "Configuration and Setup" screen, click "Add-on Modules"
 2.  Click "Install Module"
 3.  In the "Manifest URL" field, paste the following url:
-`https://raw.githubusercontent.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/master/src/module.json`
+`https://raw.githubusercontent.com/p4535992/foundryvtt-chat-portrait/master/src/module.json`
 4.  Click 'Install' and wait for installation to complete
 5.  Don't forget to enable the module in game using the "Manage Module" button
 
@@ -37,13 +37,13 @@ To install this module manually:
 
 Since version 0.7.0, the module has been rewritten to allow for each system to have a css file to define the style and a description file of the mapping for the "ImageReplacer" feature. 
 
-Now the community can "come" to me a little, testing the css on their browser and help me understand which combination is the best, i file css si trovano nella directory degli [styles](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/styles), here a example for the [dnd5e system](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/styles/chat-portrait-style-dnd5e.css)
+Now the community can "come" to me a little, testing the css on their browser and help me understand which combination is the best, i file css si trovano nella directory degli [styles](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles), here a example for the [dnd5e system](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles/chat-portrait-style-dnd5e.css)
 
 So the steps to follow to create or update a system are:
 
-1) Creation or update of the style file in the [styles](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/styles) directory the file must respect the `chat-portrait-style-XXX.css` nomenclature where XXX is the system id e.g. "dnd5e".
-2) Creation or update of the typescript file for the mapping of the "ImageReplacer" feature if you do not want to use this feature create the file as empty and I'll take care of integrating the version with the empty arrays. **In the minimal case** you just need to copy the contents of the file [generic.ts](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/module/systems/generic.ts) and insert the id of your system in the property "SYSTEM_ID" remember that you have to rename the file with the system id.
-3) Insert the system if absent in the configuration file [systems.ts](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/module/systems.ts)
+1) Creation or update of the style file in the [styles](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles) directory the file must respect the `chat-portrait-style-XXX.css` nomenclature where XXX is the system id e.g. "dnd5e".
+2) Creation or update of the typescript file for the mapping of the "ImageReplacer" feature if you do not want to use this feature create the file as empty and I'll take care of integrating the version with the empty arrays. **In the minimal case** you just need to copy the contents of the file [generic.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/generic.ts) and insert the id of your system in the property "SYSTEM_ID" remember that you have to rename the file with the system id.
+3) Insert the system if absent in the configuration file [systems.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems.ts)
 4) Open a pr on contact me in some way, by open a issue ecc.
 
 NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowski/FoundryVTT-Custom-CSS) for manage the css classes, the module help you by defining two css classes you can customize for the purpose of this module `chat-portrait-text-size-name` for the text chat message (_the 'Setup additional custom styling on the text chat message' setting_) and `chat-portrait-image-size-name` for the image prepend the text chat message (_the 'Setup additional custom styling on the image prepend the text chat message' setting_)
@@ -285,7 +285,7 @@ NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowsk
   -  Dnd5e system
   -  PF2
 
-If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
+If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
 
 ![replacer](./images/image_replacer_feature.png)
 
@@ -301,7 +301,7 @@ If you want to add your own system it's very simple!!! you can just give to me a
   -  Dnd5e system
   -  PF2
 
-If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
+If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
 
 ![replacer_damage_types](./images/damage_types_feature.png)
 
@@ -384,7 +384,7 @@ npm run-script package
 
 ## Issues
 
-Any issues, bugs, or feature requests are always welcome to be reported directly to the [Issue Tracker](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues ), or using the [Bug Reporter Module](https://foundryvtt.com/packages/bug-reporter/).
+Any issues, bugs, or feature requests are always welcome to be reported directly to the [Issue Tracker](https://github.com/p4535992/foundryvtt-chat-portrait/issues ), or using the [Bug Reporter Module](https://foundryvtt.com/packages/bug-reporter/).
 
 ## License
 
