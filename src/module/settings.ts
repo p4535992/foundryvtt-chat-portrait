@@ -5,7 +5,7 @@ import { SYSTEMS } from "./systems";
 
 // export const CONSTANTS.MODULE_NAME = 'chat-portrait';
 
-// export const INV_UNIDENTIFIED_BOOK = `/modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified-book.png`;
+// export const INV_UNIDENTIFIED_BOOK = `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified-book.png`;
 
 // export const CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME = 'mystery-man';
 
@@ -366,7 +366,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: `/modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+		default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem', {
@@ -879,7 +879,7 @@ function otherSettings(apply = false) {
 			scope: "world",
 			config: true,
 			type: String,
-			default: `/modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+			default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
 		},
 
 		// customStylingMessageSystem: {

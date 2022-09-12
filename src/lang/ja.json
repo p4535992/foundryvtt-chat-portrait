@@ -71,7 +71,7 @@
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.name": "不明なアイテム名の表記設定",
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.hint": "デフォルトでは「Unknown Item」。「未知のカスタムスタイルを使用する」の設定に依存して影響を与えます。",
 	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.name": "不明なアイテムのアイコン設定",
-	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.hint": "デフォルトでは'/modules/chat-portrait/assets/inv-unidentified.png'。「未知のカスタムスタイルを使用する」の設定に依存して影響を与えます。",
+	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.hint": "デフォルトでは'modules/chat-portrait/assets/inv-unidentified.png'。「未知のカスタムスタイルを使用する」の設定に依存して影響を与えます。",
 	"chat-portrait.settings.useTokenName.name": "トークンの名前を使用する",
 	"chat-portrait.settings.useTokenName.hint": "有効にした場合、アクターの標準名ではなく、トークン名を強制的に使用します。",
 	"chat-portrait.settings.displaySettingOTHER.name": "OTHERタイプメッセージのチャット表示",

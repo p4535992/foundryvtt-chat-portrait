@@ -256,7 +256,7 @@ any other system need some fed back from the community
 
 - **Placeholder for the label unknown item name**: by default is 'Unknown Item' depends on the 'Display Unknown' setting
 
-- **Placeholder for the label unknown item icon**: by default is '/modules/chat-portrait/assets/inv-unidentified.png' depends on the 'Display Unknown' setting
+- **Placeholder for the label unknown item icon**: by default is 'modules/chat-portrait/assets/inv-unidentified.png' depends on the 'Display Unknown' setting
 
 ~~- **[CSS CUSTOM SETTING] Setup the custom styling for the current system**: Setup additional custom styling on message with CSS language based on the feedback of the community, _Is a community effort for anyone don't know css language_ (note override any other prior property). If the settings 'Setup additional custom styling on the text chat message' or 'Setup additional custom styling on the image prepend the text chat message' is used (no blank text) this option even if true is ignored for the html elements involved. **By default is true.**~~
 

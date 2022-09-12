@@ -408,7 +408,7 @@ export class ChatPortrait {
 						elementItemImage.height = size;
 					}
 					if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-						elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`/modules/${MODULE_NAME}/assets/inv-unidentified.png`;
+						elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
 					}
 					if (!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
 						elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
@@ -420,7 +420,7 @@ export class ChatPortrait {
 					if (!elementItemImage) {
 						continue;
 					}
-					elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`/modules/${MODULE_NAME}/assets/inv-unidentified.png`;
+					elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
 					const size: number = ChatPortrait.settings.portraitSizeItem;
 					if (size && size > 0) {
 						elementItemImage.width = size;
@@ -1503,7 +1503,7 @@ export class ChatPortrait {
 			displayUnknown: "none",
 			displayUnknownPlaceHolderActorName: "Unknown Actor",
 			displayUnknownPlaceHolderItemName: "Unknown Item",
-			displayUnknownPlaceHolderItemIcon: `/modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+			displayUnknownPlaceHolderItemIcon: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
 			displaySettingOTHER: true,
 			displaySettingOOC: true,
 			displaySettingIC: true,

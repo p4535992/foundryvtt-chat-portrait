@@ -68,7 +68,7 @@
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.name": "미지의 아이템 이름에 대한 대체 명칭",
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.hint": "미지의 아이템 이름을 기본값인 'Unknown Item'에서 설정에 따라 대체합니다.",
 	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.name": "미지의 아이템 아이콘에 대한 대체 명칭",
-	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.hint": "미지의 아이템 아이콘을 기본값인 '/modules/chat-portrait/assets/inv-unidentified.png'에서 설정에 따라 대체합니다.",
+	"chat-portrait.settings.displayUnknownPlaceHolderItemIcon.hint": "미지의 아이템 아이콘을 기본값인 'modules/chat-portrait/assets/inv-unidentified.png'에서 설정에 따라 대체합니다.",
 	"chat-portrait.settings.useTokenName.name": "토큰 이름 사용",
 	"chat-portrait.settings.useTokenName.hint": "액터의 이름 대신 액터 토큰 이름을 사용해야 하는 경우에 사용합니다.",
 	"chat-portrait.settings.displaySettingOTHER.name": "기타 타입의 채팅 메시지 표시",
