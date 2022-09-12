@@ -164,24 +164,24 @@ export class ChatLink {
 		return token;
 	}
 
-	static tokenExists(user, speakerData, token):boolean {
-		if (token && token.visible){
-            return true;
-        }
+	static tokenExists(user, speakerData, token): boolean {
+		if (token && token.visible) {
+			return true;
+		}
 		if (!ChatLink.isRightScene(user, speakerData)) {
-            return false;
-        }
+			return false;
+		}
 		const message = user.isGM
 			? ChatLink.playerWarning(speakerData) + ` ${ChatLink.i18n(CONSTANTS.MODULE_NAME + ".noTokenFound")}`
 			: ChatLink.playerWarning(speakerData);
 		ChatLink.warning(message);
-        return false;
+		return false;
 	}
 
-	static isRightScene(user, speakerData):boolean {
+	static isRightScene(user, speakerData): boolean {
 		if (canvas.scene?.id === speakerData.idScene) {
-            return true;
-        }
+			return true;
+		}
 		let sceneNote;
 		if (!speakerData.idScene) {
 			sceneNote = ` ${ChatLink.i18n(CONSTANTS.MODULE_NAME + ".noSceneFound")}`;
@@ -196,15 +196,15 @@ export class ChatLink {
 			? ChatLink.playerWarning(speakerData) + sceneNote
 			: ChatLink.playerWarning(speakerData);
 		ChatLink.warning(message);
-        return false;
+		return false;
 	}
 
-	static permissionToSee(user, speakerData, token):boolean {
+	static permissionToSee(user, speakerData, token): boolean {
 		if (user.isGM || token.visible) {
 			return true;
 		}
 		ChatLink.warning(ChatLink.playerWarning(speakerData));
-        return false;
+		return false;
 	}
 
 	static permissionToControl(user: User, token: Token) {

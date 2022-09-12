@@ -209,7 +209,7 @@ export class ChatPortrait {
 			} else {
 				return <JQuery<HTMLElement>>html;
 			}
-            return undefined;
+			return undefined;
 		}
 	}
 

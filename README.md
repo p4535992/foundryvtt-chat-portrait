@@ -16,9 +16,9 @@ A Foundry VTT module that displays the Actor's portrait images on the chat messa
 
 This is a upgrade of the project [Chat Portrait by ShoyuVanilla](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait) ty to [ShoyuVanilla](https://github.com/ShoyuVanilla)
 
-![Settings](./images/image01.png)
+![Settings](./wiki/images/image01.png)
 
-![Preview](./images/image02.png)
+![Preview](./wiki/images/image02.png)
 
 ## NOTE: If you are a javascript developer and not a typescript developer, you can just use the javascript files under the dist folder
 ## Installation
@@ -154,7 +154,7 @@ Hooks.on('ChatPortraitReplaceData', (chatPortraitCustomData, chatMessage) => {
 });
 ```
 
-![hooks feature](./images/hooks_feature.png)
+![hooks feature](./wiki/images/hooks_feature.png)
 
 ## Systems
 
@@ -175,7 +175,7 @@ any other system need some fed back from the community
 
 - **Use Avatar Player Image: Use the player's Avatar image instead of the token/actor standard image**. if true ignore the first option if a avatar image is not found is going back to the standard actor/token image of the 'mistery man', this option is ignored if you are the GM or else because everything you click will have the avatar image of the GM expect for the OOC chat message. NOTE: Every OOC message by default activate this mode because make sense no token must be associated with a OOC message even for player.
 
-![avatar](./images/use_image_avatar_feature.png)
+![avatar](./wiki/images/use_image_avatar_feature.png)
 
 - **Apply chat portrait on combat tracker**: Apply the recovery of the image on the combat tracker. 
 
@@ -203,7 +203,7 @@ any other system need some fed back from the community
 - **Change Color of Message Background**: Use the actor's player's color for the background of the entire chat message
 
 
-![background](./images/background_color_feature.png)
+![background](./wiki/images/background_color_feature.png)
 
 - **Display Chat Flavor Text next to Portrait**
 
@@ -211,7 +211,7 @@ any other system need some fed back from the community
 
 - **Portrait Size for other images (px)**: Configure portrait image size for any other image on the chat message (other than the portrait one). Default is 36 px
 
-![img1](./images/chat_image_px.png)![img2](./images/chat_image_px_2.png)
+![img1](./wiki/images/chat_image_px.png)![img2](./wiki/images/chat_image_px_2.png)
 
 - **Double Click on the image portrait or the name of the token "pan to token" on the current scene**
 
@@ -225,7 +225,7 @@ any other system need some fed back from the community
 
 - **Adds a textual tag to chat messages to easily identify whether the message is a whisper, blind roll, or self roll**
 
-![tag](./images/cp_tag_example.png)
+![tag](./wiki/images/cp_tag_example.png)
 
 - **Display chat message of type OTHER**: Configure custom styling for message of type OTHER
 
@@ -250,7 +250,7 @@ any other system need some fed back from the community
   - none : Don't affect any messages.
   - [DEVELOPING] onlyNpc: Affect any messages done from a NPC (need a compatible system with the 'npc' type like D&D5).
 
-![Unknown](./images/unknown_actor_and_weapon_feature.png)
+![Unknown](./wiki/images/unknown_actor_and_weapon_feature.png)
 
 - **Placeholder for the label unknown Actor name**: by default is 'Unknown Actor' depends on the 'Display Unknown' setting
 
@@ -278,7 +278,7 @@ NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowsk
 
 NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowski/FoundryVTT-Custom-CSS) for manage the css classes, the module help you by defining two css classes you can customize for the purpose of this module `chat-portrait-text-size-name` for the text chat message (_the 'Setup additional custom styling on the text chat message' setting_) and `chat-portrait-image-size-name` for the image prepend the text chat message (_the 'Setup additional custom styling on the image prepend the text chat message' setting_)
 
-![chat_portrait_feature](./images/chat_portrait_feature.png)
+![chat_portrait_feature](./wiki/images/chat_portrait_feature.png)
 
 - **Image Replacer**: This feature for avoid the double portrait when you roll Ability / Skills / Saving Throw / Tools, for now the support is limited to the following systems :
 
@@ -287,7 +287,7 @@ NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowsk
 
 If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
 
-![replacer](./images/image_replacer_feature.png)
+![replacer](./wiki/images/image_replacer_feature.png)
 
 - **Disable the chat portrait if the alias of the chat message is from a GM**: If enable every chat message done with a alias referenced to a GM will ot apply the chat portrait mechanism
 
@@ -303,7 +303,7 @@ If you want to add your own system it's very simple!!! you can just give to me a
 
 If you want to add your own system it's very simple!!! you can just give to me a map of strings key=value of label and image, for a live example check out what i have done for d&d5e with the english language here a example for the dnd5e system [ImageReplacer for dnd5e](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/dnd5e.ts). It's ugly but it's simple to integrated.
 
-![replacer_damage_types](./images/damage_types_feature.png)
+![replacer_damage_types](./wiki/images/damage_types_feature.png)
 
 # Build
 
