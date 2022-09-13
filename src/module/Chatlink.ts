@@ -186,9 +186,9 @@ export class ChatLink {
 		if (!speakerData.idScene) {
 			sceneNote = ` ${ChatLink.i18n(CONSTANTS.MODULE_NAME + ".noSceneFound")}`;
 		} else {
-			const tokenScene = game.scenes?.find((s) => s.data._id === speakerData.idScene);
+			const tokenScene = game.scenes?.find((s) => s.id === speakerData.idScene);
 			sceneNote = ` ${ChatLink.i18nFormat(CONSTANTS.MODULE_NAME + ".checkScene", {
-				sceneName: tokenScene?.data.name,
+				sceneName: tokenScene?.name,
 			})}`;
 		}
 

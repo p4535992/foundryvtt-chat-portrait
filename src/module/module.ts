@@ -290,5 +290,65 @@ export const readyHooks = async () => {
 			.attr("data-edit", nameBorderColor)
 			.val(colourBorderColor)
 			.insertAfter($(`input[name="${nameBorderColor}"]`, html).addClass("color"));
+
+		const nameCustomStylingMessageText = `${CONSTANTS.MODULE_NAME}.customStylingMessageText`;
+		const customStylingMessageText = <string>game.settings.get(CONSTANTS.MODULE_NAME, "customStylingMessageText");
+		$(`input[name="${nameCustomStylingMessageText}"]`)
+			.attr(
+				"placeholder",
+				`.chat-portrait-text-size-name-dnd5e .chat-portrait-system-dnd5e {
+			display: flex;
+			margin: auto;
+		}
+		`
+			)
+			.attr("id", nameCustomStylingMessageText)
+			.each(function () {
+				const style = <string>$(this).attr("style");
+				const name = <string>$(this).attr("name");
+				const id = <string>$(this).attr("id");
+				const datadtype = <string>$(this).attr("data-dtype");
+				const value = <string>$(this).attr("value");
+				const placeholder = <string>$(this).attr("placeholder");
+				const textbox = $(document.createElement("textarea"))
+					.attr("style", style)
+					.attr("name", name)
+					.attr("id", id)
+					.attr("data-dtype", datadtype)
+					.attr("value", value)
+					.attr("placeholder", placeholder);
+				textbox.val(value);
+				$(this).replaceWith(textbox);
+			});
+
+		const nameCustomStylingMessageImage = `${CONSTANTS.MODULE_NAME}.customStylingMessageImage`;
+		const customStylingMessageImage = <string>game.settings.get(CONSTANTS.MODULE_NAME, "customStylingMessageImage");
+		$(`input[name="${nameCustomStylingMessageImage}"]`)
+			.attr(
+				"placeholder",
+				`.chat-portrait-image-size-name-dnd5e .chat-portrait-system-dnd5e {
+			display: flex;
+			margin: auto;
+		}
+		`
+			)
+			.attr("id", nameCustomStylingMessageImage)
+			.each(function () {
+				const style = <string>$(this).attr("style");
+				const name = <string>$(this).attr("name");
+				const id = <string>$(this).attr("id");
+				const datadtype = <string>$(this).attr("data-dtype");
+				const value = <string>$(this).attr("value");
+				const placeholder = <string>$(this).attr("placeholder");
+				const textbox = $(document.createElement("textarea"))
+					.attr("style", style)
+					.attr("name", name)
+					.attr("id", id)
+					.attr("data-dtype", datadtype)
+					.attr("value", value)
+					.attr("placeholder", placeholder);
+				textbox.val(value);
+				$(this).replaceWith(textbox);
+			});
 	});
 };

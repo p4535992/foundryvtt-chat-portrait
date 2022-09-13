@@ -12,8 +12,6 @@
 
 ![GitHub all releases](https://img.shields.io/github/downloads/p4535992/foundryvtt-chat-portrait/total?style=for-the-badge)
 
-# [THE PROJECT IS BEEN TRANSFERED HERE WITH FVTT 10 cBUT FOR NOW THE ISSUS CAN BE LEAVE HERE](https://github.com/p4535992/foundryvtt-chat-portrait)
-
 A Foundry VTT module that displays the Actor's portrait images on the chat messages.
 
 This is a upgrade of the project [Chat Portrait by ShoyuVanilla](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait) ty to [ShoyuVanilla](https://github.com/ShoyuVanilla)
@@ -260,25 +258,31 @@ any other system need some fed back from the community
 
 - **Placeholder for the label unknown item icon**: by default is 'modules/chat-portrait/assets/inv-unidentified.png' depends on the 'Display Unknown' setting
 
-~~- **[CSS CUSTOM SETTING] Setup the custom styling for the current system**: Setup additional custom styling on message with CSS language based on the feedback of the community, _Is a community effort for anyone don't know css language_ (note override any other prior property). If the settings 'Setup additional custom styling on the text chat message' or 'Setup additional custom styling on the image prepend the text chat message' is used (no blank text) this option even if true is ignored for the html elements involved. **By default is true.**~~
-
-~~Here the table applied for the supported system :~~
-
-~~| System id | Css for text message | Css for the image prepend the text |~~
-~~|:---:|:---:|:---:|~~
-~~| swade | `height: auto; display:flex;` | `height: auto; display:flex;` |~~
-~~| pf2e | `display:block; margin: auto;` | `display:block; margin: auto;` |~~
-~~| dnd5e | `display:flex; margin: auto;` | `display:flex; margin: auto;` |~~
-
-~~For any correction or suggestion open a issue on this project.~~
-
 - **[CSS CUSTOM SETTING] Setup additional custom styling on the text chat message** : Setup additional custom styling on the text chat message with CSS language (note override any other prior property)
 
 NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowski/FoundryVTT-Custom-CSS) for manage the css classes, the module help you by defining two css classes you can customize for the purpose of this module `chat-portrait-text-size-name` for the text chat message (_the 'Setup additional custom styling on the text chat message' setting_) and `chat-portrait-image-size-name` for the image prepend the text chat message (_the 'Setup additional custom styling on the image prepend the text chat message' setting_)
 
+##### Example of css piece of code for the dnd5e system to load on your world
+
+```
+.chat-portrait-text-size-name-dnd5e .chat-portrait-system-dnd5e {
+  display: flex;
+  margin: auto;
+}
+```
+
 - **[CSS CUSTOM SETTING] Setup additional custom styling on the image prepend the text chat message**: Setup additional custom styling on the image prepend the text chat message chat message with CSS language (note override any other prior property)
 
 NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowski/FoundryVTT-Custom-CSS) for manage the css classes, the module help you by defining two css classes you can customize for the purpose of this module `chat-portrait-text-size-name` for the text chat message (_the 'Setup additional custom styling on the text chat message' setting_) and `chat-portrait-image-size-name` for the image prepend the text chat message (_the 'Setup additional custom styling on the image prepend the text chat message' setting_)
+
+##### Example of css piece of code for the dnd5e system to load on your world
+
+```
+.chat-portrait-image-size-name-dnd5e .chat-portrait-system-dnd5e {
+  display: flex;
+  margin: auto;
+}
+```
 
 ![chat_portrait_feature](./wiki/images/chat_portrait_feature.png)
 

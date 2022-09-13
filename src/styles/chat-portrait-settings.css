@@ -1,0 +1,18 @@
+/*
+input[name="chat-portrait.customStylingMessageText"] {
+	height: 200px;
+}
+
+input[name="chat-portrait.customStylingMessageImage"] {
+	height: 200px;
+}
+*/
+textarea[name="chat-portrait.customStylingMessageText"] {
+	flex: none !important;
+	height: 200px;
+}
+
+textarea[name="chat-portrait.customStylingMessageImage"] {
+	flex: none !important;
+	height: 200px;
+}
