@@ -1,3 +1,7 @@
+### 0.8.0-1
+
+- Update foundryvtt 10
+
 ### 0.7.5
 
 - Synced with Illandril's Chat Enhancements 2022-08-08
