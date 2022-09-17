@@ -12,7 +12,7 @@ export class ChatPortraitChatCard extends ChatMessage {
 	// roll:Roll;
 
 	constructor(message, html, speakerInfo, imageReplacer) {
-		super(message.data.document);
+		super(message);
 		this.updateBinding(message, html, speakerInfo, imageReplacer);
 	}
 
@@ -31,8 +31,8 @@ export class ChatPortraitChatCard extends ChatMessage {
 		// Foundry will sometimes call renderChatMessage() multiple times with un-bound HTML,
 		// and we can't do anything except rely on closures to handle those events.
 		// this.id = message.id;
-		this.speaker = <Actor>game.actors?.get(message.data.speaker.actor);
-		// this.roll = message?.roll ? message?.roll : message?.data?.document?.roll;
+		this.speaker = <Actor>game.actors?.get(message.speaker.actor);
+		// this.roll = message?.roll ? message?.roll : message?.document?.roll;
 		//message.BetterRoll = this.roll;
 
 		// Hide Save DCs
@@ -110,27 +110,4 @@ export class ChatPortraitChatCard extends ChatMessage {
 			return newCard;
 		}
 	}
-
-	// fromMessage(message:ChatMessage) {
-	// 	const data = message.data.rollflags.betterrolls5e;
-	// 	const roll = new CustomItemRoll(null, data?.params ?? {}, data?.fields ?? []);
-	// 	roll._currentId = -1;
-	// 	roll.messageId = message.id;
-	// 	roll.rolled = true;
-	// 	if (data) {
-	// 		roll.isCrit = data.isCrit;
-	// 		roll.entries = FoundryProxy.create(data.entries);
-	// 		roll.properties = data.properties;
-	// 		roll.params = data.params;
-
-	// 		// Set these up so that lazy loading can be done
-	// 		roll.actorId = data.actorId;
-	// 		roll.itemId = data.itemId;
-	// 		roll.tokenId = data.tokenId;
-	// 	}
-
-	// 	roll.storedItemData = message.getFlag("dnd5e", "itemData");
-
-	// 	return roll;
-	// }
 }

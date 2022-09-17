@@ -30,10 +30,14 @@ export function getOwnedTokens(priorityToControlledIfGM: boolean): Token[] {
 			return arr;
 		}
 	}
-	let ownedTokens = <Token[]>canvas.tokens?.placeables.filter((token) => token.isOwner && (!token.data.hidden || gm));
+	let ownedTokens = <Token[]>(
+		canvas.tokens?.placeables.filter((token) => token.isOwner && (!token.document.hidden || gm))
+	);
 	if (ownedTokens.length === 0 || !canvas.tokens?.controlled[0]) {
 		ownedTokens = <Token[]>(
-			canvas.tokens?.placeables.filter((token) => (token.observer || token.isOwner) && (!token.data.hidden || gm))
+			canvas.tokens?.placeables.filter(
+				(token) => (token.observer || token.isOwner) && (!token.document.hidden || gm)
+			)
 		);
 	}
 	return ownedTokens;
@@ -83,7 +87,7 @@ export function getActiveGMs() {
 
 export function isResponsibleGM() {
 	if (!game.user?.isGM) return false;
-	return !getActiveGMs()?.some((other) => other.data._id < <string>game.user?.data._id);
+	return !getActiveGMs()?.some((other) => other.id < <string>game.user?.id);
 }
 
 // ================================
@@ -246,9 +250,9 @@ export function getFirstPlayerTokenSelected(): Token | null {
 		return null;
 	}
 	if (!selectedTokens || selectedTokens.length == 0) {
-		//if(game.user.character.data.token){
+		//if(game.user.character.token){
 		//  //@ts-ignore
-		//  return game.user.character.data.token;
+		//  return game.user.character.token;
 		//}else{
 		return null;
 		//}
@@ -274,9 +278,7 @@ export function getFirstPlayerToken(): Token | null {
 	if (!token) {
 		if (!controlled.length || controlled.length == 0) {
 			// If no token is selected use the token of the users character
-			token = <Token>(
-				canvas.tokens?.placeables.find((token) => token.data._id === game.user?.character?.data?._id)
-			);
+			token = <Token>canvas.tokens?.placeables.find((token) => token.id === game.user?.character?.id);
 		}
 		// If no token is selected use the first owned token of the users character you found
 		if (!token) {
@@ -284,37 +286,6 @@ export function getFirstPlayerToken(): Token | null {
 		}
 	}
 	return token;
-}
-
-function getElevationToken(token: Token): number {
-	const base = token.document.data;
-	return getElevationPlaceableObject(base);
-}
-
-function getElevationWall(wall: Wall): number {
-	const base = wall.document.data;
-	return getElevationPlaceableObject(base);
-}
-
-function getElevationPlaceableObject(placeableObject: any): number {
-	let base = placeableObject;
-	if (base.document) {
-		base = base.document.data;
-	}
-	const base_elevation =
-		//@ts-ignore
-		typeof _levels !== "undefined" &&
-		//@ts-ignore
-		_levels?.advancedLOS &&
-		(placeableObject instanceof Token || placeableObject instanceof TokenDocument)
-			? //@ts-ignore
-			  _levels.getTokenLOSheight(placeableObject)
-			: base.elevation ??
-			  base.flags["levels"]?.elevation ??
-			  base.flags["levels"]?.rangeBottom ??
-			  base.flags["wallHeight"]?.wallHeightBottom ??
-			  0;
-	return base_elevation;
 }
 
 // =============================

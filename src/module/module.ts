@@ -1,4 +1,4 @@
-import { warn, error, debug, i18n, log } from "./lib/lib";
+import { warn, error, debug, i18n, log, info } from "./lib/lib";
 import { ChatPortrait } from "./ChatPortrait";
 import type { ChatSpeakerData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatSpeakerData";
 import type EmbeddedCollection from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs";
@@ -13,12 +13,13 @@ import { checkSystem } from "./settings";
 const mapCombatTrackerPortrait = new Map<string, string>();
 
 export const initHooks = () => {
-	warn("Init Hooks processing");
+	debug("Init Hooks processing");
 
 	Hooks.once("socketlib.ready", registerSocket);
 };
 
 export const setupHooks = async () => {
+	debug("Setup Hooks processing");
 	setApi(API);
 
 	// setup all the hooks
@@ -36,17 +37,42 @@ export const setupHooks = async () => {
 	 */
 	Hooks.on("renderChatMessage", async (message: ChatMessage, html: JQuery<HTMLElement>, speakerInfo) => {
 		if (!speakerInfo.message.speaker.token && currentSpeakerBackUp?.token) {
-			if (currentSpeakerBackUp.scene) speakerInfo.message.speaker.scene = currentSpeakerBackUp.scene;
-			if (currentSpeakerBackUp.actor) speakerInfo.message.speaker.actor = currentSpeakerBackUp.actor;
-			if (currentSpeakerBackUp.token) speakerInfo.message.speaker.token = currentSpeakerBackUp.token;
-			if (currentSpeakerBackUp.alias) speakerInfo.message.speaker.alias = currentSpeakerBackUp.alias;
+			if (currentSpeakerBackUp.scene) {
+				speakerInfo.message.speaker.scene = currentSpeakerBackUp.scene;
+			}
+			if (currentSpeakerBackUp.actor) {
+				speakerInfo.message.speaker.actor = currentSpeakerBackUp.actor;
+			}
+			if (currentSpeakerBackUp.token) {
+				speakerInfo.message.speaker.token = currentSpeakerBackUp.token;
+			}
+			if (currentSpeakerBackUp.alias) {
+				speakerInfo.message.speaker.alias = currentSpeakerBackUp.alias;
+			}
 		}
 
-		if (!message.data.speaker.token && currentSpeakerBackUp?.token) {
-			if (currentSpeakerBackUp.scene) message.data.speaker.scene = currentSpeakerBackUp.scene;
-			if (currentSpeakerBackUp.actor) message.data.speaker.actor = currentSpeakerBackUp.actor;
-			if (currentSpeakerBackUp.token) message.data.speaker.token = currentSpeakerBackUp.token;
-			if (currentSpeakerBackUp.alias) message.data.speaker.alias = currentSpeakerBackUp.alias;
+		//@ts-ignore
+		if (!message.speaker.token && currentSpeakerBackUp?.token) {
+			//@ts-ignore
+			if (currentSpeakerBackUp.scene) {
+				//@ts-ignore
+				message.speaker.scene = currentSpeakerBackUp.scene;
+			}
+			//@ts-ignore
+			if (currentSpeakerBackUp.actor) {
+				//@ts-ignore
+				message.speaker.actor = currentSpeakerBackUp.actor;
+			}
+			//@ts-ignore
+			if (currentSpeakerBackUp.token) {
+				//@ts-ignore
+				message.speaker.token = currentSpeakerBackUp.token;
+			}
+			//@ts-ignore
+			if (currentSpeakerBackUp.alias) {
+				//@ts-ignore
+				message.speaker.alias = currentSpeakerBackUp.alias;
+			}
 		}
 
 		ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
@@ -63,15 +89,15 @@ export const setupHooks = async () => {
 	});
 
 	// Hooks.on('createChatMessage', async (message:ChatMessage, render, userId) => {
-	//   if(!message.data.speaker.token && currentSpeakerBackUp?.token){
-	//     if(currentSpeakerBackUp.scene) message.data.speaker.scene = currentSpeakerBackUp.scene;
-	//     if(currentSpeakerBackUp.actor) message.data.speaker.actor = currentSpeakerBackUp.actor;
-	//     if(currentSpeakerBackUp.token) message.data.speaker.token = currentSpeakerBackUp.token;
-	//     if(currentSpeakerBackUp.alias) message.data.speaker.alias = currentSpeakerBackUp.alias;
+	//   if(!message.speaker.token && currentSpeakerBackUp?.token){
+	//     if(currentSpeakerBackUp.scene) message.speaker.scene = currentSpeakerBackUp.scene;
+	//     if(currentSpeakerBackUp.actor) message.speaker.actor = currentSpeakerBackUp.actor;
+	//     if(currentSpeakerBackUp.token) message.speaker.token = currentSpeakerBackUp.token;
+	//     if(currentSpeakerBackUp.alias) message.speaker.alias = currentSpeakerBackUp.alias;
 	//   }
 	//   if(render.render){
-	//     const html:JQuery<HTMLElement> = $("<div>" + message.data.content + "</div>");
-	//     let speakerInfo = message.data.speaker;
+	//     const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
+	//     let speakerInfo = message.speaker;
 	//     //@ts-ignore
 	//     if(!speakerInfo.alias && speakerInfo.document?.alias){
 	//       //@ts-ignore
@@ -81,11 +107,11 @@ export const setupHooks = async () => {
 	//     let updates = {
 	//       content: html.html()
 	//     };
-	//     message.data.update(updates);
+	//     message.update(updates);
 	//     //@ts-ignore
 	//     speakerInfo.message = {};
 	//      //@ts-ignore
-	//     speakerInfo.message = message.data;
+	//     speakerInfo.message = message;
 	//   }
 	// });
 
@@ -93,9 +119,9 @@ export const setupHooks = async () => {
 	//   type: ChatPortrait.getMessageTypeVisible(speakerInfo),
 	//   user: game.user,
 	//   speaker: speakerInfo,
-	//   content: message.data.content,
+	//   content: message.content,
 	//   //@ts-ignore
-	//   whisper: message.data.whisper ? message.data.whisper : speakerInfo.document.data.whisper,
+	//   whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
 	// };
 	// await ChatMessage.create(chatData,{});
 
@@ -128,11 +154,11 @@ export const setupHooks = async () => {
 					const mytoken = ChatPortrait.getFirstPlayerToken();
 					speakerInfo.alias = message.alias;
 					speakerInfo.token = mytoken;
-					speakerInfo.actor = game.actors?.get(<string>user?.data.character);
+					speakerInfo.actor = game.actors?.get(<string>user?.character?.id);
 					const updates = {
 						speaker: speakerInfo,
 					};
-					message.data.update(updates);
+					message.update(updates);
 				}
 				// MidiQol , Better Rolls, and other modules.. sometime destroy the info
 				// for my purpose i backup the speaker i will found on the preCreateChatMessage
@@ -144,8 +170,8 @@ export const setupHooks = async () => {
 				}
 			}
 			// if(render.render){
-			//   const html:JQuery<HTMLElement> = $("<div>" + message.data.content + "</div>");
-			//   let speakerInfo = message.data.speaker;
+			//   const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
+			//   let speakerInfo = message.speaker;
 			//   //@ts-ignore
 			//   if(!speakerInfo.alias && speakerInfo.document?.alias){
 			//     //@ts-ignore
@@ -155,19 +181,19 @@ export const setupHooks = async () => {
 			//   let updates = {
 			//     content: html.html()
 			//   };
-			//   message.data.update(updates);
+			//   message.update(updates);
 			//   //@ts-ignore
 			//   speakerInfo.message = {};
 			//    //@ts-ignore
-			//   speakerInfo.message = message.data;
+			//   speakerInfo.message = message;
 			//   if(flag){
 			//     let chatData:any = {
 			//       type: ChatPortrait.getMessageTypeVisible(speakerInfo),
 			//       user: game.user,
 			//       speaker: speakerInfo,
-			//       content: message.data.content,
+			//       content: message.content,
 			//       //@ts-ignore
-			//       whisper: message.data.whisper ? message.data.whisper : speakerInfo.document.data.whisper,
+			//       whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
 			//     };
 			//     flag = false;
 			//     ChatMessage.create(chatData,{});
@@ -180,6 +206,7 @@ export const setupHooks = async () => {
 };
 
 export const readyHooks = async () => {
+	debug("Ready Hooks processing");
 	checkSystem();
 	// When the combat tracker is rendered, we need to completely replace
 	// its HTML with a custom version.
@@ -188,7 +215,7 @@ export const readyHooks = async () => {
 			// If there's as combat, we can proceed.
 			if (game.combat) {
 				// Retrieve a list of the combatants
-				const combatants = <EmbeddedCollection<typeof Combatant, CombatData>>game.combat?.data.combatants;
+				const combatants = <EmbeddedCollection<typeof Combatant, CombatData>>game.combat?.combatants;
 
 				combatants.forEach(async (c) => {
 					// Add class to trigger drag events.
@@ -221,9 +248,7 @@ export const readyHooks = async () => {
 							// if user not admin is owner of the token
 							//userID = (!game.user?.isGM && token.actor?.hasPerm(<User>game.user, "OWNER")) ? <string>game.user?.id : "";
 							//userID = (!game.user?.isGM && (token.document.permission === CONST.ENTITY_PERMISSIONS.OWNER)) ? <string>game.user?.id : "";
-							const permissions: Record<string, 0 | 1 | 2 | 3> = <Record<string, 0 | 1 | 2 | 3>>(
-								token.actor?.data.permission
-							);
+							const permissions = <any>token.actor?.permission;
 							for (const keyPermission in permissions) {
 								const valuePermission = <number>permissions[keyPermission];
 								if (game.user?.isGM) {
