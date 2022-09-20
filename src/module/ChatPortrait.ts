@@ -1014,23 +1014,23 @@ export class ChatPortrait {
 							if (ChatPortrait.useImageReplacer(html)) {
 								// REMOVED SEEM OVERKILL
 								/*
-                const elementItemImage:HTMLImageElement = <HTMLImageElement> document.createElement("img");
-                if(!elementItemImage){
-                  continue;
-                }
-                const size: number = ChatPortrait.settings.portraitSizeItem;
-                if(size && size > 0){
-                  elementItemImage.width = size;
-                  elementItemImage.height = size;
-                }
-                if( !doNotImageReplacer && (!elementItemImage.src || elementItemImage.src?.includes(CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME))){
-                  elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
-                }
-                if(!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)){
-                  elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
-                }
-                if(!isRollTable) elementItemText.prepend(elementItemImage);
-                */
+								const elementItemImage:HTMLImageElement = <HTMLImageElement> document.createElement("img");
+								if(!elementItemImage){
+									continue;
+								}
+								const size: number = ChatPortrait.settings.portraitSizeItem;
+								if(size && size > 0){
+									elementItemImage.width = size;
+									elementItemImage.height = size;
+								}
+								if( !doNotImageReplacer && (!elementItemImage.src || elementItemImage.src?.includes(CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME))){
+									elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
+								}
+								if(!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)){
+									elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
+								}
+								if(!isRollTable) elementItemText.prepend(elementItemImage);
+								*/
 							}
 						}
 					}
@@ -1100,8 +1100,8 @@ export class ChatPortrait {
 					} else {
 						warn(
 							'No specific avatar player image found it for player "' +
-								ChatPortrait.getUserName(message) +
-								'"'
+							ChatPortrait.getUserName(message) +
+							'"'
 						);
 						return imgAvatar ? imgAvatar : imgFinal;
 					}
@@ -1189,8 +1189,8 @@ export class ChatPortrait {
 				let imgToken = "";
 				if (tokenDocumentData) {
 					if (useTokenImage) {
-						if (tokenDocumentData?.img) {
-							imgToken = tokenDocumentData.img;
+						if (tokenDocumentData?.texture?.src) {
+							imgToken = tokenDocumentData.texture.src;
 						}
 
 						if ((!imgToken || ChatPortrait.isWildcardImage(imgToken)) && tokenDocumentData?.img) {
@@ -1939,7 +1939,7 @@ export class ChatPortrait {
 	};
 
 	static replaceSenderWithTokenName = function (messageSenderElem, speakerInfo) {
-		const speaker = speakerInfo;
+		const speaker = speakerInfo.message.speaker;
 		const actorName = (ChatPortrait.getActorName(speaker) || "").trim();
 		const name = (ChatPortrait.getTokenName(speaker) || "").trim();
 		if (actorName !== name) {
@@ -2259,8 +2259,8 @@ export class ChatPortrait {
 				} else {
 					warn(
 						"No specific avatar player image found it for player '" +
-							ChatPortrait.getUserNameFromUserID(userID) +
-							"'"
+						ChatPortrait.getUserNameFromUserID(userID) +
+						"'"
 					);
 					return imgAvatar ? imgAvatar : imgFinal;
 				}
