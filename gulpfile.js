@@ -537,7 +537,9 @@ async function packageBuild() {
             zip.pipe(zipFile);
 
             // Add the directory with the final code
-            zip.directory(`dist/`, manifest.file.name);
+            // zip.directory(`dist/`, manifest.file.name);
+            const moduleJson = JSON.parse(fs.readFileSync('./src/module.json'));
+            zip.directory(`dist/`, moduleJson.id);
             /* MOD 4535992
             zip.file(`dist/module.json`, { name: `module.json` });
             zip.file(`dist/bundle.js`, { name: `bundle.js` });
