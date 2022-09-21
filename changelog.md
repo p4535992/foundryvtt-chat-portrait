@@ -1,3 +1,7 @@
+### 0.8.4-5
+
+- BUg fix: [[BUG] Use Token Image broken in v10](https://github.com/p4535992/foundryvtt-chat-portrait/issues/2)
+
 ### 0.8.0-1-2-3
 
 - Update foundryvtt 10
