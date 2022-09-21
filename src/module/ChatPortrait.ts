@@ -1878,20 +1878,23 @@ export class ChatPortrait {
 
 	static getUserAvatarImage = function (message): string {
 		let userId = "";
-		if (message.document) {
+		// TODO CHECK THESE FOR FVTT10
+		if (message.document?.user?.id) {
 			userId = message.document.user.id;
 		}
-		if (!userId) {
-			userId = message.user;
-		}
-		if (!userId) {
+		if (!userId &&  message.user?.id) {
 			userId = message.user.id;
 		}
-		const user = game.users?.get(userId);
-		if (user) {
-			if (user && user.avatar) {
-				// image path
-				return user.avatar;
+		if (!userId && message.user) {
+			userId = message.user;
+		}
+		if(userId){
+			const user = game.users?.get(userId);
+			if (user) {
+				if (user && user.avatar) {
+					// image path
+					return user.avatar;
+				}
 			}
 		}
 		return CONSTANTS.DEF_TOKEN_IMG_PATH;
