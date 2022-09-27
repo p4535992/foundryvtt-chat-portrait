@@ -166,6 +166,23 @@ export class ChatPortrait {
 		// }
 
 		if (doNotStyling) {
+			const headerImageElement2 = document.createElement("header");
+			headerImageElement2.classList.add("message-header");
+			headerImageElement2.classList.add("flexrow");
+			if (!headerImageElement2.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
+				headerImageElement2.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			}
+			const messageHeaderElement2 = <HTMLElement>(
+				messageHeaderElementBase.parentElement?.insertBefore(
+					headerImageElement2,
+					messageHeaderElementBase.parentElement?.firstChild
+				)
+			);
+			const headerTextElement2 = document.createElement("h4");
+			headerTextElement2.classList.add("message-sender");
+			headerTextElement2.classList.add(`chat-portrait-text-header-2-name-${gameSystemId}`);
+			messageHeaderElement2.appendChild(headerTextElement2);
+
 			const headerImageElement = document.createElement("header");
 			headerImageElement.classList.add("message-header");
 			headerImageElement.classList.add("flexrow");
@@ -178,12 +195,10 @@ export class ChatPortrait {
 					messageHeaderElementBase.parentElement?.firstChild
 				)
 			);
-			// Text is transfer to header
 			const headerTextElement = document.createElement("h4");
 			headerTextElement.innerText = <string>messageSenderElement.textContent;
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
-
 			messageHeaderElement.appendChild(headerTextElement);
 			messageSenderElement.textContent = "";
 
@@ -199,7 +214,12 @@ export class ChatPortrait {
 			ChatPortrait.setChatMessageBackground(html, messageData, authorColor);
 			ChatPortrait.setChatMessageBorder(html, messageData, authorColor);
 			if (ChatPortrait.settings.displayPlayerName) {
-				ChatPortrait.appendPlayerName(messageSenderElement, speakerInfo.author, gameSystemId);
+				ChatPortrait.appendPlayerName(
+					headerTextElement2,
+					messageSenderElement,
+					speakerInfo.author,
+					gameSystemId
+				);
 			}
 			if (ChatPortrait.settings.displayMessageTag) {
 				ChatPortrait.injectMessageTag(html, speakerInfo, messageHeaderElement, gameSystemId);
@@ -327,6 +347,23 @@ export class ChatPortrait {
 			}
 		}
 		return ChatPortrait.generatePortraitImageElement(imgPath, gameSystemId).then((imgElement: any) => {
+			const headerImageElement3 = document.createElement("header");
+			headerImageElement3.classList.add("message-header");
+			headerImageElement3.classList.add("flexrow");
+			if (!headerImageElement3.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
+				headerImageElement3.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			}
+			const messageHeaderElement3 = <HTMLElement>(
+				messageHeaderBase.parentElement?.insertBefore(
+					headerImageElement3,
+					messageHeaderBase.parentElement?.firstChild
+				)
+			);
+			const headerTextElement3 = document.createElement("h4");
+			headerTextElement3.classList.add("message-sender");
+			headerTextElement3.classList.add(`chat-portrait-text-header-2-name-${gameSystemId}`);
+			messageHeaderElement3.appendChild(headerTextElement3);
+
 			const headerImageElement = document.createElement("header");
 			headerImageElement.classList.add("message-header");
 			headerImageElement.classList.add("flexrow");
@@ -346,8 +383,13 @@ export class ChatPortrait {
 			headerTextElement.innerText = <string>messageSender.textContent;
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
-
 			messageHeader.appendChild(headerTextElement);
+
+			// const headerTextElement = document.createElement("h4");
+			// headerTextElement.classList.add("message-sender");
+			// headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
+			// messageHeader.appendChild(headerTextElement);
+
 			messageSender.textContent = "";
 
 			const messageData = <any>messageDataBase.message;
@@ -1092,7 +1134,7 @@ export class ChatPortrait {
 			ChatPortrait.setChatMessageBorder(html, messageData, authorColor);
 			// Final settings
 			if (ChatPortrait.settings.displayPlayerName) {
-				ChatPortrait.appendPlayerName(messageSender, speaker.author, gameSystemId);
+				ChatPortrait.appendPlayerName(headerTextElement3, messageSender, speaker.author, gameSystemId);
 			}
 			if (ChatPortrait.settings.displayMessageTag) {
 				ChatPortrait.injectMessageTag(html, messageData, messageHeader, gameSystemId);
@@ -2012,14 +2054,15 @@ export class ChatPortrait {
 		}
 	};
 
-	static appendPlayerName = function (messageSenderElem, author, gameSystemId: string) {
+	static appendPlayerName = function (headerTextElement, messageSenderElem, author, gameSystemId: string) {
 		const playerName = author.name;
 		const playerNameElem = document.createElement("span");
 		playerNameElem.appendChild(document.createTextNode(playerName));
-		if (!playerNameElem.classList.contains(`${CONSTANTS.MODULE_NAME}-playerName-${gameSystemId}`)) {
-			playerNameElem.classList.add(`${CONSTANTS.MODULE_NAME}-playerName-${gameSystemId}`);
+		if (!playerNameElem.classList.contains(`chat-portrait-playerName-${gameSystemId}`)) {
+			playerNameElem.classList.add(`chat-portrait-playerName-${gameSystemId}`);
 		}
-		messageSenderElem.append(playerNameElem);
+		// messageSenderElem.append(playerNameElem);
+		headerTextElement.appendChild(playerNameElem);
 	};
 
 	static getMessageTypeVisible = function (speakerInfo) {
@@ -2199,7 +2242,8 @@ export class ChatPortrait {
 	) {
 		let timestampTag = html.find(".message-timestamp");
 		if (ChatPortrait.settings.displayMessageTagNextToName) {
-			timestampTag = html.find(`h4.chat-portrait-text-size-name-${gameSystemId}`);
+			// timestampTag = html.find(`h4.chat-portrait-text-size-name-${gameSystemId}`);
+			timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
 		}
 
 		const indicatorElement = $("<span>");
