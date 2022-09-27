@@ -2271,7 +2271,8 @@ export class ChatPortrait {
 		const isBlind = messageData.blind || false;
 		const isWhisper = whisperTargets?.length > 0 || false;
 		const isSelf = isWhisper && whisperTargets.length === 1 && whisperTargets[0] === messageData.user;
-		const isRoll = messageData.roll !== undefined;
+		//@ts-ignore
+		const isRoll = messageData.rolls !== undefined;
 
 		// Inject tag to the left of the timestamp
 		if (isBlind) {
@@ -2294,7 +2295,8 @@ export class ChatPortrait {
 		const whisperTargetString = messageData.whisperTo;
 		const whisperTargetIds = messageData.whisper;
 		const isWhisper = whisperTargetIds?.length > 0 || false;
-		const isRoll = messageData.roll !== undefined;
+		//@ts-ignore
+		const isRoll = messageData.rolls !== undefined;
 
 		const authorId = messageData.user;
 		const userId = game.user?.id;
