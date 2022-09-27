@@ -128,7 +128,7 @@ export class ChatPortrait {
 
 		// MULTISYSTEM MANAGEMENT
 		let messageSenderElement: HTMLElement;
-		let messageHeaderElement: HTMLElement;
+		let messageHeaderElementBase: HTMLElement;
 		let elementItemImageList;
 		let elementItemNameList;
 		let elementItemContentList;
@@ -138,9 +138,9 @@ export class ChatPortrait {
 		if (!messageSenderElement) {
 			messageSenderElement = <HTMLElement>html.find(".chat-card")[0];
 		}
-		messageHeaderElement = <HTMLElement>html.find(".message-header")[0];
-		if (!messageHeaderElement) {
-			messageHeaderElement = <HTMLElement>html.find(".card-header")[0];
+		messageHeaderElementBase = <HTMLElement>html.find(".message-header")[0];
+		if (!messageHeaderElementBase) {
+			messageHeaderElementBase = <HTMLElement>html.find(".card-header")[0];
 		}
 		elementItemImageList = html.find(".message-content img");
 		if (!elementItemImageList) {
@@ -161,11 +161,32 @@ export class ChatPortrait {
 
 		const gameSystemId = API.retrieveSystemId();
 
-		if (!messageHeaderElement.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
-			messageHeaderElement.classList.add(`chat-portrait-message-header-${gameSystemId}`);
-		}
+		// if (!messageHeaderElementBase.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
+		// 	messageHeaderElementBase.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+		// }
 
 		if (doNotStyling) {
+			const headerImageElement = document.createElement("header");
+			headerImageElement.classList.add("message-header");
+			headerImageElement.classList.add("flexrow");
+			if (!headerImageElement.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
+				headerImageElement.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			}
+			const messageHeaderElement = <HTMLElement>(
+				messageHeaderElementBase.parentElement?.insertBefore(
+					headerImageElement,
+					messageHeaderElementBase.parentElement?.firstChild
+				)
+			);
+			// Text is transfer to header
+			const headerTextElement = document.createElement("h4");
+			headerTextElement.innerText = <string>messageSenderElement.textContent;
+			headerTextElement.classList.add("message-sender");
+			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
+
+			messageHeaderElement.appendChild(headerTextElement);
+			messageSenderElement.textContent = "";
+
 			let authorColor = "black";
 			if (speakerInfo.author) {
 				authorColor = <string>speakerInfo.author.color;
@@ -193,7 +214,7 @@ export class ChatPortrait {
 				html,
 				speakerInfo,
 				messageSenderElement,
-				messageHeaderElement,
+				messageHeaderElementBase,
 				elementItemImageList,
 				elementItemNameList,
 				elementItemContentList,
@@ -223,7 +244,7 @@ export class ChatPortrait {
 		html: JQuery<HTMLElement>,
 		speakerInfo,
 		messageSender: HTMLElement,
-		messageHeader: HTMLElement,
+		messageHeaderBase: HTMLElement,
 		elementItemImageList,
 		elementItemNameList,
 		elementItemContentList,
@@ -305,7 +326,30 @@ export class ChatPortrait {
 				});
 			}
 		}
-		return ChatPortrait.generatePortraitImageElement(imgPath, gameSystemId).then((imgElement) => {
+		return ChatPortrait.generatePortraitImageElement(imgPath, gameSystemId).then((imgElement: any) => {
+			const headerImageElement = document.createElement("header");
+			headerImageElement.classList.add("message-header");
+			headerImageElement.classList.add("flexrow");
+			if (!headerImageElement.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
+				headerImageElement.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			}
+			headerImageElement.appendChild(imgElement);
+
+			const messageHeader = <HTMLElement>(
+				messageHeaderBase.parentElement?.insertBefore(
+					headerImageElement,
+					messageHeaderBase.parentElement?.firstChild
+				)
+			);
+			// Text is transfer to header
+			const headerTextElement = document.createElement("h4");
+			headerTextElement.innerText = <string>messageSender.textContent;
+			headerTextElement.classList.add("message-sender");
+			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
+
+			messageHeader.appendChild(headerTextElement);
+			messageSender.textContent = "";
+
 			const messageData = <any>messageDataBase.message;
 			// GOD HELP ME: Use case where we not must prepend the image or imagReplacer
 			const isRollTable = messageData.flags?.core?.RollTable ? true : false;
@@ -358,7 +402,8 @@ export class ChatPortrait {
 			ChatPortrait.setImageBorder(imgElement, authorColor);
 			// Place the image to left of the header by injecting the HTML
 			//const messageHeader: HTMLElement = html.find('.message-header')[0];
-			messageHeader.prepend(imgElement);
+			// TODO OLD SETTING ??
+			// messageHeader.prepend(imgElement);
 
 			if (ChatPortrait.settings.flavorNextToPortrait) {
 				const flavorElement: JQuery = html.find(".flavor-text");
@@ -376,6 +421,8 @@ export class ChatPortrait {
 			if (!messageSender.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 				messageSender.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
 				// messageSender.textContent = messageSender.innerText + ' ';
+				messageSender.style.flex = "0";
+				messageSender.style.alignSelf = "center";
 			}
 			// Update size text name by settings
 			if (ChatPortrait.settings.textSizeName > 0) {
@@ -1100,8 +1147,8 @@ export class ChatPortrait {
 					} else {
 						warn(
 							'No specific avatar player image found it for player "' +
-							ChatPortrait.getUserName(message) +
-							'"'
+								ChatPortrait.getUserName(message) +
+								'"'
 						);
 						return imgAvatar ? imgAvatar : imgFinal;
 					}
@@ -1882,13 +1929,13 @@ export class ChatPortrait {
 		if (message.document?.user?.id) {
 			userId = message.document.user.id;
 		}
-		if (!userId &&  message.user?.id) {
+		if (!userId && message.user?.id) {
 			userId = message.user.id;
 		}
 		if (!userId && message.user) {
 			userId = message.user;
 		}
-		if(userId){
+		if (userId) {
 			const user = game.users?.get(userId);
 			if (user) {
 				if (user && user.avatar) {
@@ -2154,10 +2201,6 @@ export class ChatPortrait {
 		if (ChatPortrait.settings.displayMessageTagNextToName) {
 			timestampTag = html.find(`h4.chat-portrait-text-size-name-${gameSystemId}`);
 		}
-		// const arr = $(messageHeaderElement).find(`chat-portrait-indicator-${gameSystemId}`);
-		// if(arr.length > 0){
-		//   return;
-		// }
 
 		const indicatorElement = $("<span>");
 		indicatorElement.addClass(`chat-portrait-indicator-${gameSystemId}`);
@@ -2262,8 +2305,8 @@ export class ChatPortrait {
 				} else {
 					warn(
 						"No specific avatar player image found it for player '" +
-						ChatPortrait.getUserNameFromUserID(userID) +
-						"'"
+							ChatPortrait.getUserNameFromUserID(userID) +
+							"'"
 					);
 					return imgAvatar ? imgAvatar : imgFinal;
 				}
