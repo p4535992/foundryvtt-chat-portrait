@@ -10,7 +10,7 @@ export interface ChatPortraitSettings {
 	borderWidth: number;
 	useUserColorAsChatBackgroundColor: boolean;
 	useUserColorAsChatBorderColor: boolean;
-	flavorNextToPortrait: boolean;
+	// flavorNextToPortrait: boolean;
 	forceNameSearch: boolean;
 	// hoverTooltip: boolean,
 	textSizeName: number;
@@ -32,11 +32,11 @@ export interface ChatPortraitSettings {
 	customStylingMessageText: string;
 	customStylingMessageImage: string;
 	displayMessageTag: boolean;
-	displayMessageTagNextToName: boolean;
+	// displayMessageTagNextToName: boolean;
 	useImageReplacer: boolean;
 	useImageReplacerDamageType: boolean;
 	applyOnCombatTracker: boolean;
-	applyPreCreateChatMessagePatch: boolean;
+	// applyPreCreateChatMessagePatch: boolean;
 	disablePortraitForAliasGmMessage: boolean;
 	setUpPortraitForAliasGmMessage: string;
 }

@@ -153,14 +153,14 @@ export const registerSettings = function () {
 		default: true,
 	});
 
-	game.settings.register(CONSTANTS.MODULE_NAME, "flavorNextToPortrait", {
-		name: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.name`,
-		hint: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.hint`,
-		scope: "client",
-		config: true,
-		type: Boolean,
-		default: false,
-	});
+	// game.settings.register(CONSTANTS.MODULE_NAME, "flavorNextToPortrait", {
+	// 	name: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.name`,
+	// 	hint: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.hint`,
+	// 	scope: "client",
+	// 	config: true,
+	// 	type: Boolean,
+	// 	default: false,
+	// });
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "forceNameSearch", {
 		name: `${CONSTANTS.MODULE_NAME}.settings.forceNameSearch.name`,
@@ -199,14 +199,14 @@ export const registerSettings = function () {
 		default: false,
 	});
 
-	game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTagNextToName", {
-		name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.name`,
-		hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.hint`,
-		scope: "client",
-		config: true,
-		type: Boolean,
-		default: false,
-	});
+	// game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTagNextToName", {
+	// 	name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.name`,
+	// 	hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.hint`,
+	// 	scope: "client",
+	// 	config: true,
+	// 	type: Boolean,
+	// 	default: false,
+	// });
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useImageReplacer", {
 		name: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacer.name`,
@@ -666,14 +666,14 @@ function otherSettings(apply = false) {
 			default: true,
 		},
 
-		flavorNextToPortrait: {
-			name: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.name`,
-			hint: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.hint`,
-			scope: "client",
-			config: true,
-			type: Boolean,
-			default: false,
-		},
+		// flavorNextToPortrait: {
+		// 	name: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.name`,
+		// 	hint: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.hint`,
+		// 	scope: "client",
+		// 	config: true,
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 
 		forceNameSearch: {
 			name: `${CONSTANTS.MODULE_NAME}.settings.forceNameSearch.name`,
@@ -712,14 +712,14 @@ function otherSettings(apply = false) {
 			default: false,
 		},
 
-		displayMessageTagNextToName: {
-			name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.name`,
-			hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.hint`,
-			scope: "client",
-			config: true,
-			type: Boolean,
-			default: false,
-		},
+		// displayMessageTagNextToName: {
+		// 	name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.name`,
+		// 	hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.hint`,
+		// 	scope: "client",
+		// 	config: true,
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 
 		useImageReplacer: {
 			name: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacer.name`,
@@ -748,14 +748,14 @@ function otherSettings(apply = false) {
 			default: false,
 		},
 
-		applyPreCreateChatMessagePatch: {
-			name: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.name`,
-			hint: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.hint`,
-			scope: "client",
-			config: true,
-			type: Boolean,
-			default: false,
-		},
+		// applyPreCreateChatMessagePatch: {
+		// 	name: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.name`,
+		// 	hint: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.hint`,
+		// 	scope: "client",
+		// 	config: true,
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 
 		displaySetting: {
 			name: `${CONSTANTS.MODULE_NAME}.settings.displaySetting.name`,

@@ -1,3 +1,7 @@
+### 0.8.7
+
+- Some css and html tweak
+
 ### 0.8.6
 
 - Bug fix:[null property error without character set](https://github.com/p4535992/foundryvtt-chat-portrait/issues/1)

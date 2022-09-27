@@ -161,16 +161,12 @@ export class ChatPortrait {
 
 		const gameSystemId = API.retrieveSystemId();
 
-		// if (!messageHeaderElementBase.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
-		// 	messageHeaderElementBase.classList.add(`chat-portrait-message-header-${gameSystemId}`);
-		// }
-
 		if (doNotStyling) {
 			const headerImageElement2 = document.createElement("header");
 			headerImageElement2.classList.add("message-header");
 			headerImageElement2.classList.add("flexrow");
-			if (!headerImageElement2.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
-				headerImageElement2.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			if (!headerImageElement2.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
+				headerImageElement2.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
 			}
 			const messageHeaderElement2 = <HTMLElement>(
 				messageHeaderElementBase.parentElement?.insertBefore(
@@ -350,8 +346,8 @@ export class ChatPortrait {
 			const headerImageElement3 = document.createElement("header");
 			headerImageElement3.classList.add("message-header");
 			headerImageElement3.classList.add("flexrow");
-			if (!headerImageElement3.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
-				headerImageElement3.classList.add(`chat-portrait-message-header-${gameSystemId}`);
+			if (!headerImageElement3.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
+				headerImageElement3.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
 			}
 			const messageHeaderElement3 = <HTMLElement>(
 				messageHeaderBase.parentElement?.insertBefore(
@@ -446,7 +442,7 @@ export class ChatPortrait {
 			//const messageHeader: HTMLElement = html.find('.message-header')[0];
 			// TODO OLD SETTING ??
 			// messageHeader.prepend(imgElement);
-
+			/*
 			if (ChatPortrait.settings.flavorNextToPortrait) {
 				const flavorElement: JQuery = html.find(".flavor-text");
 				if (flavorElement && flavorElement.length > 0) {
@@ -458,12 +454,13 @@ export class ChatPortrait {
 					messageSender.appendChild(copiedElement);
 				}
 			}
-
+			*/
 			// Default style
+
 			if (!messageSender.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 				messageSender.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
 				// messageSender.textContent = messageSender.innerText + ' ';
-				messageSender.style.flex = "0";
+				// messageSender.style.flex = "0";
 				messageSender.style.alignSelf = "center";
 			}
 			// Update size text name by settings
@@ -475,6 +472,23 @@ export class ChatPortrait {
 				}
 			} else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
 				messageSender.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
+			}
+
+			if (!headerTextElement.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
+				headerTextElement.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
+				// messageHeader.textContent = messageHeader.innerText + ' ';
+				// headerTextElement.style.flex = "0";
+				headerTextElement.style.alignSelf = "center";
+			}
+			// Update size text name by settings
+			if (ChatPortrait.settings.textSizeName > 0) {
+				const size: number = ChatPortrait.settings.textSizeName;
+				headerTextElement.style.fontSize = size + "px";
+				if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+					headerTextElement.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
+				}
+			} else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+				headerTextElement.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
 			}
 
 			// Add click listener to image and text
@@ -1538,7 +1552,7 @@ export class ChatPortrait {
 			borderWidth: SettingsForm.getBorderWidth(),
 			useUserColorAsChatBackgroundColor: SettingsForm.getUseUserColorAsChatBackgroundColor(),
 			useUserColorAsChatBorderColor: SettingsForm.getUseUserColorAsChatBorderColor(),
-			flavorNextToPortrait: SettingsForm.getFlavorNextToPortrait(),
+			// flavorNextToPortrait: SettingsForm.getFlavorNextToPortrait(),
 			forceNameSearch: SettingsForm.getForceNameSearch(),
 			// hoverTooltip: SettingsForm.getHoverTooltip(),
 			textSizeName: SettingsForm.getTextSizeName(),
@@ -1560,11 +1574,11 @@ export class ChatPortrait {
 			customStylingMessageText: SettingsForm.getCustomStylingMessageText(),
 			customStylingMessageImage: SettingsForm.getCustomStylingMessageImage(),
 			displayMessageTag: SettingsForm.getDisplayMessageTag(),
-			displayMessageTagNextToName: SettingsForm.getDisplayMessageTagNextToName(),
+			// displayMessageTagNextToName: SettingsForm.getDisplayMessageTagNextToName(),
 			useImageReplacer: SettingsForm.getUseImageReplacer(),
 			useImageReplacerDamageType: SettingsForm.getUseImageReplacerDamageType(),
 			applyOnCombatTracker: SettingsForm.getApplyOnCombatTracker(),
-			applyPreCreateChatMessagePatch: SettingsForm.getApplyPreCreateChatMessagePatch(),
+			// applyPreCreateChatMessagePatch: SettingsForm.getApplyPreCreateChatMessagePatch(),
 			disablePortraitForAliasGmMessage: SettingsForm.getDisablePortraitForAliasGmMessage(),
 			setUpPortraitForAliasGmMessage: SettingsForm.getSetUpPortraitForAliasGmMessage(),
 		};
@@ -1587,7 +1601,7 @@ export class ChatPortrait {
 			borderWidth: 2,
 			useUserColorAsChatBackgroundColor: false,
 			useUserColorAsChatBorderColor: false,
-			flavorNextToPortrait: false,
+			// flavorNextToPortrait: false,
 			forceNameSearch: false,
 			// hoverTooltip: false,
 			textSizeName: 0,
@@ -1609,11 +1623,11 @@ export class ChatPortrait {
 			customStylingMessageText: "",
 			customStylingMessageImage: "",
 			displayMessageTag: false,
-			displayMessageTagNextToName: false,
+			// displayMessageTagNextToName: false,
 			useImageReplacer: true,
 			useImageReplacerDamageType: true,
 			applyOnCombatTracker: false,
-			applyPreCreateChatMessagePatch: false,
+			// applyPreCreateChatMessagePatch: false,
 			disablePortraitForAliasGmMessage: false,
 			setUpPortraitForAliasGmMessage: "",
 		};
@@ -2240,11 +2254,14 @@ export class ChatPortrait {
 		messageHeaderElement: HTMLElement,
 		gameSystemId: string
 	) {
+		/*
 		let timestampTag = html.find(".message-timestamp");
 		if (ChatPortrait.settings.displayMessageTagNextToName) {
 			// timestampTag = html.find(`h4.chat-portrait-text-size-name-${gameSystemId}`);
 			timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
 		}
+		*/
+		const timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
 
 		const indicatorElement = $("<span>");
 		indicatorElement.addClass(`chat-portrait-indicator-${gameSystemId}`);
