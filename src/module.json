@@ -4,7 +4,9 @@
 	"description": "Display the Actor's portrait and colors on the Chat Message.",
 	"version": "0.8.8",
 	"authors": [
-		{ "name": "Shoyu Vanilla" },
+		{
+			"name": "Shoyu Vanilla"
+		},
 		{
 			"name": "p4535992",
 			"url": "https://github.com/p4535992",
@@ -83,12 +85,19 @@
 			"lang": "ja",
 			"name": "日本語",
 			"path": "languages/ja.json"
+		},
+		{
+			"lang": "fr",
+			"name": "Français",
+			"path": "languages/fr.json"
 		}
 	],
 	"packs": [],
 	"systems": [],
 	"scripts": [],
-	"esmodules": ["main.js"],
+	"esmodules": [
+		"main.js"
+	],
 	"styles": [
 		"styles/chat-portrait-settings.css",
 		"styles/chat-portrait-style-a5e.css",
