@@ -123,7 +123,7 @@
 	"chat-portrait.border-shape-l": "Configurez la forme de la bordure des portraits affichés sur les messages de conversation. Régler sur Aucun désactive les autres options de bordure.",
 	"chat-portrait.flavor-next-to-portrait": "Afficher le contenu textuel de la conversation à côté du portrait",
 	"chat-portrait.force-name-search-s": "Recherche du nom forcée",
-	"chat-portrait.force-name-search-l": "S'il n'y a pas d'Acteur correspondant aux données du message de disuction, rechercher un acteur dont le nom correspond à l'alias du parleur du message. Cette option est nécessaire pour la compatibilité avec le module Theatre Insert.",
+	"chat-portrait.force-name-search-l": "S'il n'y a pas d'Acteur correspondant aux données du message de discussion, rechercher un acteur dont le nom correspond à l'alias de celui qui prononce message. Cette option est nécessaire pour la compatibilité avec le module 'Theatre Insert'.",
 	"chat-portrait.notInSight": "{name} est introuvable.",
 	"chat-portrait.instructionsTitle": "Contrôles des liens du jeton de discution"
 }
