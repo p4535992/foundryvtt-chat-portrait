@@ -68,7 +68,7 @@
 	"chat-portrait.user-color-as-border-color": "Utiliser la couleur du joueur pour la bordure du portrait",
 	"chat-portrait.border-width-l": "Configurer la largeur de la bordure du portrait. La valeur par défaut est de 2 px",
 	"chat-portrait.user-color-as-chat-border-color-s": "Modifier la couleur de la bordure du message",
-	"chat-portrait.user-color-as-chat-border-color-l": "Utilisez la couleur du joueur de l'acteur pour la bordure de l'ensemble du message de discussion.",
+	"chat-portrait.user-color-as-chat-border-color-l": "Utilisez la couleur du joueur de l'acteur pour la bordure de l'ensemble du message de conversation.",
 	"chat-portrait.portrait-size-item-s": "Taille du portrait pour les autres images (px)",
 	"chat-portrait.portrait-size-item-l": "Configurez la taille de l'image portrait pour toute autre image du message de chat (autre que l'image portrait). La valeur par défaut est 36 px",
 	"chat-portrait.genericName": "Cette créature",
@@ -120,5 +120,7 @@
 	"chat-portrait.dialogs.systemfound.content": "Ce système n'était auparavant pas pris en charge, mais dans une mise à jour récente, il a été ajouté comme système pris en charge !<br><br>Voulez-vous charger les paramètres de pile d'objets par défaut de ce système ?",
 	"chat-portrait.form": "Configuration du portrait de conversation",
 	"chat-portrait.portrait-size-l": "Configurez la taille de l'image du portrait sur les messages de conversation. Valeur par défaut : 36 px",
-	"chat-portrait.border-shape-l": "Configurez la forme de la bordure des portraits affichés sur les messages de conversation. Si vous définissez cette option sur Aucun, les autres options de bordure sont désactivées."
+	"chat-portrait.border-shape-l": "Configurez la forme de la bordure des portraits affichés sur les messages de conversation. Régler sur Aucun désactive les autres options de bordure.",
+	"chat-portrait.flavor-next-to-portrait": "Afficher le contenu textuel de la conversation à côté du portrait",
+	"chat-portrait.force-name-search-s": "Recherche du nom forcée"
 }
