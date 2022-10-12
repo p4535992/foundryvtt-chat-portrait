@@ -1,4 +1,8 @@
-### 0.8.9
+### 0.8.11
+
+- Bug fix [multiple portrait when chat merged by DF Chat Enhancements](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/118)
+
+### 0.8.9-10
 
 - Bug fix Displays Char+Player name incorrectly when using Illandril's Chat Enhancements 2.0 (better integration with Illandril's Chat Enhancements)
 

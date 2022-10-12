@@ -26,6 +26,21 @@ export class ChatPortrait {
 		let doNotStyling = false;
 		let doNotPrintPortrait = false;
 
+		const gameSystemId = API.retrieveSystemId();
+
+		// PATCH Compatibility with DF Chat Enhancements module
+		// multiple portrait when chat merged by DF Chat Enhancements
+		const elementMessageHeaderBySystem1 = html.find(`chat-portrait-message-header-${gameSystemId}`);
+		// TODO TO REMOVE
+		const elementMessageHeaderBySystem2 = html.find(`chat-portrait-message-portrait-${gameSystemId}`);
+		// TODO TO REMOVE
+		const elementMessageHeaderBySystem3 = html.find(`chat-portrait-message-portrait`);
+		if (elementMessageHeaderBySystem1?.length > 0 ||
+			elementMessageHeaderBySystem2?.length > 0 ||
+			elementMessageHeaderBySystem3?.length > 0) {
+			return undefined;
+		}
+
 		// PreHook (can abort the interaction with the door)
 		if (Hooks.call("ChatPortraitEnabled") === false) {
 			return html;
@@ -158,8 +173,6 @@ export class ChatPortrait {
 		if (!elementItemTextList) {
 			elementItemTextList = html.find(".card-header p");
 		}
-
-		const gameSystemId = API.retrieveSystemId();
 
 		if (doNotStyling) {
 			const headerImageElement2 = document.createElement("header");
