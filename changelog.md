@@ -1,3 +1,7 @@
+### 0.8.9
+
+- Bug fix Displays Char+Player name incorrectly when using Illandril's Chat Enhancements 2.0 (better integration with Illandril's Chat Enhancements)
+
 ### 0.8.7-8
 
 - Some css and html tweak

@@ -192,7 +192,7 @@ export class ChatPortrait {
 				)
 			);
 			const headerTextElement = document.createElement("h4");
-			headerTextElement.innerText = <string>messageSenderElement.textContent;
+			headerTextElement.innerHTML = <string>messageSenderElement.innerHTML;
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeaderElement.appendChild(headerTextElement);
@@ -376,16 +376,10 @@ export class ChatPortrait {
 			);
 			// Text is transfer to header
 			const headerTextElement = document.createElement("h4");
-			headerTextElement.innerText = <string>messageSender.textContent;
+			headerTextElement.innerHTML = <string>messageSender.innerHTML;
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeader.appendChild(headerTextElement);
-
-			// const headerTextElement = document.createElement("h4");
-			// headerTextElement.classList.add("message-sender");
-			// headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
-			// messageHeader.appendChild(headerTextElement);
-
 			messageSender.textContent = "";
 
 			const messageData = <any>messageDataBase.message;
@@ -459,8 +453,6 @@ export class ChatPortrait {
 
 			if (!messageSender.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 				messageSender.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
-				// messageSender.textContent = messageSender.innerText + ' ';
-				// messageSender.style.flex = "0";
 				messageSender.style.alignSelf = "center";
 			}
 			// Update size text name by settings
@@ -476,8 +468,6 @@ export class ChatPortrait {
 
 			if (!headerTextElement.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 				headerTextElement.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
-				// messageHeader.textContent = messageHeader.innerText + ' ';
-				// headerTextElement.style.flex = "0";
 				headerTextElement.style.alignSelf = "center";
 			}
 			// Update size text name by settings
@@ -554,7 +544,6 @@ export class ChatPortrait {
 					if (elementItemName) {
 						if (!elementItemName.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 							elementItemName.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
-							// elementItemName.textContent = elementItemName.innerText + ' ';
 						}
 						let value = "";
 						let images: ImageReplacerData = { iconMainReplacer: "", iconsDamageType: [] };
@@ -939,7 +928,6 @@ export class ChatPortrait {
 					const elementItemText: HTMLElement = <HTMLElement>elementItemTextList[i];
 					if (!elementItemText.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 						elementItemText.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
-						// elementItemText.textContent = elementItemText.innerText + ' ';
 					}
 					let value = "";
 					let images: ImageReplacerData = { iconMainReplacer: "", iconsDamageType: [] };
