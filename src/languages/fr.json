@@ -119,5 +119,6 @@
 	"chat-portrait.dialogs.nosystemfound.content": "Ce système n'est actuellement pas entièrement pris en charge. Cela signifie que le module ne sait pas comment traiter au mieux les éléments de ce système, mais qu'il peut encore fonctionner de manière limitée.<br><br>Vous pouvez configurer les paramètres du module vous-même, mais cela nécessite un peu de connaissances techniques.<br><br>Si vous avez des questions, envoyez un message à <strong>Wasp#2005</strong> sur le discord Foundry.",
 	"chat-portrait.dialogs.systemfound.content": "Ce système n'était auparavant pas pris en charge, mais dans une mise à jour récente, il a été ajouté comme système pris en charge !<br><br>Voulez-vous charger les paramètres de pile d'objets par défaut de ce système ?",
 	"chat-portrait.form": "Configuration du portrait de conversation",
-	"chat-portrait.portrait-size-l": "Configurez la taille de l'image portrait sur les messages de conversation. La valeur par défaut est 36 px"
+	"chat-portrait.portrait-size-l": "Configurez la taille de l'image portrait sur les messages de conversation. La valeur par défaut est 36 px",
+	"chat-portrait.border-shape-l": "Configurez la forme de la bordure des portraits affichés sur les messages de conversation. Si vous définissez cette option sur Aucun, les autres options de bordure sont désactivées."
 }
