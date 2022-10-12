@@ -125,5 +125,6 @@
 	"chat-portrait.force-name-search-s": "Recherche du nom forcée",
 	"chat-portrait.force-name-search-l": "S'il n'y a pas d'Acteur correspondant aux données du message de discussion, rechercher un acteur dont le nom correspond à l'alias de celui qui prononce message. Cette option est nécessaire pour la compatibilité avec le module 'Theatre Insert'.",
 	"chat-portrait.notInSight": "{name} est introuvable.",
-	"chat-portrait.instructionsTitle": "Contrôles des liens du jeton de discution"
+	"chat-portrait.instructionsTitle": "Contrôles des liens du jeton de discution",
+	"chat-portrait.settings.doNotUseTokenImageWithSpecificType.hint": "N'oubliez pas que le type d'acteur est sensible à la casse. N'a de sens que si le paramètre 'Use Token Image' est réglé sur Vrai."
 }
