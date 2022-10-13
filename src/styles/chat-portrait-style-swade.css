@@ -63,14 +63,14 @@
 }
 
 .message .chat-portrait-message-header-swade {
-	line-height: 0px !important;
+	/* line-height: 0px !important; */
 	margin: 0;
 	padding: 0;
 	border: none;
 }
 
 .message .chat-portrait-message-header-2-swade {
-	line-height: 0px !important;
+	/* line-height: 0px !important; */
 	margin: 0;
 	padding: 0;
 	border: none;

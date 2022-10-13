@@ -25,6 +25,7 @@ export class ChatPortrait {
 	): JQuery<HTMLElement> | undefined {
 		let doNotStyling = false;
 		let doNotPrintPortrait = false;
+		let doOnlyPortrait = false;
 
 		const gameSystemId = API.retrieveSystemId();
 
@@ -94,6 +95,7 @@ export class ChatPortrait {
 			//  && game.modules.get('narrator-tools')?.active
 			return html;
 		}
+
 		// PATCH MODULE koboldworks-turn-announcer
 		const isTurnAnnouncer = html.find(".message-content .turn-announcer .portrait")[0];
 		if (isTurnAnnouncer) {
@@ -106,6 +108,7 @@ export class ChatPortrait {
 			}
 			doNotStyling = true;
 		}
+
 		// PATCH MODULE TOKEN BAR  - IS MONK TOKEN BAR XP
 		const isMonkTokenBarXP = html.find(".message-content")[0]?.firstElementChild?.classList;
 		if (isMonkTokenBarXP && isMonkTokenBarXP.length > 0) {
@@ -116,8 +119,14 @@ export class ChatPortrait {
 
 		// PATCH IRON MONK LITTLE UTILITIES ROUND UP MESSAGE
 		const isMonkLittleUtilitiesRoundUp = getProperty(chatMessage, `flags.monks-little-details.roundmarker`);
-		if(String(isMonkLittleUtilitiesRoundUp)==="true"){
+		if (String(isMonkLittleUtilitiesRoundUp) === "true") {
 			doNotStyling = true;
+		}
+
+		// PATCH IRON MONK SHOP ACTION
+		const isMonkEnhancedJournal = getProperty(chatMessage, `flags.monks-enhanced-journal.action`);
+		if (isMonkEnhancedJournal) {
+			doOnlyPortrait = true;
 		}
 
 		// PATCH MODULE CHAT IMAGE
@@ -127,6 +136,7 @@ export class ChatPortrait {
 			isChatImage.style.height = "100%";
 			doNotStyling = true;
 		}
+
 		// PATCH INNOCENTI LOOT
 		const isInnocentiLoot = html.find(".message-content .innocenti-loot")[0];
 		if (isInnocentiLoot) {
@@ -272,7 +282,8 @@ export class ChatPortrait {
 				elementItemTextList,
 				imageReplacer,
 				gameSystemId,
-				doNotPrintPortrait
+				doNotPrintPortrait,
+				doOnlyPortrait
 			);
 			if (myPromise) {
 				myPromise.then((html: JQuery<HTMLElement>) => {
@@ -302,7 +313,8 @@ export class ChatPortrait {
 		elementItemTextList,
 		imageReplacer: ImageReplaceVoiceData[],
 		gameSystemId: string,
-		doNotPrintPortrait: boolean
+		doNotPrintPortrait: boolean,
+		doOnlyPortrait: boolean
 	): Promise<JQuery<HTMLElement>> | null {
 		const messageDataBase: MessageRenderData = speakerInfo;
 		let imgPath: string;
@@ -428,6 +440,10 @@ export class ChatPortrait {
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeader.appendChild(headerTextElement);
 			messageSender.textContent = "";
+
+			if (doOnlyPortrait) {
+				return html;
+			}
 
 			const messageData = <any>messageDataBase.message;
 			// GOD HELP ME: Use case where we not must prepend the image or imagReplacer
