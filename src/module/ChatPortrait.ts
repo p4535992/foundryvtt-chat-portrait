@@ -113,6 +113,13 @@ export class ChatPortrait {
 				doNotStyling = true;
 			}
 		}
+
+		// PATCH IRON MONK LITTLE UTILITIES ROUND UP MESSAGE
+		const isMonkLittleUtilitiesRoundUp = getProperty(chatMessage, `flags.monks-little-details.roundmarker`);
+		if(String(isMonkLittleUtilitiesRoundUp)==="true"){
+			doNotStyling = true;
+		}
+
 		// PATCH MODULE CHAT IMAGE
 		const isChatImage = html.find(".message-content .chat-images-container img")[0];
 		if (isChatImage) {
