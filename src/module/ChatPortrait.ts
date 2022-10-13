@@ -207,7 +207,19 @@ export class ChatPortrait {
 				)
 			);
 			const headerTextElement = document.createElement("h4");
-			headerTextElement.innerHTML = <string>messageSenderElement.innerHTML;
+			if (messageSenderElement.textContent) {
+				headerTextElement.innerHTML = <string>messageSenderElement.innerHTML;
+			} else {
+				const useTokenName: boolean = ChatPortrait.settings.useTokenName;
+				const speaker = speakerInfo.message.speaker;
+				const actorName = (ChatPortrait.getActorName(speaker) || "").trim();
+				const tokenName = (ChatPortrait.getTokenName(speaker) || "").trim();
+				if (useTokenName) {
+					headerTextElement.innerHTML = tokenName;
+				} else {
+					headerTextElement.innerHTML = actorName;
+				}
+			}
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeaderElement.appendChild(headerTextElement);
@@ -391,7 +403,19 @@ export class ChatPortrait {
 			);
 			// Text is transfer to header
 			const headerTextElement = document.createElement("h4");
-			headerTextElement.innerHTML = <string>messageSender.innerHTML;
+			if (messageSender.textContent) {
+				headerTextElement.innerHTML = <string>messageSender.innerHTML;
+			} else {
+				const useTokenName: boolean = ChatPortrait.settings.useTokenName;
+				const speaker = speakerInfo.message.speaker;
+				const actorName = (ChatPortrait.getActorName(speaker) || "").trim();
+				const tokenName = (ChatPortrait.getTokenName(speaker) || "").trim();
+				if (useTokenName) {
+					headerTextElement.innerHTML = tokenName;
+				} else {
+					headerTextElement.innerHTML = actorName;
+				}
+			}
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeader.appendChild(headerTextElement);
