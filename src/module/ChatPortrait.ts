@@ -177,6 +177,7 @@ export class ChatPortrait {
 		}
 
 		if (doNotStyling) {
+			/*
 			const headerImageElement2 = document.createElement("header");
 			headerImageElement2.classList.add("message-header");
 			headerImageElement2.classList.add("flexrow");
@@ -224,7 +225,7 @@ export class ChatPortrait {
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeaderElement.appendChild(headerTextElement);
 			messageSenderElement.textContent = "";
-
+			*/
 			let authorColor = "black";
 			if (speakerInfo.author) {
 				authorColor = <string>speakerInfo.author.color;
@@ -238,14 +239,14 @@ export class ChatPortrait {
 			ChatPortrait.setChatMessageBorder(html, messageData, authorColor);
 			if (ChatPortrait.settings.displayPlayerName) {
 				ChatPortrait.appendPlayerName(
-					headerTextElement2,
+					messageHeaderElementBase,
 					messageSenderElement,
 					speakerInfo.author,
 					gameSystemId
 				);
 			}
 			if (ChatPortrait.settings.displayMessageTag) {
-				ChatPortrait.injectMessageTag(html, speakerInfo, messageHeaderElement, gameSystemId);
+				ChatPortrait.injectMessageTag(html, speakerInfo, messageHeaderElementBase, gameSystemId);
 				ChatPortrait.injectWhisperParticipants(html, speakerInfo, gameSystemId);
 			}
 			ChatLink.prepareEvent(chatMessage, html, speakerInfo, gameSystemId);
