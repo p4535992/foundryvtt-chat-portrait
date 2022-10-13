@@ -26,6 +26,7 @@
 .chat-portrait-image-size-name-pf2e {
 	/* display: block;
   margin: auto; */
+	margin-right: 5px;
 }
 
 .chat-portrait-indicator-pf2e {
@@ -60,6 +61,20 @@
 .message .chat-portrait-message-header-pf2e .chat-portrait-whisper-to-pf2e {
 	line-height: 1rem;
 	margin-bottom: 0.5rem;
+}
+
+.message .chat-portrait-message-header-pf2e {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.message .chat-portrait-message-header-2-pf2e {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 /* .chat-portrait-text-size-name .chat-portrait-system-pf2e {

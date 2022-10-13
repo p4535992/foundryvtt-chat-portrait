@@ -25,6 +25,7 @@
 .chat-portrait-image-size-name-swade {
 	height: auto;
 	display: flex;
+	margin-right: 5px;
 }
 
 .chat-portrait-indicator-swade {
@@ -59,6 +60,20 @@
 .message .chat-portrait-message-header-swade .chat-portrait-whisper-to-swade {
 	line-height: 1rem;
 	margin-bottom: 0.5rem;
+}
+
+.message .chat-portrait-message-header-swade {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.message .chat-portrait-message-header-2-swade {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 /* .chat-portrait-text-size-name .chat-portrait-system-swade {

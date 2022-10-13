@@ -25,6 +25,7 @@
 .chat-portrait-image-size-name-dnd5e {
 	/* display: flex;
   margin: auto; */
+	margin-right: 5px;
 }
 
 .chat-portrait-indicator-dnd5e {
@@ -59,6 +60,20 @@
 .message .chat-portrait-message-header-dnd5e .chat-portrait-whisper-to-dnd5e {
 	line-height: 1rem;
 	margin-bottom: 0.5rem;
+}
+
+.message .chat-portrait-message-header-dnd5e {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.message .chat-portrait-message-header-2-dnd5e {
+	line-height: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 /* .chat-portrait-text-size-name-dnd5e .chat-portrait-system-dnd5e {

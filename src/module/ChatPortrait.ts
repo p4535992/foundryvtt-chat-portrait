@@ -35,9 +35,11 @@ export class ChatPortrait {
 		const elementMessageHeaderBySystem2 = html.find(`chat-portrait-message-portrait-${gameSystemId}`);
 		// TODO TO REMOVE
 		const elementMessageHeaderBySystem3 = html.find(`chat-portrait-message-portrait`);
-		if (elementMessageHeaderBySystem1?.length > 0 ||
+		if (
+			elementMessageHeaderBySystem1?.length > 0 ||
 			elementMessageHeaderBySystem2?.length > 0 ||
-			elementMessageHeaderBySystem3?.length > 0) {
+			elementMessageHeaderBySystem3?.length > 0
+		) {
 			return undefined;
 		}
 
