@@ -53,7 +53,7 @@
 }
 
 .message .chat-portrait-message-header-a5e .message-metadata {
-	flex: 0 0 auto;
+	/* flex: 0 0 auto; */
 	margin-left: 1rem;
 }
 
@@ -67,6 +67,10 @@
 	margin: 0;
 	padding: 0;
 	border: none;
+}
+
+.message .chat-portrait-text-header-name-a5e {
+	white-space: break-spaces!important;
 }
 
 .message .chat-portrait-message-header-2-a5e {

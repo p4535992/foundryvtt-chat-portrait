@@ -70,6 +70,10 @@
 	border: none;
 }
 
+.message .chat-portrait-text-header-name-pf2e {
+	white-space: break-spaces!important;;
+}
+
 .message .chat-portrait-message-header-2-pf2e {
 	/* line-height: 0px !important; */
 	margin: 0;
