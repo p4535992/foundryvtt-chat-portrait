@@ -224,6 +224,7 @@ export class ChatPortrait {
 					messageHeaderElementBase.parentElement?.firstChild
 				)
 			);
+			// Text is transfer to header
 			const headerTextElement = document.createElement("h4");
 			if (messageSenderElement.textContent) {
 				headerTextElement.innerHTML = <string>messageSenderElement.innerHTML;
@@ -390,6 +391,33 @@ export class ChatPortrait {
 			}
 		}
 		return ChatPortrait.generatePortraitImageElement(imgPath, gameSystemId).then((imgElement: any) => {
+			// Very very rare use case ????
+			if (!imgElement) {
+				imgElement = document.createElement("img");
+				imgElement.src = "";
+				const size: number = ChatPortrait.settings.portraitSize;
+				if (size && size > 0) {
+					imgElement.width = size;
+					imgElement.height = size;
+				}
+				// WE TRY TO GET THE AVATAR IMAGE ANYWAY
+				if (ChatPortrait.settings.useAvatarImage) {
+					imgElement.src = ChatPortrait.getUserAvatarImage(speaker);
+				}
+				if (!imgElement.src || imgElement.src.length <= 0) {
+					imgElement.src = CONSTANTS.INV_UNIDENTIFIED_BOOK;
+				}
+				if (!imgElement.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
+					imgElement.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
+				}
+			}
+
+			// const headerTextElement = <HTMLElement>document.querySelector(".message-header");
+			// headerTextElement.prepend(imgElement);
+			// const headerTextElement: HTMLElement = <HTMLElement>html.find('.message-header')[0];
+			// headerTextElement.prepend(imgElement);
+
+			// I need this orrible piece of code for better manage the multisystem use case
 			const headerImageElement3 = document.createElement("header");
 			headerImageElement3.classList.add("message-header");
 			headerImageElement3.classList.add("flexrow");
@@ -439,8 +467,13 @@ export class ChatPortrait {
 			headerTextElement.classList.add("message-sender");
 			headerTextElement.classList.add(`chat-portrait-text-header-name-${gameSystemId}`);
 			messageHeader.appendChild(headerTextElement);
-			messageSender.textContent = "";
 
+			const messageMetadata: HTMLElement = <HTMLElement>html.find(".message-metadata")[0];
+			messageHeader.appendChild(messageMetadata);
+			// hide old header
+			if (<HTMLElement>messageSender.parentElement) {
+				(<HTMLElement>messageSender.parentElement).style.display = "none";
+			}
 			if (doOnlyPortrait) {
 				return html;
 			}
@@ -473,30 +506,9 @@ export class ChatPortrait {
 				(<HTMLImageElement>imgElement).style.display = "none";
 			}
 
-			// Very very rare use case ????
-			if (!imgElement) {
-				imgElement = document.createElement("img");
-				imgElement.src = "";
-				const size: number = ChatPortrait.settings.portraitSize;
-				if (size && size > 0) {
-					imgElement.width = size;
-					imgElement.height = size;
-				}
-				// WE TRY TO GET THE AVATAR IMAGE ANYWAY
-				if (ChatPortrait.settings.useAvatarImage) {
-					imgElement.src = ChatPortrait.getUserAvatarImage(speaker);
-				}
-				if (!imgElement.src || imgElement.src.length <= 0) {
-					imgElement.src = CONSTANTS.INV_UNIDENTIFIED_BOOK;
-				}
-				if (!imgElement.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
-					imgElement.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
-				}
-			}
-
 			ChatPortrait.setImageBorder(imgElement, authorColor);
 			// Place the image to left of the header by injecting the HTML
-			//const messageHeader: HTMLElement = html.find('.message-header')[0];
+			// const messageHeader: HTMLElement = <HTMLElement>html.find('.message-header')[0];
 			// TODO OLD SETTING ??
 			// messageHeader.prepend(imgElement);
 			/*
@@ -1200,9 +1212,11 @@ export class ChatPortrait {
 			// Final settings
 			if (ChatPortrait.settings.displayPlayerName) {
 				ChatPortrait.appendPlayerName(headerTextElement3, messageSender, speaker.author, gameSystemId);
+				// ChatPortrait.appendPlayerName(headerTextElement, messageSender, speaker.author, gameSystemId);
 			}
 			if (ChatPortrait.settings.displayMessageTag) {
-				ChatPortrait.injectMessageTag(html, messageData, messageHeader, gameSystemId);
+				// ChatPortrait.injectMessageTag(html, messageData, messageHeader, gameSystemId);
+				ChatPortrait.injectMessageTag(html, messageData, headerTextElement, gameSystemId);
 				ChatPortrait.injectWhisperParticipants(html, messageData, gameSystemId);
 			}
 			ChatLink.prepareEvent(chatMessage, html, speakerInfo, gameSystemId);
