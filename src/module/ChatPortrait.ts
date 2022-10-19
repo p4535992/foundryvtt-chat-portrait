@@ -197,7 +197,7 @@ export class ChatPortrait {
 			/*
 			const headerImageElement2 = document.createElement("header");
 			headerImageElement2.classList.add("message-header");
-			headerImageElement2.classList.add("flexrow");
+			headerImageElement2.classList.add("chat-portrait-flexrow");
 			if (!headerImageElement2.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
 				headerImageElement2.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
 			}
@@ -214,7 +214,7 @@ export class ChatPortrait {
 
 			const headerImageElement = document.createElement("header");
 			headerImageElement.classList.add("message-header");
-			headerImageElement.classList.add("flexrow");
+			headerImageElement.classList.add("chat-portrait-flexrow");
 			if (!headerImageElement.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
 				headerImageElement.classList.add(`chat-portrait-message-header-${gameSystemId}`);
 			}
@@ -417,10 +417,10 @@ export class ChatPortrait {
 			// const headerTextElement: HTMLElement = <HTMLElement>html.find('.message-header')[0];
 			// headerTextElement.prepend(imgElement);
 
-			// I need this orrible piece of code for better manage the multisystem use case
+			// I need this orribile piece of code for better manage the multisystem use case
 			const headerImageElement3 = document.createElement("header");
-			headerImageElement3.classList.add("message-header");
-			headerImageElement3.classList.add("flexrow");
+			// headerImageElement3.classList.add("message-header");
+			headerImageElement3.classList.add("chat-portrait-flexrow");
 			if (!headerImageElement3.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
 				headerImageElement3.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
 			}
@@ -436,8 +436,8 @@ export class ChatPortrait {
 			messageHeaderElement3.appendChild(headerTextElement3);
 
 			const headerImageElement = document.createElement("header");
-			headerImageElement.classList.add("message-header");
-			headerImageElement.classList.add("flexrow");
+			// headerImageElement.classList.add("message-header");
+			headerImageElement.classList.add("chat-portrait-flexrow");
 			if (!headerImageElement.classList.contains(`chat-portrait-message-header-${gameSystemId}`)) {
 				headerImageElement.classList.add(`chat-portrait-message-header-${gameSystemId}`);
 			}
@@ -480,20 +480,24 @@ export class ChatPortrait {
 
 			const messageData = <any>messageDataBase.message;
 			// GOD HELP ME: Use case where we not must prepend the image or imagReplacer
-			const isRollTable = messageData.flags?.core?.RollTable ? true : false;
 
+			// PATCH
+			const isRollTable = messageData.flags?.core?.RollTable ? true : false;
 			let messageHtmlContent: any = undefined;
 			try {
 				messageHtmlContent = $(messageData.content);
 			} catch (e) {
 				messageHtmlContent = undefined;
 			}
+			// PATCH
 			const isEnhancedConditionsCUB = messageHtmlContent
 				? messageHtmlContent.hasClass("enhanced-conditions")
 				: false;
+			// PATCH
 			const isMidiDisplaySave = messageHtmlContent
 				? $(messageData.content).find(".midi-qol-saves-display")?.length > 0
 				: false;
+			// PATCH
 			const isStarwarsffgDiceRoll = messageHtmlContent
 				? messageHtmlContent.hasClass("starwarsffg dice-roll")
 				: false;

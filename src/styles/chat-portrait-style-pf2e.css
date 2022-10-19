@@ -1,4 +1,4 @@
-.message .message-header img.chat-portrait-message-portrait-pf2e {
+.message img.chat-portrait-message-portrait-pf2e {
 	flex: 0 0 0px;
 	margin-right: 5px;
 	margin-bottom: 3px;
@@ -54,8 +54,8 @@
 }
 
 .message .chat-portrait-message-header-pf2e .message-metadata {
+	/* flex: 0 0 auto; */
 	margin-left: 1rem;
-	flex: auto;
 }
 
 .message .chat-portrait-message-header-pf2e .chat-portrait-whisper-to-pf2e {
@@ -71,14 +71,22 @@
 }
 
 .message .chat-portrait-text-header-name-pf2e {
-	white-space: break-spaces!important;;
+	margin-left: inherit;
+	padding: 0;
+	border: none;
+	white-space: break-spaces!important;
+    line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 .message .chat-portrait-message-header-2-pf2e {
-	/* line-height: 0px !important; */
 	margin: 0;
 	padding: 0;
 	border: none;
+	line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 /* .chat-portrait-text-size-name .chat-portrait-system-pf2e {

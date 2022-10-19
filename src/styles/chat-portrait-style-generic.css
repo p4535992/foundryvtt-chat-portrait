@@ -1,4 +1,4 @@
-.message .message-header img.chat-portrait-message-portrait-generic {
+.message img.chat-portrait-message-portrait-generic {
 	flex: 0 0 0px;
 	margin-right: 5px;
 	margin-bottom: 3px;
@@ -69,7 +69,7 @@
 
 /* Narrator Chat Module Support - Don't show portrait on Narrates */
 /*
-.chat-message.message.flexcol.narrator-chat .message-header img.chat-portrait-message-portrait {
+.chat-message.message.flexcol.narrator-chat img.chat-portrait-message-portrait {
   display: none;
 }
 */
@@ -127,18 +127,26 @@
 }
 
 .message .chat-portrait-text-header-name-generic {
-	white-space: break-spaces!important;;
+	margin-left: inherit;
+	padding: 0;
+	border: none;
+	white-space: break-spaces!important;
+    line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 .message .chat-portrait-message-header-2-generic {
-	/* line-height: 0px !important; */
 	margin: 0;
 	padding: 0;
 	border: none;
+	line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 /*
-.message .message-header .message-sender {
+.message .message-sender {
   flex: 1 0 1px;
 }
 */

@@ -1,4 +1,4 @@
-.message .message-header img.chat-portrait-message-portrait-a5e {
+.message img.chat-portrait-message-portrait-a5e {
 	flex: 0 0 0px;
 	margin-right: 5px;
 	margin-bottom: 3px;
@@ -70,14 +70,22 @@
 }
 
 .message .chat-portrait-text-header-name-a5e {
+	margin-left: inherit;
+	padding: 0;
+	border: none;
 	white-space: break-spaces!important;
+    line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 .message .chat-portrait-message-header-2-a5e {
-	/* line-height: 0px !important; */
 	margin: 0;
 	padding: 0;
 	border: none;
+	line-height: 20px;
+    /* color: var(--color-text-dark-secondary); */
+	align-items: center;
 }
 
 /* .chat-portrait-text-size-name-a5e .chat-portrait-system-a5e {
