@@ -427,9 +427,11 @@ export class ChatPortrait {
             if (!headerTextElement3.classList.contains(`chat-portrait-flexrow`)) {
                 headerTextElement3.classList.add(`chat-portrait-flexrow`);
             }
-			messageSender.parentElement?.insertBefore(
+
+			const messageContent = <HTMLElement>html.find('.message-content')[0];
+			messageContent?.insertBefore(
 				headerTextElement3,
-				messageSender.parentElement?.firstChild
+				messageContent.firstChild
 			);
 
 			/*
@@ -1232,12 +1234,12 @@ export class ChatPortrait {
 			ChatPortrait.setChatMessageBorder(html, messageData, authorColor);
 			// Final settings
 			if (ChatPortrait.settings.displayPlayerName) {
-				// ChatPortrait.appendPlayerName(headerTextElement3, messageSender, speaker.author, gameSystemId);
-				ChatPortrait.appendPlayerName(headerTextElement, messageSender, speaker.author, gameSystemId);
+				ChatPortrait.appendPlayerName(headerTextElement3, messageSender, speaker.author, gameSystemId);
+				// ChatPortrait.appendPlayerName(headerTextElement, messageSender, speaker.author, gameSystemId);
 			}
 			if (ChatPortrait.settings.displayMessageTag) {
-				// ChatPortrait.injectMessageTag(html, messageData, messageHeaderBase, gameSystemId);
-				ChatPortrait.injectMessageTag(html, messageData, headerTextElement, gameSystemId);
+				ChatPortrait.injectMessageTag(html, messageData, headerTextElement3, gameSystemId);
+				// ChatPortrait.injectMessageTag(html, messageData, headerTextElement, gameSystemId);
 				ChatPortrait.injectWhisperParticipants(html, messageData, gameSystemId);
 			}
 			ChatLink.prepareEvent(chatMessage, html, speakerInfo, gameSystemId);
@@ -2355,7 +2357,7 @@ export class ChatPortrait {
 	static injectMessageTag(
 		html,
 		messageData: MessageRenderData,
-		messageHeaderElement: HTMLElement,
+		messageElement: HTMLElement,
 		gameSystemId: string
 	) {
 		/*
@@ -2365,10 +2367,15 @@ export class ChatPortrait {
 			timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
 		}
 		*/
-		const timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
+		//const timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
+		// const timestampTag = $(messageElement);
+		// const indicatorElement = $("<span>");
+		// indicatorElement.addClass(`chat-portrait-indicator-${gameSystemId}`);
 
-		const indicatorElement = $("<span>");
-		indicatorElement.addClass(`chat-portrait-indicator-${gameSystemId}`);
+		const indicatorElement = document.createElement("span");
+		if (!indicatorElement.classList.contains(`chat-portrait-indicator-${gameSystemId}`)) {
+			indicatorElement.classList.add(`chat-portrait-indicator-${gameSystemId}`);
+		}
 
 		const whisperTargets = messageData.whisper;
 
@@ -2380,17 +2387,25 @@ export class ChatPortrait {
 
 		// Inject tag to the left of the timestamp
 		if (isBlind) {
-			indicatorElement.text(game.i18n.localize("CHAT.RollBlind"));
-			timestampTag.before(indicatorElement);
+			// indicatorElement.text(game.i18n.localize("CHAT.RollBlind"));
+			// timestampTag.before(indicatorElement);
+			indicatorElement.innerText = game.i18n.localize("CHAT.RollBlind");
+			messageElement.appendChild(indicatorElement);
 		} else if (isSelf && whisperTargets[0]) {
-			indicatorElement.text(game.i18n.localize("CHAT.RollSelf"));
-			timestampTag.before(indicatorElement);
+			// indicatorElement.text(game.i18n.localize("CHAT.RollSelf"));
+			// timestampTag.before(indicatorElement);
+			indicatorElement.innerText = game.i18n.localize("CHAT.RollSelf");
+			messageElement.appendChild(indicatorElement);
 		} else if (isRoll && isWhisper) {
-			indicatorElement.text(game.i18n.localize("CHAT.RollPrivate"));
-			timestampTag.before(indicatorElement);
+			// indicatorElement.text(game.i18n.localize("CHAT.RollPrivate"));
+			// timestampTag.before(indicatorElement);
+			indicatorElement.innerText = game.i18n.localize("CHAT.RollPrivate");
+			messageElement.appendChild(indicatorElement);
 		} else if (isWhisper) {
-			indicatorElement.text(game.i18n.localize("chat-portrait.whisper"));
-			timestampTag.before(indicatorElement);
+			// indicatorElement.text(game.i18n.localize("chat-portrait.whisper"));
+			// timestampTag.before(indicatorElement);
+			indicatorElement.innerText = game.i18n.localize("chat-portrait.whisper");
+			messageElement.appendChild(indicatorElement);
 		}
 	}
 
