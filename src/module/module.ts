@@ -229,11 +229,11 @@ export const readyHooks = async () => {
 					if (!mapCombatTrackerPortrait.get(tokenID)) {
 						const actorID = <string>c.actor?.id;
 
-						const token: TokenDocument = <TokenDocument>ChatPortrait.getTokenFromId(tokenID);
+						const token: TokenDocument = <TokenDocument>ChatPortrait._getTokenFromId(tokenID);
 						let userID = "";
 						let isOwnedFromPLayer = false;
 						let useTokenImage: boolean = ChatPortrait.settings.useTokenImage;
-						const actor = ChatPortrait.getActor(token.actor);
+						const actor = ChatPortrait.getActorFromSpeaker(token.actor);
 						const doNotUseTokenImageWithSpecificType: string[] = ChatPortrait.settings
 							.doNotUseTokenImageWithSpecificType
 							? String(ChatPortrait.settings.doNotUseTokenImageWithSpecificType).split(",")
