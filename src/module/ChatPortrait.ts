@@ -1478,7 +1478,7 @@ export class ChatPortrait {
 	static async generatePortraitImageElement(
 		imgPath: string,
 		gameSystemId: string
-	): Promise<HTMLImageElement | undefined> {
+	): Promise<HTMLImageElement | HTMLVideoElement | undefined> {
 		if (!imgPath) {
 			return;
 		}
@@ -1490,22 +1490,31 @@ export class ChatPortrait {
 		//if (VideoHelper.hasVideoExtension(diff.img))
 		//    thumb = await ImageHelper.createThumbnail(diff.img, { width: 48, height: 48 });
 		//let thumb = CONSTANTS.DEF_TOKEN_IMG_PATH;
-		if (imgPath.includes(".webm")) {
+		if (imgPath.includes(".webm") || ChatPortrait.isVideo(imgPath)) {
 			try {
-				const imgThumb = await ImageHelper.createThumbnail(imgPath, { width: size, height: size });
-				if (imgPath.includes(".webm")) {
-					img.src = imgThumb.thumb;
-					// If a url we need these anyway
-					if (size && size > 0) {
-						img.width = size;
-						img.height = size;
+				const video = ChatPortrait.createVideoElement(imgPath);
+				if (!video) {
+					const imgThumb = await ImageHelper.createThumbnail(imgPath, { width: size, height: size });
+					if (imgPath.includes(".webm")) {
+						img.src = imgThumb.thumb;
+						// If a url we need these anyway
+						if (size && size > 0) {
+							img.width = size;
+							img.height = size;
+						}
+					} else {
+						img.src = <string>imgThumb.src;
+						if (size && size > 0) {
+							// If a url we need these anyway
+							img.width = size;
+							img.height = size;
+						}
 					}
 				} else {
-					img.src = <string>imgThumb.src;
+					// If a url we need these anyway
 					if (size && size > 0) {
-						// If a url we need these anyway
-						img.width = size;
-						img.height = size;
+						video.width = size;
+						video.height = size;
 					}
 				}
 			} catch {
@@ -2467,6 +2476,21 @@ export class ChatPortrait {
 			//TODO must check other systems
 			return false;
 		}
+	}
+
+	static isVideo(imgSrc: string): boolean {
+		const re = /(?:\.([^.]+))?$/;
+		const ext = re.exec(imgSrc)?.[1];
+		return ext === "webm";
+	}
+
+	static createVideoElement(videoSrc: string): HTMLVideoElement {
+		const video = document.createElement("video");
+		video.src = videoSrc;
+		video.autoplay = false;
+		video.controls = false;
+		video.muted = true;
+		return video;
 	}
 
 	static loadImagePathForCombatTracker(
