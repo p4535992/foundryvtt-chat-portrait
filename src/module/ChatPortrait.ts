@@ -198,8 +198,8 @@ export class ChatPortrait {
 			const headerImageElement2 = document.createElement("header");
 			headerImageElement2.classList.add("message-header");
 			headerImageElement2.classList.add("chat-portrait-flexrow");
-			if (!headerImageElement2.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
-				headerImageElement2.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
+			if (!headerImageElement2.classList.contains(`chat-portrait-message-content-${gameSystemId}`)) {
+				headerImageElement2.classList.add(`chat-portrait-message-content-${gameSystemId}`);
 			}
 			const messageHeaderElement2 = <HTMLElement>(
 				messageHeaderElementBase.parentElement?.insertBefore(
@@ -209,7 +209,7 @@ export class ChatPortrait {
 			);
 			const headerTextElement2 = document.createElement("h4");
 			headerTextElement2.classList.add("message-sender");
-			headerTextElement2.classList.add(`chat-portrait-text-header-2-name-${gameSystemId}`);
+			headerTextElement2.classList.add(`chat-portrait-text-content-name-${gameSystemId}`);
 			messageHeaderElement2.appendChild(headerTextElement2);
 
 			const headerImageElement = document.createElement("header");
@@ -421,26 +421,23 @@ export class ChatPortrait {
 			}
 
 			const headerTextElement3 = document.createElement("h4");
-            if (!headerTextElement3.classList.contains(`chat-portrait-text-header-2-name-${gameSystemId}`)) {
-			    headerTextElement3.classList.add(`chat-portrait-text-header-2-name-${gameSystemId}`);
-            }
-            if (!headerTextElement3.classList.contains(`chat-portrait-flexrow`)) {
-                headerTextElement3.classList.add(`chat-portrait-flexrow`);
-            }
+			if (!headerTextElement3.classList.contains(`chat-portrait-text-content-name-${gameSystemId}`)) {
+				headerTextElement3.classList.add(`chat-portrait-text-content-name-${gameSystemId}`);
+			}
+			if (!headerTextElement3.classList.contains(`chat-portrait-flexrow`)) {
+				headerTextElement3.classList.add(`chat-portrait-flexrow`);
+			}
 
-			const messageContent = <HTMLElement>html.find('.message-content')[0];
-			messageContent?.insertBefore(
-				headerTextElement3,
-				messageContent.firstChild
-			);
+			const messageContent = <HTMLElement>html.find(".message-content")[0];
+			messageContent?.insertBefore(headerTextElement3, messageContent.firstChild);
 
 			/*
 			// I need this orribile piece of code for better manage the multisystem use case
 			const headerImageElement3 = document.createElement("header");
 			// headerImageElement3.classList.add("message-header");
 			headerImageElement3.classList.add("chat-portrait-flexrow");
-			if (!headerImageElement3.classList.contains(`chat-portrait-message-header-2-${gameSystemId}`)) {
-				headerImageElement3.classList.add(`chat-portrait-message-header-2-${gameSystemId}`);
+			if (!headerImageElement3.classList.contains(`chat-portrait-message-content-${gameSystemId}`)) {
+				headerImageElement3.classList.add(`chat-portrait-message-content-${gameSystemId}`);
 			}
 			const messageHeaderElement3 = <HTMLElement>(
 				messageHeaderBase.parentElement?.insertBefore(
@@ -450,7 +447,7 @@ export class ChatPortrait {
 			);
 			const headerTextElement3 = document.createElement("h4");
 			headerTextElement3.classList.add("message-sender");
-			headerTextElement3.classList.add(`chat-portrait-text-header-2-name-${gameSystemId}`);
+			headerTextElement3.classList.add(`chat-portrait-text-content-name-${gameSystemId}`);
 			messageHeaderElement3.appendChild(headerTextElement3);
 
 			const headerImageElement = document.createElement("header");
@@ -563,7 +560,7 @@ export class ChatPortrait {
 			} else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
 				messageSender.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
 			}
-            // TODO can't remember why i'm doing this
+			// TODO can't remember why i'm doing this
 			// if (!headerTextElement.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
 			// 	headerTextElement.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
 			// 	headerTextElement.style.alignSelf = "center";
@@ -1276,7 +1273,11 @@ export class ChatPortrait {
 			if (imgAvatar && !imgAvatar.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
 				return imgAvatar;
 			} else {
-				warn('No specific avatar player image found it for player "' + ChatPortrait.getUserNameFromChatMessage(message) + '"');
+				warn(
+					'No specific avatar player image found it for player "' +
+						ChatPortrait.getUserNameFromChatMessage(message) +
+						'"'
+				);
 				return imgAvatar ? imgAvatar : imgFinal;
 			}
 		}
@@ -1348,7 +1349,7 @@ export class ChatPortrait {
 			let tokenDocument: TokenDocument;
 			let tokenDocumentData: TokenDocument;
 			if (speaker.token) {
-                tokenDocument = <TokenDocument>ChatPortrait.getTokenFromSpeaker(speaker);
+				tokenDocument = <TokenDocument>ChatPortrait.getTokenFromSpeaker(speaker);
 				// THIS PIECE OF CODE IS PROBABLY NOT NECESSARY ANYMORE ??
 				if (!tokenDocument) {
 					try {
@@ -1360,9 +1361,9 @@ export class ChatPortrait {
 						// Do nothing
 					}
 					if (!tokenDocument) {
-						tokenDocumentData = <TokenDocument>game.scenes
-							?.get(speaker.scene)
-							?.tokens?.find((t) => <string>t.id === speaker.token); // Deprecated on 0.8.6
+						tokenDocumentData = <TokenDocument>(
+							game.scenes?.get(speaker.scene)?.tokens?.find((t) => <string>t.id === speaker.token)
+						); // Deprecated on 0.8.6
 					} else {
 						tokenDocumentData = tokenDocument;
 					}
@@ -1373,29 +1374,29 @@ export class ChatPortrait {
 				let imgToken = "";
 				if (tokenDocumentData) {
 					if (useTokenImage) {
-                        //@ts-ignore
+						//@ts-ignore
 						if (tokenDocumentData?.texture?.src) {
-                            //@ts-ignore
+							//@ts-ignore
 							imgToken = tokenDocumentData.texture.src;
 						}
-                        //@ts-ignore
+						//@ts-ignore
 						if ((!imgToken || ChatPortrait.isWildcardImage(imgToken)) && tokenDocumentData?.img) {
-                            //@ts-ignore
+							//@ts-ignore
 							imgToken = tokenDocumentData?.texture.src;
 						}
 					} else {
-                        //@ts-ignore
+						//@ts-ignore
 						if (tokenDocumentData?.actorData?.img) {
-                            //@ts-ignore
+							//@ts-ignore
 							imgToken = tokenDocumentData.actorData.img;
 						}
 
 						if (
 							(!imgToken || ChatPortrait.isWildcardImage(imgToken)) &&
-                            //@ts-ignore
+							//@ts-ignore
 							tokenDocumentData?.actorData?.img
 						) {
-                            //@ts-ignore
+							//@ts-ignore
 							imgToken = tokenDocumentData?.actorData.img;
 						}
 					}
@@ -1457,7 +1458,11 @@ export class ChatPortrait {
 			if (imgAvatar && !imgAvatar.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
 				return imgAvatar;
 			} else {
-				warn("No specific avatar player image found it for player '" + ChatPortrait.getUserNameFromChatMessage(message) + "'");
+				warn(
+					"No specific avatar player image found it for player '" +
+						ChatPortrait.getUserNameFromChatMessage(message) +
+						"'"
+				);
 				return imgAvatar ? imgAvatar : imgFinal;
 			}
 		} else {
@@ -1810,24 +1815,24 @@ export class ChatPortrait {
 		return speaker.alias;
 	};
 
-	static getTokenNameFromSpeaker = function (speaker):string | null {
+	static getTokenNameFromSpeaker = function (speaker): string | null {
 		if (speaker.token) {
 			const token = ChatPortrait.getTokenFromSpeaker(speaker);
 			if (token) {
 				return token.name;
 			}
 		}
-        if(speaker.actor) {
-            const actor = game.actors?.get(speaker.actor);
-            if (actor) {
-                if (actor.token) {
-                    return actor.token.name;
-                }
-                if (actor.hasPlayerOwner) {
-                    return actor.name;
-                }
-            }
-        }
+		if (speaker.actor) {
+			const actor = game.actors?.get(speaker.actor);
+			if (actor) {
+				if (actor.token) {
+					return actor.token.name;
+				}
+				if (actor.hasPlayerOwner) {
+					return actor.name;
+				}
+			}
+		}
 		if (game.user?.isGM) {
 			return speaker.alias;
 		}
@@ -1835,7 +1840,7 @@ export class ChatPortrait {
 	};
 
 	static getTokenFromSpeaker = function (speaker): TokenDocument | null {
-        if (speaker.token) {
+		if (speaker.token) {
 			const scene = speaker.scene ? speaker.scene : game.scenes?.current?.id;
 			let token = <TokenDocument>ChatPortrait._getTokenFromScene(speaker.scene, speaker.token);
 			if (!token) {
@@ -1850,20 +1855,20 @@ export class ChatPortrait {
 			if (actor.token) {
 				return actor.token;
 			}
-        }
-        return null;
+		}
+		return null;
 	};
 
-    static getTokenFromIds = function (sceneID, tokenID, actorID): TokenDocument | null {
-        let tokenDocument = <TokenDocument>ChatPortrait._getTokenFromScene(sceneID, tokenID);
-        if (!tokenDocument) {
-            tokenDocument = <TokenDocument>ChatPortrait._getTokenFromId(tokenID);
-        }
-        if (!tokenDocument && actorID) {
-            tokenDocument = <TokenDocument>ChatPortrait._getTokenFromActor(actorID);
-        }
-        return tokenDocument;
-    }
+	static getTokenFromIds = function (sceneID, tokenID, actorID): TokenDocument | null {
+		let tokenDocument = <TokenDocument>ChatPortrait._getTokenFromScene(sceneID, tokenID);
+		if (!tokenDocument) {
+			tokenDocument = <TokenDocument>ChatPortrait._getTokenFromId(tokenID);
+		}
+		if (!tokenDocument && actorID) {
+			tokenDocument = <TokenDocument>ChatPortrait._getTokenFromActor(actorID);
+		}
+		return tokenDocument;
+	};
 
 	static _getTokenFromActor = function (actorID): TokenDocument | null {
 		let token: TokenDocument | null = null;
@@ -2354,20 +2359,15 @@ export class ChatPortrait {
 		return false;
 	}
 
-	static injectMessageTag(
-		html,
-		messageData: MessageRenderData,
-		messageElement: HTMLElement,
-		gameSystemId: string
-	) {
+	static injectMessageTag(html, messageData: MessageRenderData, messageElement: HTMLElement, gameSystemId: string) {
 		/*
 		let timestampTag = html.find(".message-timestamp");
 		if (ChatPortrait.settings.displayMessageTagNextToName) {
 			// timestampTag = html.find(`h4.chat-portrait-text-size-name-${gameSystemId}`);
-			timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
+			timestampTag = html.find(`h4.chat-portrait-text-content-name-${gameSystemId}`);
 		}
 		*/
-		//const timestampTag = html.find(`h4.chat-portrait-text-header-2-name-${gameSystemId}`);
+		//const timestampTag = html.find(`h4.chat-portrait-text-content-name-${gameSystemId}`);
 		// const timestampTag = $(messageElement);
 		// const indicatorElement = $("<span>");
 		// indicatorElement.addClass(`chat-portrait-indicator-${gameSystemId}`);
@@ -2544,7 +2544,7 @@ export class ChatPortrait {
 		//@ts-ignore
 		let tokenDocumentData: TokenData;
 		if (tokenID) {
-            tokenDocument = <TokenDocument>ChatPortrait.getTokenFromIds(sceneID,tokenID,actorID);
+			tokenDocument = <TokenDocument>ChatPortrait.getTokenFromIds(sceneID, tokenID, actorID);
 			// THIS PIECE OF CODE IS PROBABLY NOT NECESSARY ANYMORE ??
 			if (!tokenDocument) {
 				try {

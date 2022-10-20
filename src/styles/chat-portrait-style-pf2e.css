@@ -74,18 +74,18 @@
 	margin-left: inherit;
 	padding: 0;
 	border: none;
-	white-space: break-spaces!important;
-    line-height: 20px;
-    /* color: var(--color-text-dark-secondary); */
+	white-space: break-spaces !important;
+	line-height: 20px;
+	/* color: var(--color-text-dark-secondary); */
 	align-items: center;
 }
 
-.message .chat-portrait-message-header-2-pf2e {
+.message .chat-portrait-message-content-pf2e {
 	margin: 0;
 	padding: 0;
 	border: none;
 	line-height: 20px;
-    /* color: var(--color-text-dark-secondary); */
+	/* color: var(--color-text-dark-secondary); */
 	align-items: center;
 }
 

@@ -18,8 +18,8 @@ textarea[name="chat-portrait.customStylingMessageImage"] {
 }
 
 .chat-portrait-flexrow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
