@@ -138,87 +138,89 @@ export const setupHooks = async () => {
 	/**
 	 * Catch chat message creations and add some more data if we need to
 	 */
-     Hooks.on(
-        "preCreateChatMessage",
-        (message: ChatMessage, options: any, render: any, userId: string) => {
-
-        //@ts-ignore
-        // const src = ChatPortrait.getTokenFromSpeaker(message.speaker);
-        const src = ChatPortrait.loadImagePathForChatMessage(message.speaker)
-        if (src) {
-            //@ts-ignore
-            message.updateSource({
-                flags: {
-                    "chat-portrait": {
-                        src: src
-                    }
-                }
-            });
-        }
-
-		if (game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch")) {
-			if (options) {
-				// Update the speaker
-				if (!options.speaker || (!options.speaker.token && !options.speaker.actor)) {
-					let user = game.users?.get(options.user);
-					let avatar;
-					if (!user && options.user) {
-						user = game.users?.get(options.user?.id);
-					} else {
-						user = game.users?.get(userId);
-					}
-					const speakerInfo: any = {};
-					const mytoken = ChatPortrait.getFirstPlayerToken();
-					speakerInfo.alias = message.alias;
-					speakerInfo.token = mytoken;
-					speakerInfo.actor = game.actors?.get(<string>user?.character?.id);
-					const updates = {
-						speaker: speakerInfo,
-					};
-					message.update(updates);
-				}
-				// MidiQol , Better Rolls, and other modules.. sometime destroy the info
-				// for my purpose i backup the speaker i will found on the preCreateChatMessage
-				else if (options.speaker) {
-					currentSpeakerBackUp = options.speaker;
-					if (options.speaker.token) {
-						currentSpeakerBackUp.token = options.speaker.token?.id;
-					}
-				}
+	Hooks.on("preCreateChatMessage", (message: ChatMessage, options: any, render: any, userId: string) => {
+		//@ts-ignore
+		// const src = ChatPortrait.getTokenFromSpeaker(message.speaker);
+		let speakerInfo: any = {};
+		//@ts-ignore
+		if (message.speaker?.token) {
+			//@ts-ignore
+			const src = ChatPortrait.loadImagePathForChatMessage(message.speaker);
+			if (src) {
+				//@ts-ignore
+				message.updateSource({
+					flags: {
+						"chat-portrait": {
+							src: src,
+						},
+					},
+				});
 			}
-			// if(render.render){
-			//   const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
-			//   let speakerInfo = message.speaker;
-			//   //@ts-ignore
-			//   if(!speakerInfo.alias && speakerInfo.document?.alias){
-			//     //@ts-ignore
-			//     speakerInfo.alias = speakerInfo.document?.alias;
-			//   }
-			//   await ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
-			//   let updates = {
-			//     content: html.html()
-			//   };
-			//   message.update(updates);
-			//   //@ts-ignore
-			//   speakerInfo.message = {};
-			//    //@ts-ignore
-			//   speakerInfo.message = message;
-			//   if(flag){
-			//     let chatData:any = {
-			//       type: ChatPortrait.getMessageTypeVisible(speakerInfo),
-			//       user: game.user,
-			//       speaker: speakerInfo,
-			//       content: message.content,
-			//       //@ts-ignore
-			//       whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
-			//     };
-			//     flag = false;
-			//     ChatMessage.create(chatData,{});
-			//   }else{
-			//     flag = true;
-			//   }
-			// }
 		}
+
+		// if (game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch")) {
+		// 	if (options) {
+		// 		// Update the speaker
+		// 		if (!options.speaker || (!options.speaker.token && !options.speaker.actor)) {
+		// 			let user = game.users?.get(options.user);
+		// 			let avatar;
+		// 			if (!user && options.user) {
+		// 				user = game.users?.get(options.user?.id);
+		// 			} else {
+		// 				user = game.users?.get(userId);
+		// 			}
+		// 			const speakerInfo: any = {};
+		// 			const mytoken = ChatPortrait.getFirstPlayerToken();
+		// 			speakerInfo.alias = message.alias;
+		// 			speakerInfo.token = mytoken;
+		// 			speakerInfo.actor = game.actors?.get(<string>user?.character?.id);
+		// 			const updates = {
+		// 				speaker: speakerInfo,
+		// 			};
+		// 			message.update(updates);
+		// 		}
+		// 		// MidiQol , Better Rolls, and other modules.. sometime destroy the info
+		// 		// for my purpose i backup the speaker i will found on the preCreateChatMessage
+		// 		else if (options.speaker) {
+		// 			currentSpeakerBackUp = options.speaker;
+		// 			if (options.speaker.token) {
+		// 				currentSpeakerBackUp.token = options.speaker.token?.id;
+		// 			}
+		// 		}
+		// 	}
+		// 	// if(render.render){
+		// 	//   const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
+		// 	//   let speakerInfo = message.speaker;
+		// 	//   //@ts-ignore
+		// 	//   if(!speakerInfo.alias && speakerInfo.document?.alias){
+		// 	//     //@ts-ignore
+		// 	//     speakerInfo.alias = speakerInfo.document?.alias;
+		// 	//   }
+		// 	//   await ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
+		// 	//   let updates = {
+		// 	//     content: html.html()
+		// 	//   };
+		// 	//   message.update(updates);
+		// 	//   //@ts-ignore
+		// 	//   speakerInfo.message = {};
+		// 	//    //@ts-ignore
+		// 	//   speakerInfo.message = message;
+		// 	//   if(flag){
+		// 	//     let chatData:any = {
+		// 	//       type: ChatPortrait.getMessageTypeVisible(speakerInfo),
+		// 	//       user: game.user,
+		// 	//       speaker: speakerInfo,
+		// 	//       content: message.content,
+		// 	//       //@ts-ignore
+		// 	//       whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
+		// 	//     };
+		// 	//     flag = false;
+		// 	//     ChatMessage.create(chatData,{});
+		// 	//   }else{
+		// 	//     flag = true;
+		// 	//   }
+		// 	// }
+		// }
 	});
 };
 

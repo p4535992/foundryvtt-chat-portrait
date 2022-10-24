@@ -1,3 +1,7 @@
+### 0.8.23
+
+- Add wildcard solution with pre create message
+
 ### 0.8.22
 
 - Little integration of video on the portrait html element

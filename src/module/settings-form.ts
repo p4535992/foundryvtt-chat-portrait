@@ -233,12 +233,12 @@ export class SettingsForm {
 	static setApplyOnCombatTracker(value: boolean) {
 		game.settings.set(CONSTANTS.MODULE_NAME, "applyOnCombatTracker", value);
 	}
-	static getApplyPreCreateChatMessagePatch() {
-		return <boolean>game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch");
-	}
-	static setApplyPreCreateChatMessagePatch(value: boolean) {
-		game.settings.set(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", value);
-	}
+	// static getApplyPreCreateChatMessagePatch() {
+	// 	return <boolean>game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch");
+	// }
+	// static setApplyPreCreateChatMessagePatch(value: boolean) {
+	// 	game.settings.set(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", value);
+	// }
 	static getDisablePortraitForAliasGmMessage() {
 		return <boolean>game.settings.get(CONSTANTS.MODULE_NAME, "disablePortraitForAliasGmMessage");
 	}

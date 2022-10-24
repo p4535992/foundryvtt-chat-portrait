@@ -235,14 +235,14 @@ export const registerSettings = function () {
 		default: false,
 	});
 
-	game.settings.register(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", {
-		name: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.name`,
-		hint: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.hint`,
-		scope: "client",
-		config: true,
-		type: Boolean,
-		default: false,
-	});
+	// game.settings.register(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", {
+	// 	name: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.name`,
+	// 	hint: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.hint`,
+	// 	scope: "client",
+	// 	config: true,
+	// 	type: Boolean,
+	// 	default: false,
+	// });
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySetting", {
 		name: `${CONSTANTS.MODULE_NAME}.settings.displaySetting.name`,
