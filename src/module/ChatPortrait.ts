@@ -356,7 +356,7 @@ export class ChatPortrait {
 		if (ChatPortrait.shouldOverrideMessageUnknown(messageDataBase)) {
 			imgPath = CONSTANTS.DEF_TOKEN_IMG_PATH;
 		} else {
-			imgPath = ChatPortrait.loadImagePathForChatMessage(html, speaker);
+			imgPath = ChatPortrait.loadImagePathForChatMessage(speaker);
 		}
 
 		const chatPortraitCustomData: ChatPortraitCustomData = {
@@ -1249,12 +1249,17 @@ export class ChatPortrait {
 	 * @param  {{scene?:string;actor?:string;token?:string;alias?:string;}} speaker
 	 * @returns string
 	 */
-	static loadImagePathForChatMessage(html: JQuery<HTMLElement>, speakerInfo): string {
+	static loadImagePathForChatMessage(speakerInfo): string {
 		const message = speakerInfo.message ? speakerInfo.message : speakerInfo.document;
 		const speaker = message.speaker ? message.speaker : speakerInfo;
 		const isOOC = ChatPortrait.getMessageTypeVisible(speakerInfo) === CONST.CHAT_MESSAGE_TYPES.OOC;
 
 		const imgFinal = CONSTANTS.DEF_TOKEN_IMG_PATH;
+
+        const flaggedPreChatSrc = message.flags?.[CONSTANTS.MODULE_NAME]?.src;
+        if(flaggedPreChatSrc) {
+            return flaggedPreChatSrc;
+        }
 
 		if (
 			!ChatPortrait.settings.disablePortraitForAliasGmMessage &&
@@ -1494,7 +1499,9 @@ export class ChatPortrait {
 			try {
 				const video = ChatPortrait.createVideoElement(imgPath);
 				if (!video) {
-					const imgThumb = await ImageHelper.createThumbnail(imgPath, { width: size, height: size });
+					const imgThumb = size && size > 0
+						? await ImageHelper.createThumbnail(imgPath, { width: size, height: size })
+						: await ImageHelper.createThumbnail(imgPath);
 					if (imgPath.includes(".webm")) {
 						img.src = imgThumb.thumb;
 						// If a url we need these anyway
@@ -1516,6 +1523,10 @@ export class ChatPortrait {
 						video.width = size;
 						video.height = size;
 					}
+					if (!video.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
+						video.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
+					}
+                    return video;
 				}
 			} catch {
 				img.src = imgPath;
@@ -1850,10 +1861,12 @@ export class ChatPortrait {
 
 	static getTokenFromSpeaker = function (speaker): TokenDocument | null {
 		if (speaker.token) {
-			const scene = speaker.scene ? speaker.scene : game.scenes?.current?.id;
-			let token = <TokenDocument>ChatPortrait._getTokenFromScene(speaker.scene, speaker.token);
+			const sceneSpeaker = speaker.scene ? speaker.scene : game.scenes?.current?.id;
+			const scene = game.scenes?.get(sceneSpeaker);
+			const tokenSpeaker = scene?.tokens.get(speaker.token);
+			let token = <TokenDocument>ChatPortrait._getTokenFromScene(<string>scene?.id, <string>tokenSpeaker?.id);
 			if (!token) {
-				token = <TokenDocument>ChatPortrait._getTokenFromId(speaker.token);
+				token = <TokenDocument>ChatPortrait._getTokenFromId(<string>tokenSpeaker?.id);
 			}
 			if (!token && speaker.actor) {
 				token = <TokenDocument>ChatPortrait._getTokenFromActor(speaker.actor);
@@ -1868,7 +1881,7 @@ export class ChatPortrait {
 		return null;
 	};
 
-	static getTokenFromIds = function (sceneID, tokenID, actorID): TokenDocument | null {
+	static getTokenFromIds = function (sceneID:string, tokenID:string, actorID:string): TokenDocument | null {
 		let tokenDocument = <TokenDocument>ChatPortrait._getTokenFromScene(sceneID, tokenID);
 		if (!tokenDocument) {
 			tokenDocument = <TokenDocument>ChatPortrait._getTokenFromId(tokenID);
@@ -1879,7 +1892,7 @@ export class ChatPortrait {
 		return tokenDocument;
 	};
 
-	static _getTokenFromActor = function (actorID): TokenDocument | null {
+	static _getTokenFromActor = function (actorID:string): TokenDocument | null {
 		let token: TokenDocument | null = null;
 		const scene = game.scenes?.get(<string>game.user?.viewedScene);
 		if (scene) {
@@ -1887,13 +1900,13 @@ export class ChatPortrait {
 				return <boolean>(tokenTmp.actor && tokenTmp.actor.id === actorID);
 			});
 			if (thisSceneToken) {
-				token = <TokenDocument>ChatPortrait._getTokenFromId(thisSceneToken.id);
+				token = <TokenDocument>ChatPortrait._getTokenFromId(<string>thisSceneToken.id);
 			}
 		}
 		return token;
 	};
 
-	static _getTokenFromId = function (tokenId): TokenDocument | null {
+	static _getTokenFromId = function (tokenId:string): TokenDocument | null {
 		try {
 			return <TokenDocument>canvas.tokens?.get(tokenId)?.document;
 		} catch (e) {
@@ -1901,7 +1914,7 @@ export class ChatPortrait {
 		}
 	};
 
-	static _getTokenFromScene = function (sceneID, tokenID): TokenDocument | null {
+	static _getTokenFromScene = function (sceneID:string, tokenID:string,): TokenDocument | null {
 		const specifiedScene = game.scenes?.get(sceneID);
 		if (specifiedScene) {
 			//return ChatPortrait.getTokenForScene(specifiedScene, tokenID);
@@ -2479,9 +2492,9 @@ export class ChatPortrait {
 	}
 
 	static isVideo(imgSrc: string): boolean {
-		const re = /(?:\.([^.]+))?$/;
-		const ext = re.exec(imgSrc)?.[1];
-		return ext === "webm";
+        const re = /(?:\.([^.]+))?$/;
+        const ext = re.exec(imgSrc)?.[1];
+        return ext === "webm";
 	}
 
 	static createVideoElement(videoSrc: string): HTMLVideoElement {

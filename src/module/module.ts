@@ -13,13 +13,13 @@ import { checkSystem } from "./settings";
 const mapCombatTrackerPortrait = new Map<string, string>();
 
 export const initHooks = () => {
-	debug("Init Hooks processing");
+	// debug("Init Hooks processing");
 
 	Hooks.once("socketlib.ready", registerSocket);
 };
 
 export const setupHooks = async () => {
-	debug("Setup Hooks processing");
+	// debug("Setup Hooks processing");
 	setApi(API);
 
 	// setup all the hooks
@@ -138,7 +138,24 @@ export const setupHooks = async () => {
 	/**
 	 * Catch chat message creations and add some more data if we need to
 	 */
-	Hooks.on("preCreateChatMessage", async (message: ChatMessage, options, render, userId) => {
+     Hooks.on(
+        "preCreateChatMessage",
+        (message: ChatMessage, options: any, render: any, userId: string) => {
+
+        //@ts-ignore
+        // const src = ChatPortrait.getTokenFromSpeaker(message.speaker);
+        const src = ChatPortrait.loadImagePathForChatMessage(message.speaker)
+        if (src) {
+            //@ts-ignore
+            message.updateSource({
+                flags: {
+                    "chat-portrait": {
+                        src: src
+                    }
+                }
+            });
+        }
+
 		if (game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch")) {
 			if (options) {
 				// Update the speaker
@@ -206,7 +223,7 @@ export const setupHooks = async () => {
 };
 
 export const readyHooks = async () => {
-	debug("Ready Hooks processing");
+	// debug("Ready Hooks processing");
 	checkSystem();
 	// When the combat tracker is rendered, we need to completely replace
 	// its HTML with a custom version.
