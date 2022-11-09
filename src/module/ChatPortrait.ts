@@ -947,7 +947,9 @@ export class ChatPortrait {
 														return myItem.name == itemName;
 													});
 												}
-												elementItemImage.src = <string>item.img;
+												if(item?.img) {
+													elementItemImage.src = <string>item.img;
+												}
 												if (
 													!elementItemImage.src ||
 													elementItemImage.src?.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)
