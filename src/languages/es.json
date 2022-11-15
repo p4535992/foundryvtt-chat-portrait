@@ -131,7 +131,7 @@
 	"chat-portrait.dialogs.systemfound.title": "Sistema Reconocido",
 	"chat-portrait.setting.debug.hint": " ",
 	"chat-portrait.dialogs.systemfound.confirm": "Aplicar Valores Predeterminados del Sistema",
-	"chat-portrait.from": "Desde",
+	"chat-portrait.from": "De",
 	"chat-portrait.settings.doNotUseTokenImageWithSpecificType.name": "No usar imagen de Ficha con los siguientes actores (ej. personajes jugadores, no jugadores, etc. separado por personaje',')",
 	"chat-portrait.settings.doNotUseTokenImageWithSpecificType.hint": "Recordad que el tipo de actor distingue mayúsculas y minúsculas. Tiene sentido solo si la configuración 'Usar Imagen de Ficha' está seleccionada",
 	"chat-portrait.settings.borderShape.hint": "Configurar la forma del marco de los retratos que se muestran en los mensajes del chat. Configurar esto como Ninguna deshabilita otras opciones de marcos",
