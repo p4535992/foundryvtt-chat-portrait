@@ -24,12 +24,11 @@
 	"chat-portrait.flavor-next-to-portrait": "Zeige den Chat-Flavour-Text neben dem Portrait",
 	"chat-portrait.force-name-search-s": "Erzwinge Namenssuche",
 	"chat-portrait.force-name-search-l": "Wenn kein Aktor in der Chat-Nachricht enthalten ist, dann suche nach einem Aktor dessen Name dem Namen des Sprechers der Nachricht entspricht. Diese Option wird für das Theatre Insert Modul benötigt.",
-
 	"chat-portrait.labels.check": "überprüfen",
 	"chat-portrait.labels.ability": "Fähigkeit",
 	"chat-portrait.labels.skill": "Können",
-
 	"chat-portrait.labels.checkEN": "check",
 	"chat-portrait.labels.abilityEN": "ability",
-	"chat-portrait.labels.skillEN": "skill"
+	"chat-portrait.labels.skillEN": "skill",
+	"chat-portrait.portrait-size-item-s": ""
 }
