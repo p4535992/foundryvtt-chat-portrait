@@ -143,6 +143,12 @@ export class ChatPortrait {
 			doNotStyling = true;
 		}
 
+        // PATCH MONK UTILTIIES ROUND UP (https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/121)
+		const isMonkRoundup = html.find(".message-content .round-marker")[0];
+		if (isMonkRoundup) {
+			doNotStyling = true;
+		}
+
 		// PATCH DragonFlagon Chat Enhancements
 		let hasTop = false;
 		let hasBottom = false;
