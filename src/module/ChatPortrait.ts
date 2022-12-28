@@ -1365,10 +1365,10 @@ export class ChatPortrait {
 				}
 			}
 
-			let tokenDocument: TokenDocument;
+			// let tokenDocument: TokenDocument;
 			let tokenDocumentData: TokenDocument;
 			if (speaker.token) {
-				tokenDocument = <TokenDocument>ChatPortrait.getTokenFromSpeaker(speaker);
+				let tokenDocument = <TokenDocument>ChatPortrait.getTokenFromSpeaker(speaker);
 				// THIS PIECE OF CODE IS PROBABLY NOT NECESSARY ANYMORE ??
 				if (!tokenDocument) {
 					try {
@@ -1393,6 +1393,17 @@ export class ChatPortrait {
 				let imgToken = "";
 				if (tokenDocumentData) {
 					if (useTokenImage) {
+                        //@ts-ignore
+                        if (tokenDocumentData?.randomImg) {
+                            //@ts-ignore
+                            if(tokenDocumentData?.texture?.src){
+                                //@ts-ignore
+                                imgToken = tokenDocumentData.texture.src;
+                            } else {
+                                // particolar case...
+                                imgToken = CONSTANTS.DEF_TOKEN_IMG_PATH;
+                            }
+                        }
 						//@ts-ignore
 						if (tokenDocumentData?.texture?.src) {
 							//@ts-ignore
