@@ -125,6 +125,11 @@
 	"relationships": {
 		"systems": [],
 		"requires": [],
-		"conflicts": []
+		"conflicts": [
+            {
+				"id": "simply-portraits",
+				"description": "Redundancy of features you can disable 'Simply Portraits' module if you want"
+			}
+        ]
 	}
 }
