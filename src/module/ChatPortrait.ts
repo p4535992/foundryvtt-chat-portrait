@@ -143,7 +143,7 @@ export class ChatPortrait {
 			doNotStyling = true;
 		}
 
-        // PATCH MONK UTILTIIES ROUND UP (https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/121)
+		// PATCH MONK UTILTIIES ROUND UP (https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/121)
 		const isMonkRoundup = html.find(".message-content .round-marker")[0];
 		if (isMonkRoundup) {
 			doNotStyling = true;
@@ -197,6 +197,13 @@ export class ChatPortrait {
 		elementItemTextList = html.find(".message-header .flavor-text");
 		if (!elementItemTextList) {
 			elementItemTextList = html.find(".card-header p");
+		}
+
+		if(!elementItemContentList[0]?.innerText){
+			return html;
+		}
+		if(!elementItemContentList[0]?.innerText.replace(/(\r\n|\r|\n)/g, '').trim()){
+			return html;
 		}
 
 		if (doNotStyling) {
@@ -844,7 +851,7 @@ export class ChatPortrait {
 													return myItem.name == itemName;
 												});
 											}
-											if(item?.img) {
+											if (item?.img) {
 												elementItemImage.src = <string>item.img;
 											}
 											if (
@@ -953,7 +960,7 @@ export class ChatPortrait {
 														return myItem.name == itemName;
 													});
 												}
-												if(item?.img) {
+												if (item?.img) {
 													elementItemImage.src = <string>item.img;
 												}
 												if (
@@ -1393,17 +1400,17 @@ export class ChatPortrait {
 				let imgToken = "";
 				if (tokenDocumentData) {
 					if (useTokenImage) {
-                        //@ts-ignore
-                        if (tokenDocumentData?.randomImg) {
-                            //@ts-ignore
-                            if(tokenDocumentData?.texture?.src){
-                                //@ts-ignore
-                                imgToken = tokenDocumentData.texture.src;
-                            } else {
-                                // particolar case...
-                                imgToken = CONSTANTS.DEF_TOKEN_IMG_PATH;
-                            }
-                        }
+						//@ts-ignore
+						if (tokenDocumentData?.randomImg) {
+							//@ts-ignore
+							if (tokenDocumentData?.texture?.src) {
+								//@ts-ignore
+								imgToken = tokenDocumentData.texture.src;
+							} else {
+								// particolar case...
+								imgToken = CONSTANTS.DEF_TOKEN_IMG_PATH;
+							}
+						}
 						//@ts-ignore
 						if (tokenDocumentData?.texture?.src) {
 							//@ts-ignore
@@ -1872,11 +1879,10 @@ export class ChatPortrait {
 			const actor = game.actors?.get(speaker.actor);
 			if (actor) {
 				//@ts-ignore
-				if(actor?.prototypeToken) {
+				if (actor?.prototypeToken) {
 					//@ts-ignore
 					return actor?.prototypeToken.name;
-				}
-				else if (actor.token) {
+				} else if (actor.token) {
 					return actor.token.name;
 				}
 				if (actor.hasPlayerOwner) {
@@ -1891,7 +1897,7 @@ export class ChatPortrait {
 	};
 
 	static getTokenFromSpeaker = function (speaker): TokenDocument | null {
-		let token:TokenDocument|null = null;
+		let token: TokenDocument | null = null;
 		if (speaker.token) {
 			const sceneSpeaker = speaker.scene ? speaker.scene : game.scenes?.current?.id;
 			const scene = game.scenes?.get(sceneSpeaker);
@@ -1903,17 +1909,15 @@ export class ChatPortrait {
 			if (!token && speaker.actor) {
 				token = <TokenDocument>ChatPortrait._getTokenFromActor(speaker.actor);
 			}
-
 		}
-		if(!token) {
+		if (!token) {
 			const actor = game.actors?.get(speaker.actor);
 			if (actor) {
 				//@ts-ignore
-				if(actor?.prototypeToken) {
+				if (actor?.prototypeToken) {
 					//@ts-ignore
 					token = actor?.prototypeToken;
-				}
-				else if (actor.token) {
+				} else if (actor.token) {
 					token = actor.token;
 				}
 			}

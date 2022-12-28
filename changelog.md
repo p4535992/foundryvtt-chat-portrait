@@ -1,4 +1,8 @@
-### 0.8.23
+### 0.8.26
+
+- Bug fix https://github.com/p4535992/foundryvtt-chat-portrait/issues/8
+
+### 0.8.23-24-25
 
 - Add wildcard solution with pre create message
 
