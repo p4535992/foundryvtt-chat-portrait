@@ -1860,7 +1860,12 @@ export class ChatPortrait {
 		if (speaker.actor) {
 			const actor = game.actors?.get(speaker.actor);
 			if (actor) {
-				if (actor.token) {
+				//@ts-ignore
+				if(actor?.prototypeToken) {
+					//@ts-ignore
+					return actor?.prototypeToken.name;
+				}
+				else if (actor.token) {
 					return actor.token.name;
 				}
 				if (actor.hasPlayerOwner) {
@@ -1875,6 +1880,7 @@ export class ChatPortrait {
 	};
 
 	static getTokenFromSpeaker = function (speaker): TokenDocument | null {
+		let token:TokenDocument|null = null;
 		if (speaker.token) {
 			const sceneSpeaker = speaker.scene ? speaker.scene : game.scenes?.current?.id;
 			const scene = game.scenes?.get(sceneSpeaker);
@@ -1886,14 +1892,22 @@ export class ChatPortrait {
 			if (!token && speaker.actor) {
 				token = <TokenDocument>ChatPortrait._getTokenFromActor(speaker.actor);
 			}
+
 		}
-		const actor = game.actors?.get(speaker.actor);
-		if (actor) {
-			if (actor.token) {
-				return actor.token;
+		if(!token) {
+			const actor = game.actors?.get(speaker.actor);
+			if (actor) {
+				//@ts-ignore
+				if(actor?.prototypeToken) {
+					//@ts-ignore
+					token = actor?.prototypeToken;
+				}
+				else if (actor.token) {
+					token = actor.token;
+				}
 			}
 		}
-		return null;
+		return !token ? null : token;
 	};
 
 	static getTokenFromIds = function (sceneID: string, tokenID: string, actorID: string): TokenDocument | null {
