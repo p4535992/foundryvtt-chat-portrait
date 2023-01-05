@@ -1,3 +1,7 @@
+### 0.8.27
+
+- Bug fix image token
+
 ### 0.8.26
 
 - Bug fix https://github.com/p4535992/foundryvtt-chat-portrait/issues/8

@@ -1902,7 +1902,7 @@ export class ChatPortrait {
 			const sceneSpeaker = speaker.scene ? speaker.scene : game.scenes?.current?.id;
 			const scene = game.scenes?.get(sceneSpeaker);
 			const tokenSpeaker = scene?.tokens.get(speaker.token);
-			let token = <TokenDocument>ChatPortrait._getTokenFromScene(<string>scene?.id, <string>tokenSpeaker?.id);
+			token = <TokenDocument>ChatPortrait._getTokenFromScene(<string>scene?.id, <string>tokenSpeaker?.id);
 			if (!token) {
 				token = <TokenDocument>ChatPortrait._getTokenFromId(<string>tokenSpeaker?.id);
 			}
