@@ -199,10 +199,10 @@ export class ChatPortrait {
 			elementItemTextList = html.find(".card-header p");
 		}
 
-		if(!elementItemContentList[0]?.innerText){
+		if (!elementItemContentList[0]?.innerText) {
 			return html;
 		}
-		if(!elementItemContentList[0]?.innerText.replace(/(\r\n|\r|\n)/g, '').trim()){
+		if (!elementItemContentList[0]?.innerText.replace(/(\r\n|\r|\n)/g, "").trim()) {
 			return html;
 		}
 
@@ -694,8 +694,11 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-									elementItemName.prepend(elementItemImage);
+									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
+										elementItemName.prepend(elementItemImage);
+									}
 								}
 								// DAMAGE TYPES
 								if (
@@ -768,8 +771,13 @@ export class ChatPortrait {
 										!doNotPrependImage &&
 										!elementItemImage.src.endsWith("/game")
 									) {
-										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-										elementItemName.prepend(elementItemImage);
+										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+										if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+											elementItemImage.classList.add(
+												`chat-portrait-image-size-name-${gameSystemId}`
+											);
+											elementItemName.prepend(elementItemImage);
+										}
 									}
 									// DAMAGE TYPES
 									if (
@@ -875,8 +883,11 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-									elementItemName.prepend(elementItemImage);
+									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
+										elementItemName.prepend(elementItemImage);
+									}
 								}
 								// DAMAGE TYPES
 								if (
@@ -986,8 +997,13 @@ export class ChatPortrait {
 										!doNotPrependImage &&
 										!elementItemImage.src.endsWith("/game")
 									) {
-										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-										elementItemName.prepend(elementItemImage);
+										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+										if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+											elementItemImage.classList.add(
+												`chat-portrait-image-size-name-${gameSystemId}`
+											);
+											elementItemName.prepend(elementItemImage);
+										}
 									}
 									// DAMAGE TYPES
 									if (
@@ -1074,8 +1090,11 @@ export class ChatPortrait {
 								elementItemImage.classList.remove(`chat-portrait-message-portrait-${gameSystemId}`);
 							}
 							if (!doNotImageReplacer && !doNotPrependImage && !elementItemImage.src.endsWith("/game")) {
-								elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-								elementItemText.prepend(elementItemImage);
+								// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+								if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
+									elementItemText.prepend(elementItemImage);
+								}
 							}
 							// DAMAGE TYPES
 							if (
@@ -1146,8 +1165,11 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-									elementItemText.prepend(elementItemImage);
+									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
+										elementItemText.prepend(elementItemImage);
+									}
 								}
 								// DAMAGE TYPES
 								if (
@@ -1210,8 +1232,11 @@ export class ChatPortrait {
 								elementItemImage.classList.remove(`chat-portrait-message-portrait-${gameSystemId}`);
 							}
 							if (!doNotImageReplacer && !doNotPrependImage && !elementItemImage.src.endsWith("/game")) {
-								elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
-								elementItemText.prepend(elementItemImage);
+								// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+								if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
+									elementItemText.prepend(elementItemImage);
+								}
 							}
 						} else {
 							if (ChatPortrait.useImageReplacer(html)) {
