@@ -1,4 +1,8 @@
 
+### 0.8.29
+
+- Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/17
+
 ### 0.8.28
 
 - Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
@@ -81,7 +85,7 @@
 - Update of the settings panel, abandoned the customized dialogue in favor of the standard foundry method and moved most of the settings from the 'world' scope to the 'client' scope so each player can apply their own preferences.
 - Readme update where I try to explain as best I can how to apply the css for your system and or the image mapping for the "ImageReplacer" feature.
 - I certainly foresee problems in case you can install the latest version of the 0.6.X series at this url https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/releases/download/v0.6.4/module.json
-    
+
 
 ### 0.6.4
 
@@ -186,7 +190,7 @@
 
 ### 0.5.14
 
-- Add github worklow 
+- Add github worklow
 - Add new settings for "Do not use token image with specific type of actor"
 
 ### 0.5.13
@@ -322,7 +326,7 @@ background color with narrator tools
 - Add new style for the visualizations of the damage types
 - Try to bug fix [Token portrait does not change even if the token do.](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/57)
 - Some small bug fix here and there
-  
+
 ### 0.3.11
 
 - Small bug fix on 'preCreateMessageChat' hook
@@ -333,7 +337,7 @@ background color with narrator tools
 - Try a bug fix [Doing Ability Checks/Saves causes Portrait to revert to Player Token, not Actor/Character token.](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/52)
 - Added Universal Language Image Replacer (still limited to DnD5e)
 - Added Image Replacer for damage type
-  
+
 ### 0.3.9 (Developing)
 
 - Fixed little incompatibility with midiqol
@@ -353,10 +357,10 @@ background color with narrator tools
 ### 0.3.6
 
 - Add another module setting for use a custom styling for the text and resolved this issue [Font Class of the Styling](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/49)
-- 
+-
 ### 0.3.5
 
-- Add css class for a "better"  display of the text on the chat 
+- Add css class for a "better"  display of the text on the chat
 
 ### 0.3.4
 
@@ -369,7 +373,7 @@ background color with narrator tools
 ### 0.3.3
 
 - Some minor bug fix
- 
+
 ### 0.3.2
 
 - Some minor bug fix
@@ -388,7 +392,7 @@ background color with narrator tools
 - Add some minor feature and bug fix.
 - Add feature [Feature request: Don't display portrait on out-of-character messages](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/42)
 
-### 0.2.16 
+### 0.2.16
 
 - Set default value of unknwon to 'none' instead 'allCards' because make sense
 
@@ -419,7 +423,7 @@ background color with narrator tools
 
 - Minor update
 
-### 0.2.10 
+### 0.2.10
 
 - Added [Add an object-fit: cover option in the window configuration](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/21), replace the object-fit:contains in object-fit:cover
 - Bug fix on 'useAvatarImage' setting related to [Feature suggestion : OOC portrait as player avatar](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/32)
@@ -456,8 +460,8 @@ background color with narrator tools
 - Preparation for foundry 0.8.0
 - Bootstrapped with League of Extraordinary FoundryVTT Developers  [foundry-vtt-types](https://github.com/League-of-Foundry-Developers/foundry-vtt-types)
 - Added [Bug Reporter Module](https://foundryvtt.com/packages/bug-reporter/)
-- [New Feature: Configurable option to use the player's color as blended background color of the message. by @Biggles](https://github.com/MOAM-Biggles/FoundryVTT-Chat-Portrait/) 
-- [Translation: Updated German translation by @Biggles](https://github.com/MOAM-Biggles/FoundryVTT-Chat-Portrait/) 
+- [New Feature: Configurable option to use the player's color as blended background color of the message. by @Biggles](https://github.com/MOAM-Biggles/FoundryVTT-Chat-Portrait/)
+- [Translation: Updated German translation by @Biggles](https://github.com/MOAM-Biggles/FoundryVTT-Chat-Portrait/)
 - [Added option to use player's color as blended background color of the](https://github.com/MOAM-Biggles/FoundryVTT-Chat-Portrait/commit/420f018bdcb5a37cf0e5e3ad5a61e6dccc318abd)
 
 ### 0.2.2
