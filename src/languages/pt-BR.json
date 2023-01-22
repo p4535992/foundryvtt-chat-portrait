@@ -8,12 +8,11 @@
 	"chat-portrait.none": "Nenhuma",
 	"chat-portrait.force-name-search-s": "Forçar Busca por Nome",
 	"chat-portrait.force-name-search-l": "Se não há um ator nos dados da mensagem de chat, buscar por um ator cujo nome corresponde ao alias do interlocutor da mensagem. Essa opção é necessária para a compatibilidade com o módulo Theatre Insert.",
-
 	"chat-portrait.labels.check": "Verifica",
 	"chat-portrait.labels.ability": "habilidade",
 	"chat-portrait.labels.skill": "habilidade",
-
 	"chat-portrait.labels.checkEN": "check",
 	"chat-portrait.labels.abilityEN": "ability",
-	"chat-portrait.labels.skillEN": "skill"
+	"chat-portrait.labels.skillEN": "skill",
+	"chat-portrait.save": "Salvar Alterações"
 }
