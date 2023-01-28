@@ -1,3 +1,6 @@
+### 0.8.30
+
+- Cleanup bak files and update languages
 
 ### 0.8.29
 
