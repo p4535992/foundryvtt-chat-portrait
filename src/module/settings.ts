@@ -226,6 +226,24 @@ export const registerSettings = function () {
 		default: false,
 	});
 
+	game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerWeaponProperties", {
+		name: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerWeaponProperties.name`,
+		hint: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerWeaponProperties.hint`,
+		scope: "world",
+		config: false,
+		default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerWeaponProperties : [],
+		type: Array,
+	});
+
+	game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerIconizer", {
+		name: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerIconizer.name`,
+		hint: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerIconizer.hint`,
+		scope: "world",
+		config: false,
+		default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerIconizer : [],
+		type: Array,
+	});
+
 	game.settings.register(CONSTANTS.MODULE_NAME, "applyOnCombatTracker", {
 		name: `${CONSTANTS.MODULE_NAME}.settings.applyOnCombatTracker.name`,
 		hint: `${CONSTANTS.MODULE_NAME}.settings.applyOnCombatTracker.hint`,
