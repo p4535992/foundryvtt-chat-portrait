@@ -694,8 +694,15 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+									if (
+										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+										!elementItemImage.classList.contains(`chat-actor-icon`) &&
+										// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+										!(
+											game.system.id === "pf2e" &&
+											messageContent.querySelectorAll(".damage-application")?.length > 0
+										)
+									) {
 										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
 										elementItemName.prepend(elementItemImage);
 									}
@@ -771,8 +778,15 @@ export class ChatPortrait {
 										!doNotPrependImage &&
 										!elementItemImage.src.endsWith("/game")
 									) {
-										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-										if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+										if (
+											// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+											!elementItemImage.classList.contains(`chat-actor-icon`) &&
+											// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+											!(
+												game.system.id === "pf2e" &&
+												messageContent.querySelectorAll(".damage-application")?.length > 0
+											)
+										) {
 											elementItemImage.classList.add(
 												`chat-portrait-image-size-name-${gameSystemId}`
 											);
@@ -883,8 +897,15 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+									if (
+										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+										!elementItemImage.classList.contains(`chat-actor-icon`) &&
+										// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+										!(
+											game.system.id === "pf2e" &&
+											messageContent.querySelectorAll(".damage-application")?.length > 0
+										)
+									) {
 										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
 										elementItemName.prepend(elementItemImage);
 									}
@@ -997,8 +1018,15 @@ export class ChatPortrait {
 										!doNotPrependImage &&
 										!elementItemImage.src.endsWith("/game")
 									) {
-										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-										if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+										if (
+											// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+											!elementItemImage.classList.contains(`chat-actor-icon`) &&
+											// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+											!(
+												game.system.id === "pf2e" &&
+												messageContent.querySelectorAll(".damage-application")?.length > 0
+											)
+										) {
 											elementItemImage.classList.add(
 												`chat-portrait-image-size-name-${gameSystemId}`
 											);
@@ -1090,8 +1118,15 @@ export class ChatPortrait {
 								elementItemImage.classList.remove(`chat-portrait-message-portrait-${gameSystemId}`);
 							}
 							if (!doNotImageReplacer && !doNotPrependImage && !elementItemImage.src.endsWith("/game")) {
-								// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-								if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+								if (
+									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+									!elementItemImage.classList.contains(`chat-actor-icon`) &&
+									// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+									!(
+										game.system.id === "pf2e" &&
+										messageContent.querySelectorAll(".damage-application")?.length > 0
+									)
+								) {
 									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
 									elementItemText.prepend(elementItemImage);
 								}
@@ -1165,8 +1200,15 @@ export class ChatPortrait {
 									!doNotPrependImage &&
 									!elementItemImage.src.endsWith("/game")
 								) {
-									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-									if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+									if (
+										// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+										!elementItemImage.classList.contains(`chat-actor-icon`) &&
+										// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+										!(
+											game.system.id === "pf2e" &&
+											messageContent.querySelectorAll(".damage-application")?.length > 0
+										)
+									) {
 										elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
 										elementItemText.prepend(elementItemImage);
 									}
@@ -1232,8 +1274,15 @@ export class ChatPortrait {
 								elementItemImage.classList.remove(`chat-portrait-message-portrait-${gameSystemId}`);
 							}
 							if (!doNotImageReplacer && !doNotPrependImage && !elementItemImage.src.endsWith("/game")) {
-								// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
-								if (!elementItemImage.classList.contains(`chat-actor-icon`)) {
+								if (
+									// PATCH FOR MONK JOURNAL https://github.com/p4535992/foundryvtt-chat-portrait/issues/16
+									!elementItemImage.classList.contains(`chat-actor-icon`) &&
+									// PATCH FOR PF2E DAMAGE https://github.com/p4535992/foundryvtt-chat-portrait/issues/15
+									!(
+										game.system.id === "pf2e" &&
+										messageContent.querySelectorAll(".damage-application")?.length > 0
+									)
+								) {
 									elementItemImage.classList.add(`chat-portrait-image-size-name-${gameSystemId}`);
 									elementItemText.prepend(elementItemImage);
 								}
