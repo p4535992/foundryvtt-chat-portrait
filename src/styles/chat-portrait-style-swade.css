@@ -18,7 +18,7 @@
 }
 
 .chat-portrait-text-size-name-swade {
-	height: auto;
+	height: auto !important;
 	display: flex;
 }
 
