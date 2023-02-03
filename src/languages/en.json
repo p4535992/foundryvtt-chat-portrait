@@ -138,6 +138,8 @@
 	"chat-portrait.settings.disablePortraitForAliasGmMessage.hint": "If enable every chat message done with a alias referenced to a GM will ot apply the chat portrait mechanism",
 	"chat-portrait.settings.setUpPortraitForAliasGmMessage.name": "Set up a specific image if the alias of the chat message is from a GM",
 	"chat-portrait.settings.setUpPortraitForAliasGmMessage.hint": "If enable will use the image selected here for every chat message done with a alias referenced to a GM. If 'Disable the chat portrait if the alias of the chat message is from a GM' is enable this setting will be ignored",
+	"chat-portrait.settings.enableSpeakingAs.name": "Enable 'Speaking As' embedded",
+	"chat-portrait.settings.enableSpeakingAs.hint": "A embedded integration of the module 'Speaking As' embedded",
 	"chat-portrait.setting.reset.name": "Reset settings to default",
 	"chat-portrait.setting.reset.label": "Reset Settings To Default",
 	"chat-portrait.setting.reset.hint": "This will reset all of the settings of back to the active game system's default.",
@@ -158,5 +160,9 @@
 	"chat-portrait.labels.skill": "skill",
 	"chat-portrait.labels.checkEN": "check",
 	"chat-portrait.labels.abilityEN": "ability",
-	"chat-portrait.labels.skillEN": "skill"
+	"chat-portrait.labels.skillEN": "skill",
+	"chat-portrait.unlocked": "Nothing is preventing you from speaking as this character.",
+	"chat-portrait.locked": "{module} has locked you to this speaker.",
+	"chat-portrait.self-locked": "You have locked yourself to speak out of character.",
+	"chat-portrait.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again."
 }

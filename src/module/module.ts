@@ -8,6 +8,7 @@ import CONSTANTS from "./constants";
 import { setApi } from "../main";
 import API from "./api";
 import { registerSocket } from "./socket";
+import { initSpeakingAs, overrideMessage, updateSpeaker } from "./apps/speaking-as";
 
 const mapCombatTrackerPortrait = new Map<string, string>();
 
@@ -15,6 +16,10 @@ export const initHooks = () => {
 	// debug("Init Hooks processing");
 
 	Hooks.once("socketlib.ready", registerSocket);
+
+	if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+		initSpeakingAs();
+	}
 };
 
 export const setupHooks = async () => {
@@ -156,6 +161,9 @@ export const setupHooks = async () => {
 				});
 			}
 		}
+		if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+			overrideMessage(message);
+		}
 
 		// if (game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch")) {
 		// 	if (options) {
@@ -220,6 +228,12 @@ export const setupHooks = async () => {
 		// 	//   }
 		// 	// }
 		// }
+	});
+
+	Hooks.on("controlToken", (token, options) => {
+		if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+			updateSpeaker();
+		}
 	});
 };
 

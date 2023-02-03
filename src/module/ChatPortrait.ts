@@ -1353,7 +1353,21 @@ export class ChatPortrait {
 
 		const flaggedPreChatSrc = message.flags?.[CONSTANTS.MODULE_NAME]?.src;
 		if (flaggedPreChatSrc) {
-			return flaggedPreChatSrc;
+			if (message.user && isOOC) {
+				const imgAvatar: string = ChatPortrait.getUserAvatarImageFromChatMessage(message);
+				if (imgAvatar && !imgAvatar.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
+					return imgAvatar;
+				} else {
+					warn(
+						`No specific avatar player image found it for player "'${ChatPortrait.getUserNameFromChatMessage(
+							message
+						)}'"`
+					);
+					return imgAvatar ? imgAvatar : imgFinal;
+				}
+			} else {
+				return flaggedPreChatSrc;
+			}
 		}
 
 		if (

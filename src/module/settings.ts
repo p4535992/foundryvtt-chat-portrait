@@ -432,6 +432,15 @@ export const registerSettings = function () {
 		default: "",
 	});
 
+	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakingAs", {
+		name: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.name`,
+		hint: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.hint`,
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: false,
+	});
+
 	// ========================================================================
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "debug", {

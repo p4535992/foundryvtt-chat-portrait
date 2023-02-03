@@ -23,3 +23,85 @@ textarea[name="chat-portrait.customStylingMessageImage"] {
 	flex-wrap: wrap;
 	justify-content: flex-start;
 }
+
+/* Speaking as embedded */
+
+.chat-portrait--currentSpeaker {
+	height: 45px;
+	flex: 0 !important;
+	padding: 7px 0 0 0;
+	opacity: 1;
+	margin: 0 0 0 3px;
+	transition: all 0.5s;
+}
+
+.chat-portrait--currentSpeaker + #chat-controls {
+	padding: 0 0 0.5em 0;
+}
+
+.chat-portrait--currentSpeaker.hide {
+	opacity: 0;
+}
+
+.chat-portrait--currentSpeaker--locked.fa-unlock {
+	opacity: 0.2;
+}
+
+.chat-portrait--currentSpeaker--locked.fa-lock {
+	opacity: 1;
+}
+
+.chat-portrait--currentSpeaker--locked {
+	transition: all 0.5s;
+	float: right;
+	font-size: var(--font-size-24);
+	position: relative;
+	padding: 2px 7px 2px 12px;
+}
+
+.chat-portrait--currentSpeaker--button {
+	transition: all 0.5s;
+	float: right;
+	font-size: var(--font-size-24);
+	position: relative;
+	padding: 2px 0px 2px 7px;
+}
+
+.chat-portrait--currentSpeaker--buttonInset {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	position: absolute;
+	right: -15%;
+	bottom: -5%;
+	font-size: 12px;
+	color: whitesmoke;
+}
+
+.chat-portrait--currentSpeaker--text {
+	transition: all 0.5s;
+	font-size: var(--font-size-20);
+	line-height: 28px;
+	position: relative;
+	bottom: 0.35em;
+	display: inline;
+	width: 10em;
+	padding: 5px;
+}
+
+.chat-portrait--currentSpeaker--icon {
+	transition: all 0.5s;
+	font-size: var(--font-size-20);
+	height: 28px;
+	border: none;
+}
+
+.chat-portrait--currentSpeaker #context-menu {
+	max-height: 50vh;
+	overflow-y: auto;
+}
+
+.chat-portrait--currentSpeaker--text.shadow {
+	text-shadow: 0 0 6px gold;
+}
+.chat-portrait--currentSpeaker--icon.shadow {
+	filter: drop-shadow(0 0 3px gold);
+}
