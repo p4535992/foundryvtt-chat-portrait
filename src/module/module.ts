@@ -9,6 +9,7 @@ import { setApi } from "../main";
 import API from "./api";
 import { registerSocket } from "./socket";
 import { initSpeakingAs, overrideMessage, updateSpeaker } from "./apps/speaking-as";
+// import { readySpeakAs, renderSidebarTabSpeakAs } from "./apps/speak-as";
 
 const mapCombatTrackerPortrait = new Map<string, string>();
 
@@ -238,6 +239,16 @@ export const setupHooks = async () => {
 };
 
 export const readyHooks = async () => {
+	// if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakAs")) {
+	// 	readySpeakAs();
+	// }
+
+	// Hooks.on("renderSidebarTab", (dialog, $element, targets) => {
+	// 	if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakAs")) {
+	// 		renderSidebarTabSpeakAs(dialog, $element, targets);
+	// 	}
+	// });
+	
 	// debug("Ready Hooks processing");
 	// When the combat tracker is rendered, we need to completely replace
 	// its HTML with a custom version.

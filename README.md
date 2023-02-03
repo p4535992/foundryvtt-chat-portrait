@@ -302,9 +302,8 @@ If you want to add your own system it's very simple!!! you can just give to me a
 - **Set up a specific image if the alias of the chat message is from a GM**: If enable will use the image selected here for every chat message done with a alias referenced to a GM. If 'Disable the chat portrait if the alias of the chat message is from a GM' is enable this setting will be ignored
 
 - **Enable 'Speaking As' embedded**: Embedded integration of the module [Speaking As](https://github.com/MrVauxs/speaking-as)
-, Displays the character you are speaking as. You can right click the text to bring up a character selection screen to talk as. You can also lock yourself to speak out of character. Majority of the functionality is attributed to [Illandril's Chat Enhancements](https://github.com/illandril/FoundryVTT-chat-enhancements) and [Cautious Gamemaster's Pack](https://github.com/cs96and/FoundryVTT-CGMP), but with large changes to formatting.
-
-## **Video Preview:** https://files.catbox.moe/bja2zm.mp4
+, Displays the character you are speaking as. You can right click the text to bring up a character selection screen to talk as. You can also lock yourself to speak out of character. Majority of the functionality is attributed to [Illandril's Chat Enhancements](https://github.com/illandril/FoundryVTT-chat-enhancements) and [Cautious Gamemaster's Pack](https://github.com/cs96and/FoundryVTT-CGMP), but with large changes to formatting. Video Preview: 
+![img](/wiki/images/speaking_as_1.gif)
 
 [ON DEVELOPING SO ANY SUGGESTION IS WELCOME]
 
@@ -406,6 +405,7 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 - [Deepflame's Chat Cards](https://gitlab.com/TimToxopeus/df-chat-cards)  with [MIT](https://gitlab.com/TimToxopeus/df-chat-cards/-/blob/master/LICENSE)
 - [Illandril's Chat Enhancements](https://github.com/illandril/FoundryVTT-chat-enhancements/)
 - [Speaking as](https://github.com/MrVauxs/speaking-as)  with [MIT](https://github.com/illandril/FoundryVTT-chat-enhancements/blob/main/LICENSE)
+- [Speak As……](https://github.com/hktrpg/foundryVTT-speak-as)  with [GNU General Public License v3.0](https://github.com/hktrpg/foundryVTT-speak-as/blob/main/LICENSE)
 
 This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
@@ -425,3 +425,4 @@ Thanks to anyone who helps me with this code! I appreciate the user community's 
 - [Deepflame's Chat Cards](https://gitlab.com/TimToxopeus/df-chat-cards)
 - [Illandril's Chat Enhancements](https://github.com/illandril/FoundryVTT-chat-enhancements/)
 - [Speaking as](https://github.com/MrVauxs/speaking-as)
+- [Speak As……](https://github.com/hktrpg/foundryVTT-speak-as)
