@@ -158,5 +158,13 @@
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.name": "Emplacement pour l'étiquette nom de l'élément inconnu",
 	"chat-portrait.settings.displayUnknownPlaceHolderItemName.hint": "Emplacement pour le nom de l'élément inconnu de l'étiquette par défaut est «Élément inconnu» dépend du paramètre «Afficher un élément inconnu»",
 	"chat-portrait.settings.customStylingMessageSystem.hint": "Configurer un style personnalisé supplémentaire sur le message avec le langage CSS basé sur les retours de la communauté, c'est un effort de la communauté pour tous ceux qui ne connaissent pas le langage css (note : remplace toute autre propriété antérieure). Si les paramètres 'Setup additional custom styling on the text chat message' ou 'Setup additional custom styling on the image prepend the text chat message' sont utilisés (pas de texte vide), cette option, même si elle est vraie, est ignorée pour les éléments html concernés.",
-	"chat-portrait.settings.forceNameSearch.hint": "S'il n'y a pas d'Acteur correspondant aux données du message de discussion, rechercher un acteur dont le nom correspond à celui du message. Cette option est nécessaire pour la compatibilité avec le module Theatre Insert."
+	"chat-portrait.settings.forceNameSearch.hint": "S'il n'y a pas d'Acteur correspondant aux données du message de discussion, rechercher un acteur dont le nom correspond à celui du message. Cette option est nécessaire pour la compatibilité avec le module Theatre Insert.",
+	"chat-portrait.settings.enableSpeakAs.hint": "Une intégration du module \"Parler en tant que...\"",
+	"chat-portrait.unlocked": "Rien ne vous empêche de parler en tant que ce personnage.",
+	"chat-portrait.locked": "{module} vous a verrouillé sur cet orateur.",
+	"chat-portrait.settings.enableSpeakAs.name": "Activer la fonction \"Parler en tant que...\" intégrée",
+	"chat-portrait.self-locked": "Vous vous êtes verrouillé pour parler hors votre personnage.",
+	"chat-portrait.buttonHint": "Cliquez pour parler en dehors du personnage pour le message suivant. Double-cliquez pour continuer ainsi jusqu'à ce que vous cliquiez à nouveau.",
+	"chat-portrait.settings.enableSpeakingAs.name": "Activer la fonction \"Parler en tant que\" intégrée",
+	"chat-portrait.settings.enableSpeakingAs.hint": "Une intégration du module \"Parler comme\""
 }
