@@ -76,7 +76,8 @@ export const initSpeakingAs = function () {
 			)
 		)
 	);
-	oocButton.click(function () {
+	oocButton.click(function (event) {
+		event.stopPropagation();
 		let classes = <string[]>["", "fa-circle-1", "fa-repeat"];
 		$(`.${CSS_CURRENT_SPEAKER}--buttonInset`).attr("mode", mode() >= 2 ? 0 : mode() + 1);
 		$(`.${CSS_CURRENT_SPEAKER}--buttonInset`)
@@ -165,13 +166,14 @@ export function overrideMessage(messageData) {
 	if (mode() === 0) return;
 	switch (messageData?.flags?.cgmp?.subType) {
 		case CHAT_MESSAGE_SUB_TYPES.AS:
-		case CHAT_MESSAGE_SUB_TYPES.DESC:
+		case CHAT_MESSAGE_SUB_TYPES.DESC: {
 			break;
-
-		default:
+		}
+		default: {
 			//@ts-ignore
 			convertToOoc(messageData, true);
 			break;
+		}
 	}
 	if (mode() === 1) {
 		$(`.${CSS_CURRENT_SPEAKER}--buttonInset`).attr("mode", 0);

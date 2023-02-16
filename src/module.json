@@ -107,7 +107,8 @@
 		"styles/chat-portrait-style-generic.css",
 		"styles/chat-portrait-style-dnd5e.css",
 		"styles/chat-portrait-style-pf2e.css",
-		"styles/chat-portrait-style-swade.css"
+		"styles/chat-portrait-style-swade.css",
+		"styles/dd.css"
 	],
 	"compatibility": {
 		"minimum": 10,
