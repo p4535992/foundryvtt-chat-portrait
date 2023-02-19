@@ -1,4 +1,8 @@
-### 0.8.30-31-32-33-34
+### 0.8.36 
+
+- Little Pathfinder2e css fix
+
+### 0.8.30-31-32-33-34-35
 
 - Cleanup bak files and update languages
 
