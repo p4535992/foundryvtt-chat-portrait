@@ -130,10 +130,6 @@
 			{
 				"id": "simply-portraits",
 				"reason": "Redundancy of features you can disable 'Simply Portraits' module if you want"
-			},
-			{
-				"id": "speaking-as",
-				"reason": "Redundancy of features you can disable 'Speaking As' module if you want"
 			}
 		]
 	}
