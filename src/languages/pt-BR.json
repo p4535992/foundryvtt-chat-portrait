@@ -50,5 +50,15 @@
 	"chat-portrait.settings.useTokenImage.name": "Usar imagem de token",
 	"chat-portrait.settings.useTokenImage.hint": "Use a imagem do Token do ator em vez da imagem padrão do ator.",
 	"chat-portrait.settings.doNotUseTokenImageWithSpecificType.name": "Não use Imagem de Token com o seguinte tipo de atores (por exemplo, personagem, PdM. separados pelo caractere ',')",
-	"chat-portrait.form-hint": "Abrir a janela de configuração. Atualiza a página atual ao salvar"
+	"chat-portrait.form-hint": "Abrir a janela de configuração. Atualiza a página atual ao salvar",
+	"chat-portrait.settings.portraitSize.name": "Tamanho Retrato (px)",
+	"chat-portrait.settings.portraitSize.hint": "Configure o tamanho da imagem de retrato nas mensagens de chat. O padrão é 36 pixels",
+	"chat-portrait.settings.portraitSizeItem.name": "Tamanho do retrato para outras imagens (px)",
+	"chat-portrait.settings.borderShape.name": "Forma de Borda do Retrato",
+	"chat-portrait.settings.borderShape.hint": "Configure a forma da borda dos retratos exibidos nas mensagens de chat. Definir como Nenhum desativa outras opções de borda",
+	"chat-portrait.settings.borderShape.choice.square": "quadrado",
+	"chat-portrait.settings.borderShape.choice.circle": "circular",
+	"chat-portrait.settings.borderShape.choice.none": "nenhum",
+	"chat-portrait.settings.doNotUseTokenImageWithSpecificType.hint": "Lembre-se de que o tipo de ator diferencia maiúsculas de minúsculas. Faz sentido apenas com a configuração 'Usar imagem de token' definida como verdadeira",
+	"chat-portrait.settings.portraitSizeItem.hint": "Configure o tamanho da imagem de retrato para qualquer outra imagem na mensagem de chat (exceto a de retrato). O padrão é 36 pixels"
 }
