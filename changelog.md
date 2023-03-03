@@ -1,3 +1,7 @@
+### 0.8.37
+
+- Little updates
+
 ### 0.8.36 
 
 - Little Pathfinder2e css fix
