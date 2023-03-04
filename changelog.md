@@ -1,3 +1,9 @@
+### 0.8.38 
+
+- Little css fix on pf2e ?? 
+- Try to Bug fix : https://github.com/p4535992/foundryvtt-chat-portrait/issues/22 
+- Try to Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/25 
+
 ### 0.8.37
 
 - Little updates
