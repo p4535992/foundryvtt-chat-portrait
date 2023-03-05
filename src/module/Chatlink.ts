@@ -1,5 +1,6 @@
 import { ChatPortrait } from "./ChatPortrait";
 import CONSTANTS from "./constants";
+import { warn } from "./lib/lib";
 
 export class ChatLink {
 	static clickTimeout = 250;
@@ -272,7 +273,7 @@ export class ChatLink {
 	}
 
 	static warning(message) {
-		ui.notifications?.warn(message);
+		warn(message, true);
 	}
 
 	static hoverIn = (event, speaker) => {
@@ -280,8 +281,13 @@ export class ChatLink {
 		if (token && token.visible) {
 			event.fromChat = true;
 			//@ts-ignore
-			token._object._onHoverIn(event);
-			ChatLink.lastHoveredToken = token;
+			if (token._object) {
+				//@ts-ignore
+				token._object._onHoverIn(event);
+				ChatLink.lastHoveredToken = token;
+			} else {
+				warn(`Can't hover in the chat portrait of the token '${token}'`);
+			}
 		}
 	};
 

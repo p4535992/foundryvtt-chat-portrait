@@ -1,3 +1,7 @@
+### 0.8.40
+
+- Patched https://github.com/p4535992/foundryvtt-chat-portrait/issues/26
+
 ### 0.8.39
 
 - Synced with "Speaking As" project
