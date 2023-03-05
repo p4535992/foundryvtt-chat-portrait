@@ -375,7 +375,7 @@ export class ChatPortrait {
 		const chatPortraitCustomData: ChatPortraitCustomData = {
 			customIconPortraitImage: imgPath,
 			customImageReplacer: {},
-			customImageReplacerData: API.imageReplacerIconizer,
+			customImageReplacerData: API.imageReplacerIconizer
 		};
 
 		Hooks.call("ChatPortraitReplaceData", chatPortraitCustomData, chatMessage);
@@ -399,7 +399,7 @@ export class ChatPortrait {
 			for (const key in imageReplacerToUseOLD) {
 				imageReplacerToUse.push({
 					name: key,
-					icon: <string>imageReplacerToUseOLD[key],
+					icon: <string>imageReplacerToUseOLD[key]
 				});
 			}
 		}
@@ -1814,7 +1814,7 @@ export class ChatPortrait {
 			applyOnCombatTracker: SettingsForm.getApplyOnCombatTracker(),
 			// applyPreCreateChatMessagePatch: SettingsForm.getApplyPreCreateChatMessagePatch(),
 			disablePortraitForAliasGmMessage: SettingsForm.getDisablePortraitForAliasGmMessage(),
-			setUpPortraitForAliasGmMessage: SettingsForm.getSetUpPortraitForAliasGmMessage(),
+			setUpPortraitForAliasGmMessage: SettingsForm.getSetUpPortraitForAliasGmMessage()
 		};
 	}
 
@@ -1863,7 +1863,7 @@ export class ChatPortrait {
 			applyOnCombatTracker: false,
 			// applyPreCreateChatMessagePatch: false,
 			disablePortraitForAliasGmMessage: false,
-			setUpPortraitForAliasGmMessage: "",
+			setUpPortraitForAliasGmMessage: ""
 		};
 	}
 

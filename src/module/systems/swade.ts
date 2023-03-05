@@ -4,5 +4,5 @@ export default {
 	SYSTEM_ID: "swade",
 	imageReplacerDamageType: <ImageReplaceVoiceData[]>[],
 	imageReplacerWeaponProperties: <ImageReplaceVoiceData[]>[],
-	imageReplacerIconizer: <ImageReplaceVoiceData[]>[],
+	imageReplacerIconizer: <ImageReplaceVoiceData[]>[]
 };

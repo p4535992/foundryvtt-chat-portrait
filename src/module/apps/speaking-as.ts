@@ -8,7 +8,7 @@ const CSS_CURRENT_SPEAKER = CSS_PREFIX + "currentSpeaker";
 const CHAT_MESSAGE_SUB_TYPES = {
 	NONE: 0,
 	DESC: 1,
-	AS: 2,
+	AS: 2
 };
 
 let image;
@@ -155,10 +155,10 @@ function convertToOoc(messageData) {
 		speaker: {
 			actor: newActor,
 			alias: user.name,
-			token: newToken,
+			token: newToken
 		},
 		token: newTokenD,
-		actor: newActorD,
+		actor: newActorD
 	});
 }
 
@@ -205,11 +205,11 @@ export function updateSpeaker() {
 					actor: tokenDocument?.actor?.id,
 					alias: name,
 					scene: tokenDocument?.parent?.id ?? game.user?.viewedScene,
-					token: tokenDocument?.id,
+					token: tokenDocument?.id
 			  }
 			: <any>{
 					alias: name,
-					scene: game.user?.viewedScene,
+					scene: game.user?.viewedScene
 			  };
 
 	// Compatibility with Cautious Gamemaster's Pack
@@ -328,7 +328,7 @@ Hooks.once("renderChatLog", () => {
 					icon: "",
 					callback: () => {
 						selectActorToken(actor);
-					},
+					}
 				});
 			}
 			currentSpeakerToggleMenu.menuItems = speakerOptions;

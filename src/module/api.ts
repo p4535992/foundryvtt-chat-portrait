@@ -93,7 +93,7 @@ const API = {
 		} else {
 			return "generic";
 		}
-	},
+	}
 };
 
 export default API;

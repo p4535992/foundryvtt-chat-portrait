@@ -156,9 +156,9 @@ export const setupHooks = async () => {
 				message.updateSource({
 					flags: {
 						"chat-portrait": {
-							src: src,
-						},
-					},
+							src: src
+						}
+					}
 				});
 			}
 		}

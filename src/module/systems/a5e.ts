@@ -17,7 +17,7 @@ export default {
 		{ name: "A5E.DamageRadiant", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/radiant.svg` },
 		{ name: "A5E.DamageSlashing", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/slashing.svg` },
 		{ name: "A5E.DamageThunder", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thunder.svg` },
-		{ name: "A5E.DamageUnknown", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/non_magical_physical.svg` },
+		{ name: "A5E.DamageUnknown", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/non_magical_physical.svg` }
 	],
 	imageReplacerWeaponProperties: <ImageReplaceVoiceData[]>[
 		{ name: "A5E.WeaponPropertyBurn", icon: `` },
@@ -47,7 +47,7 @@ export default {
 		{ name: "A5E.WeaponPropertyTrip", icon: `` },
 		{ name: "A5E.WeaponPropertyTwoHanded", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/two-Handed.svg` },
 		{ name: "A5E.WeaponPropertyVersatile", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/versatile.svg` },
-		{ name: "A5E.WeaponPropertyVicious", icon: `` },
+		{ name: "A5E.WeaponPropertyVicious", icon: `` }
 	],
 	imageReplacerIconizer: <ImageReplaceVoiceData[]>[
 		{ name: "A5E.AbilityDefault", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/gaming_set.svg` },
@@ -106,20 +106,20 @@ export default {
 		{ name: "A5E.SkillSpecialtyClimbing", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/climbing.svg` },
 		{
 			name: "A5E.SkillSpecialtyConcealingEmotions",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/concealing_emotions.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/concealing_emotions.svg`
 		},
 		{ name: "A5E.SkillSpecialtyComposing", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/composing.svg` },
 		{ name: "A5E.SkillSpecialtyConstructs", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/constructs.svg` },
 		{
 			name: "A5E.SkillSpecialtyCourtlyManners",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/courtly_manners.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/courtly_manners.svg`
 		},
 		{ name: "A5E.SkillSpecialtyCults", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/cults.svg` },
 		{ name: "A5E.SkillSpecialtyDancing", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/dancing.svg` },
 		{ name: "A5E.SkillSpecialtyDeciphering", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/deciphering.svg` },
 		{
 			name: "A5E.SkillSpecialtyDetectingLies",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/detecting_lies.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/detecting_lies.svg`
 		},
 		{ name: "A5E.SkillSpecialtyDetection", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/detection.svg` },
 		{ name: "A5E.SkillSpecialtyDiseases", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/diseases.svg` },
@@ -131,7 +131,7 @@ export default {
 		{ name: "A5E.SkillSpecialtyEmpires", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/empires.svg` },
 		{
 			name: "A5E.SkillSpecialtyEscapeArtistry",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/escape_artistry.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/escape_artistry.svg`
 		},
 		{ name: "A5E.SkillSpecialtyEtiquette", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/etiquette.svg` },
 		{ name: "A5E.SkillSpecialtyExplosives", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/explosives.svg` },
@@ -144,14 +144,14 @@ export default {
 		{ name: "A5E.SkillSpecialtyForaging", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/foraging.svg` },
 		{
 			name: "A5E.SkillSpecialtyForbiddenKnowledge",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/forbidden_knowledge.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/forbidden_knowledge.svg`
 		},
 		{ name: "A5E.SkillSpecialtyForensics", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/forensics.svg` },
 		{ name: "A5E.SkillSpecialtyFiends", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/fiends.svg` },
 		{ name: "A5E.SkillSpecialtyGadgetry", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/gadgetry.svg` },
 		{
 			name: "A5E.SkillSpecialtyGatheringRumors",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/gathering_rumors.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/gathering_rumors.svg`
 		},
 		{ name: "A5E.SkillSpecialtyGenealogy", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/genealogy.svg` },
 		{ name: "A5E.SkillSpecialtyGods", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/gods.svg` },
@@ -161,7 +161,7 @@ export default {
 		{ name: "A5E.SkillSpecialtyInterrogation", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/interrogation.svg` },
 		{
 			name: "A5E.SkillSpecialtyInvisibleObjects",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/invisible _objects.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/invisible _objects.svg`
 		},
 		{ name: "A5E.SkillSpecialtyJumping", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/jumping.svg` },
 		{ name: "A5E.SkillSpecialtyLaws", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/laws.svg` },
@@ -174,7 +174,7 @@ export default {
 		{ name: "A5E.SkillSpecialtyMathematics", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/mathematics.svg` },
 		{
 			name: "A5E.SkillSpecialtyMechanicalTraps",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/mechanical_traps.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/mechanical_traps.svg`
 		},
 		{ name: "A5E.SkillSpecialtyMimicry", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/mimicry.svg` },
 		{ name: "A5E.SkillSpecialtyMonstrosities", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/monstrosities.svg` },
@@ -189,11 +189,11 @@ export default {
 		{ name: "A5E.SkillSpecialtyProphecy", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/prophecy.svg` },
 		{
 			name: "A5E.SkillSpecialtyReadingEmotions",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/reading_emotions.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/reading_emotions.svg`
 		},
 		{
 			name: "A5E.SkillSpecialtyRegionalGoods",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/regional_goods.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/regional_goods.svg`
 		},
 		{ name: "A5E.SkillSpecialtyResearch", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/research.svg` },
 		{ name: "A5E.SkillSpecialtyRiding", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/riding.svg` },
@@ -201,7 +201,7 @@ export default {
 		{ name: "A5E.SkillSpecialtyScent", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/scent.svg` },
 		{
 			name: "A5E.SkillSpecialtySensingMotives",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/sensing_motives.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/sensing_motives.svg`
 		},
 		{ name: "A5E.SkillSpecialtySiegecraft", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/siegecraft.svg` },
 		{ name: "A5E.SkillSpecialtySinging", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/singing.svg` },
@@ -209,7 +209,7 @@ export default {
 		{ name: "A5E.SkillSpecialtyStreetwise", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/streetwise.svg` },
 		{
 			name: "A5E.SkillSpecialtySubtleThreats",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/subtle_threats.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/subtle_threats.svg`
 		},
 		{ name: "A5E.SkillSpecialtySwimming", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/swimming.svg` },
 		{ name: "A5E.SkillSpecialtySwinging", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/swinging.svg` },
@@ -224,9 +224,9 @@ export default {
 		{ name: "A5E.SkillSpecialtyWayfinding", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/wayfinding.svg` },
 		{
 			name: "A5E.SkillSpecialtyWeaponDisplays",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/weapon_displays.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/weapon_displays.svg`
 		},
 		{ name: "A5E.SkillSpecialtyWeather", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/weather.svg` },
-		{ name: "A5E.SkillSpecialtyWriting", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/writing.svg` },
-	],
+		{ name: "A5E.SkillSpecialtyWriting", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/writing.svg` }
+	]
 };

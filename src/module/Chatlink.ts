@@ -45,7 +45,7 @@ export class ChatLink {
 			idScene: speaker.scene,
 			idActor: speaker.actor,
 			idToken: speaker.token,
-			name: speakerName,
+			name: speakerName
 		};
 
 		if (!speakerData.idScene) {
@@ -96,7 +96,7 @@ export class ChatLink {
 			idScene: speaker.scene,
 			idActor: speaker.actor,
 			idToken: speaker.token,
-			name: speakerName,
+			name: speakerName
 		};
 
 		if (!speakerData.idScene) {
@@ -188,7 +188,7 @@ export class ChatLink {
 		} else {
 			const tokenScene = game.scenes?.find((s) => s.id === speakerData.idScene);
 			sceneNote = ` ${ChatLink.i18nFormat(CONSTANTS.MODULE_NAME + ".checkScene", {
-				sceneName: tokenScene?.name,
+				sceneName: tokenScene?.name
 			})}`;
 		}
 

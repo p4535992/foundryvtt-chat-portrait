@@ -86,7 +86,7 @@ export class ChatPortraitChatCard extends ChatMessage {
 				gsap?.from(html.get(), {
 					"border-color": "red",
 					"box-shadow": "0 0 6px inset #ff6400",
-					duration: 2,
+					duration: 2
 				});
 			}, 0);
 

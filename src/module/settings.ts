@@ -15,7 +15,7 @@ export const registerSettings = function () {
 		hint: `${CONSTANTS.MODULE_NAME}.setting.reset.hint`,
 		icon: "fas fa-coins",
 		type: ResetSettingsDialog,
-		restricted: true,
+		restricted: true
 	});
 
 	// =====================================================================
@@ -37,7 +37,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "doNotUseTokenImageWithSpecificType", {
@@ -46,7 +46,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: "",
+		default: ""
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useTokenName", {
@@ -55,7 +55,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useAvatarImage", {
@@ -64,7 +64,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayPlayerName", {
@@ -73,7 +73,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "portraitSize", {
@@ -82,7 +82,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Number,
-		default: 36,
+		default: 36
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "portraitSizeItem", {
@@ -91,7 +91,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Number,
-		default: 36,
+		default: 36
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "borderShape", {
@@ -104,8 +104,8 @@ export const registerSettings = function () {
 		choices: <any>{
 			square: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.square`),
 			circle: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.circle`),
-			none: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.none`),
-		},
+			none: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.none`)
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsBorderColor", {
@@ -114,7 +114,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "borderColor", {
@@ -123,7 +123,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: String,
-		default: "#000000",
+		default: "#000000"
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "borderWidth", {
@@ -132,7 +132,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Number,
-		default: 2,
+		default: 2
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsChatBackgroundColor", {
@@ -141,7 +141,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsChatBorderColor", {
@@ -150,7 +150,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, "flavorNextToPortrait", {
@@ -168,7 +168,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME,'hoverTooltip', {
@@ -187,7 +187,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Number,
-		default: 0,
+		default: 0
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTag", {
@@ -196,7 +196,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTagNextToName", {
@@ -214,7 +214,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "useImageReplacerDamageType", {
@@ -223,7 +223,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerWeaponProperties", {
@@ -232,7 +232,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: false,
 		default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerWeaponProperties : [],
-		type: Array,
+		type: Array
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerIconizer", {
@@ -241,7 +241,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: false,
 		default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerIconizer : [],
-		type: Array,
+		type: Array
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "applyOnCombatTracker", {
@@ -250,7 +250,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", {
@@ -275,8 +275,8 @@ export const registerSettings = function () {
 			self: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.self`),
 			gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.gm`),
 			player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.player`),
-			none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.none`),
-		},
+			none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.none`)
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingOTHER", {
@@ -285,7 +285,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingOOC", {
@@ -294,7 +294,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingIC", {
@@ -303,7 +303,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingEMOTE", {
@@ -312,7 +312,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingWHISPER", {
@@ -321,7 +321,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingROLL", {
@@ -330,7 +330,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: true,
+		default: true
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingWhisperToOther", {
@@ -339,7 +339,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknown", {
@@ -356,8 +356,8 @@ export const registerSettings = function () {
 			gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.gm`),
 			player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.player`),
 			none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.none`),
-			onlyNpc: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.onlyNpc`),
-		},
+			onlyNpc: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.onlyNpc`)
+		}
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", {
@@ -366,7 +366,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: "Unknown Actor",
+		default: "Unknown Actor"
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", {
@@ -375,7 +375,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: "Unknown Item",
+		default: "Unknown Item"
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", {
@@ -384,7 +384,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+		default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem', {
@@ -402,7 +402,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: String,
-		default: "",
+		default: ""
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "customStylingMessageImage", {
@@ -411,7 +411,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: String,
-		default: "",
+		default: ""
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "disablePortraitForAliasGmMessage", {
@@ -420,7 +420,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "setUpPortraitForAliasGmMessage", {
@@ -429,7 +429,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: String,
-		default: "",
+		default: ""
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakingAs", {
@@ -438,7 +438,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakAs", {
@@ -447,7 +447,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		type: Boolean,
-		default: false,
+		default: false
 	});
 
 	// ========================================================================
@@ -458,7 +458,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: true,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	// game.settings.register(CONSTANTS.MODULE_NAME, 'debugHooks', {
@@ -472,14 +472,14 @@ export const registerSettings = function () {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "systemNotFoundWarningShown", {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "preconfiguredSystem", {
@@ -488,7 +488,7 @@ export const registerSettings = function () {
 		scope: "world",
 		config: false,
 		default: false,
-		type: Boolean,
+		type: Boolean
 	});
 };
 
@@ -516,14 +516,14 @@ class ResetSettingsDialog extends FormApplication<FormApplicationOptions, object
 							await setting.delete();
 						}
 						//window.location.reload();
-					},
+					}
 				},
 				cancel: {
 					icon: '<i class="fas fa-times"></i>',
-					label: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.cancel`),
-				},
+					label: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.cancel`)
+				}
 			},
-			default: "cancel",
+			default: "cancel"
 		});
 	}
 

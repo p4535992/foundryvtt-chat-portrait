@@ -43,6 +43,6 @@ export default {
 		{ name: "PF2E.ActionsCheck.society", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/society.svg` },
 		{ name: "PF2E.ActionsCheck.stealth", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/stealth.svg` },
 		{ name: "PF2E.ActionsCheck.survival", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/survival.svg` },
-		{ name: "PF2E.ActionsCheck.thievery", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thievery.svg` },
-	],
+		{ name: "PF2E.ActionsCheck.thievery", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thievery.svg` }
+	]
 };

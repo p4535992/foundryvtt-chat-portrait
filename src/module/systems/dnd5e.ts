@@ -20,7 +20,7 @@ export default {
 		{ name: "DND5E.DamagePsychic", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/psychic.svg` },
 		{ name: "DND5E.DamageRadiant", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/radiant.svg` },
 		{ name: "DND5E.DamageSlashing", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/slashing.svg` },
-		{ name: "DND5E.DamageThunder", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thunder.svg` },
+		{ name: "DND5E.DamageThunder", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thunder.svg` }
 	],
 	imageReplacerWeaponProperties: <ImageReplaceVoiceData[]>[
 		{ name: "DND5E.WeaponPropertiesAda", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/adamantine.svg` },
@@ -39,7 +39,7 @@ export default {
 		{ name: "DND5E.WeaponPropertiesSpc", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/special.svg` },
 		{ name: "DND5E.WeaponPropertiesThr", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/thrown.svg` },
 		{ name: "DND5E.WeaponPropertiesTwo", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/two-Handed.svg` },
-		{ name: "DND5E.WeaponPropertiesVer", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/versatile.svg` },
+		{ name: "DND5E.WeaponPropertiesVer", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/versatile.svg` }
 	],
 	/**
 	 * based on https://github.com/game-icons/icons/issues/516
@@ -78,7 +78,7 @@ export default {
 		{ name: "DND5E.ToolHerbalismKit", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/herbalism_kit` }, // https://game-icons.net/1x1/delapouite/herbs-bundle.html
 		{
 			name: "DND5E.ToolMusicalInstrument",
-			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/musical_instrument.svg`,
+			icon: `modules/${CONSTANTS.MODULE_NAME}/assets/musical_instrument.svg`
 		}, // https://game-icons.net/1x1/zajkonur/violin.html
 		{ name: "DND5E.ToolNavigators", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/navigator_s_tools.svg` }, // https://game-icons.net/1x1/delapouite/sextant.html
 		{ name: "DND5E.ToolPoisonersKit", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/poisoner_s_kit.svg` }, // https://game-icons.net/1x1/lorc/poison-bottle.html
@@ -94,7 +94,7 @@ export default {
 		{ name: "DND5E.AbilityInt", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/intelligence.svg` }, // https://game-icons.net/1x1/lorc/fox-head.html
 		{ name: "DND5E.AbilityWis", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/wisdom.svg` }, // https://game-icons.net/1x1/lorc/owl.html
 		{ name: "DND5E.AbilityCha", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/charisma.svg` }, // https://game-icons.net/1x1/delapouite/eagle-head.html
-		{ name: "DND5E.Initiative", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/initiative.svg` }, //https://game-icons.net/1x1/delapouite/acoustic-megaphone.html
+		{ name: "DND5E.Initiative", icon: `modules/${CONSTANTS.MODULE_NAME}/assets/initiative.svg` } //https://game-icons.net/1x1/delapouite/acoustic-megaphone.html
 
 		// TODO CONDITION I JUST DON'T KNOW HO CAN BE USEFUL
 
@@ -116,5 +116,5 @@ export default {
 		// { name : 'DND5E.ConStunned', icon : `Stunned",
 		// { name : 'DND5E.ConUnconscious', icon : `Unconscious",
 		// { name : 'DND5E.Concentration', icon : `Concentration",
-	],
+	]
 };
