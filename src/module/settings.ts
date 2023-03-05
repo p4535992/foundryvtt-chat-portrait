@@ -435,10 +435,19 @@ export const registerSettings = function () {
 	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakingAs", {
 		name: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.name`,
 		hint: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.hint`,
-		scope: "world",
+		scope: "client",
 		config: true,
 		type: Boolean,
 		default: false
+	});
+
+	game.settings.register(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters", {
+		name: `${CONSTANTS.MODULE_NAME}.settings.speakingAsWarningCharacters.name`,
+		hint: `${CONSTANTS.MODULE_NAME}.settings.speakingAsWarningCharacters.hint`,
+		scope: "client",
+		config: true,
+		type: String,
+		default: '".+"'
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakAs", {

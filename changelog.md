@@ -1,3 +1,7 @@
+### 0.8.39
+
+- Synced with "Speaking As" project
+
 ### 0.8.38 
 
 - Little css fix on pf2e ?? 

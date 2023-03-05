@@ -140,6 +140,8 @@
 	"chat-portrait.settings.setUpPortraitForAliasGmMessage.hint": "If enable will use the image selected here for every chat message done with a alias referenced to a GM. If 'Disable the chat portrait if the alias of the chat message is from a GM' is enable this setting will be ignored",
 	"chat-portrait.settings.enableSpeakingAs.name": "Enable 'Speaking As' embedded",
 	"chat-portrait.settings.enableSpeakingAs.hint": "A embedded integration of the module 'Speaking As' embedded",
+	"chat-portrait.settings.speakingAsWarningCharacters.name": "[ONLY WITH \"Enable 'Speaking As' embedded\" enabled] Warn if Speaking with Special Characters",
+	"chat-portrait.settings.speakingAsWarningCharacters.hint": "Highlights the chatbox if you are using reserved characters such as \"quotes\" or other characters of your choice when speaking out of character. If the setting is empty, no warnings will be given. This uses Regex.",
 	"chat-portrait.settings.enableSpeakAs.name": "Enable 'Speak As...' embedded",
 	"chat-portrait.settings.enableSpeakAs.hint": "A embedded integration of the module 'Speak As...' embedded",
 	"chat-portrait.setting.reset.name": "Reset settings to default",
@@ -166,5 +168,7 @@
 	"chat-portrait.unlocked": "Nothing is preventing you from speaking as this character.",
 	"chat-portrait.locked": "{module} has locked you to this speaker.",
 	"chat-portrait.self-locked": "You have locked yourself to speak out of character.",
-	"chat-portrait.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again."
+	"chat-portrait.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again.",
+	"chat-portrait.speakingAs.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again.",
+	"chat-portrait.speakingAs.buttonHint.warning": "You are using reserved ({characters}) letters when speaking out of character! Did you want to speak in-character instead?"
 }

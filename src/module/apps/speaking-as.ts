@@ -294,12 +294,16 @@ export function updateSpeaker() {
 		.dblclick(() => panToSpeaker(speakerObject));
 
 	$(image).on("load", () => {
-		if ($(`${CSS_CURRENT_SPEAKER}--icon`).html() !== image.html())
+		if ($(`${CSS_CURRENT_SPEAKER}--icon`).html() !== image.html()) {
 			$(`.${CSS_CURRENT_SPEAKER}--icon`).replaceWith(image);
-		if ($(`${CSS_CURRENT_SPEAKER}--text`).html() !== text.html())
+		}
+		if ($(`${CSS_CURRENT_SPEAKER}--text`).html() !== text.html()) {
 			$(`.${CSS_CURRENT_SPEAKER}--text`).replaceWith(text);
-		if ($(`${CSS_CURRENT_SPEAKER}--locked`).html() !== locked.html())
+		}
+		if ($(`${CSS_CURRENT_SPEAKER}--locked`).html() !== locked.html()) {
 			$(`.${CSS_CURRENT_SPEAKER}--locked`).replaceWith(locked);
+		}
+		setTimeout(<any>checkWarn(), 0);
 	});
 }
 
@@ -310,7 +314,10 @@ Hooks.once("renderChatLog", () => {
 		setTimeout(async () => {
 			chatControls.parentNode?.insertBefore(currentSpeakerDisplay, chatControls);
 			// Apparently game.i18n.localize is not loaded when the button is added so it's here instead.
-			$(`.${CSS_CURRENT_SPEAKER}--button`).attr("data-tooltip", game.i18n.localize("chat-portrait.buttonHint"));
+			$(`.${CSS_CURRENT_SPEAKER}--button`).attr(
+				"data-tooltip",
+				game.i18n.localize("chat-portrait.speakingAs.buttonHint")
+			);
 		}, 0);
 
 		const currentSpeakerToggleMenu = new ContextMenu(
@@ -337,14 +344,52 @@ Hooks.once("renderChatLog", () => {
 
 		setTimeout(async () => {
 			updateSpeaker();
+			$("#chat-message").on("input", () => {
+				checkWarn();
+			});
+			$("#chat-message").on("keydown", () => {
+				$("#chat-message").removeClass(CSS_PREFIX + "warning");
+				//@ts-ignore
+				game.tooltip.deactivate();
+			});
 		}, 0);
 
 		// Remove Illandril's Chat Enhancements display
 		if (game.modules.get("illandril-chat-enhancements")?.active) {
-			document.getElementsByClassName("illandril-chat-enhancements--currentSpeaker")[0]?.remove();
+			document.getElementsByClassName("illandril-chat-enhancements--current-speaker")[0]?.remove();
 		}
 	}
 });
+
+function checkWarn() {
+	// Add a warning on key enter if the textarea contains quotes, as if you were talking in character.
+	if (
+		game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters") === "" ||
+		$(".chat-portrait--currentSpeaker--text").text() !== game.user?.name || // Return if speaking out of character
+		["/ic", "/ooc", "/emote"].some((str: string) => (<string>$("#chat-message").val())?.includes(str)) // Return if the message contains a command that would deliberately make you speak in or out of character
+	) {
+		$("#chat-message").removeClass(CSS_PREFIX + "warning");
+		//@ts-ignore
+		game.tooltip.deactivate();
+		return;
+	}
+
+	const regex = new RegExp(<string>game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters"));
+	if (regex.test(<string>$("#chat-message").val())) {
+		$("#chat-message").addClass(CSS_PREFIX + "warning");
+		//@ts-ignore
+		game.tooltip.activate($("#chat-message")[0], {
+			text: game.i18n.format("chat-portrait.speakingAs.buttonHint.warning", {
+				characters: game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters")
+			}),
+			direction: "LEFT"
+		});
+	} else {
+		$("#chat-message").removeClass(CSS_PREFIX + "warning");
+		//@ts-ignore
+		game.tooltip.deactivate();
+	}
+}
 
 // Hooks.on("controlToken", updateSpeaker);
 // Hooks.on('preCreateChatMessage', overrideMessage);
