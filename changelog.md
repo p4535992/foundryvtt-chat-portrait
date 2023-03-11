@@ -1,4 +1,4 @@
-### 0.8.40
+### 0.8.40-41
 
 - Patched https://github.com/p4535992/foundryvtt-chat-portrait/issues/26
 
