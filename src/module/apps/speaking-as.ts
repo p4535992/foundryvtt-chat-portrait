@@ -1,5 +1,5 @@
 import CONSTANTS from "../constants";
-import { info } from "../lib/lib";
+import { i18n, i18nFormat, info } from "../lib/lib";
 
 const CSS_PREFIX = `${CONSTANTS.MODULE_NAME}--`;
 
@@ -316,7 +316,7 @@ Hooks.once("renderChatLog", () => {
 			// Apparently game.i18n.localize is not loaded when the button is added so it's here instead.
 			$(`.${CSS_CURRENT_SPEAKER}--button`).attr(
 				"data-tooltip",
-				game.i18n.localize("chat-portrait.speakingAs.buttonHint")
+				i18n("chat-portrait.buttonHint")
 			);
 		}, 0);
 
@@ -379,7 +379,7 @@ function checkWarn() {
 		$("#chat-message").addClass(CSS_PREFIX + "warning");
 		//@ts-ignore
 		game.tooltip.activate($("#chat-message")[0], {
-			text: game.i18n.format("chat-portrait.speakingAs.buttonHint.warning", {
+			text: i18nFormat("chat-portrait.speakingAs.buttonHint.warning", {
 				characters: game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters")
 			}),
 			direction: "LEFT"

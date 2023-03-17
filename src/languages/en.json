@@ -169,6 +169,5 @@
 	"chat-portrait.locked": "{module} has locked you to this speaker.",
 	"chat-portrait.self-locked": "You have locked yourself to speak out of character.",
 	"chat-portrait.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again.",
-	"chat-portrait.speakingAs.buttonHint": "Click to speak out of character for the next message. Double click to do so until you click again.",
 	"chat-portrait.speakingAs.buttonHint.warning": "You are using reserved ({characters}) letters when speaking out of character! Did you want to speak in-character instead?"
 }
