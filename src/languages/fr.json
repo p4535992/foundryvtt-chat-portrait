@@ -167,7 +167,6 @@
 	"chat-portrait.buttonHint": "Cliquez pour parler en dehors du personnage pour le message suivant. Double-cliquez pour continuer ainsi jusqu'à ce que vous cliquiez à nouveau.",
 	"chat-portrait.settings.enableSpeakingAs.name": "Activer la fonction \"Parler en tant que\" intégrée",
 	"chat-portrait.settings.enableSpeakingAs.hint": "Une intégration du module \"Parler comme\"",
-	"chat-portrait.speakingAs.buttonHint": "Cliquez pour parler hors du personnage pour le prochain message. Double-cliquez pour continuer ainsi jusqu'à ce que vous cliquiez à nouveau.",
 	"chat-portrait.speakingAs.buttonHint.warning": "Vous êtes en train d'utiliser les caractères ({characters}) lorsque vous parlez hors de votre personnage ! Ne voulez-vous pas plutôt parler en tant que personnage ?",
 	"chat-portrait.settings.speakingAsWarningCharacters.name": "[SEULEMENT AVEC \"la fonction 'Parler comme' intégrée activée] Avertissement si vous parlez avec des caractères spéciaux",
 	"chat-portrait.settings.speakingAsWarningCharacters.hint": "Illumine la fenêtre de conversation si vous utilisez des caractères réservés tel que \"parenthèses\" ou d'autres caractères de votre choix lorsque vous parle en dehors de votre personnage. Si le réglage est vide, aucun avertissement ne sera donné. Cela utilise les regex."
