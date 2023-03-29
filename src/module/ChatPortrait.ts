@@ -1956,6 +1956,20 @@ export class ChatPortrait {
 		return speaker.alias;
 	};
 
+	static getPrototypeTokenNameFromSpeaker = function (speaker) {
+		const actor = ChatPortrait.getActorFromSpeaker(speaker); //game.actors.get(speaker.actor);
+		if (actor) {
+			//@ts-ignore
+			if (actor?.prototypeToken) {
+				//@ts-ignore
+				return actor?.prototypeToken.name;
+			} else if (actor.token) {
+				return actor.token.name;
+			}
+		}
+		return speaker.alias;
+	};
+
 	static getTokenNameFromSpeaker = function (speaker): string | null {
 		if (speaker.token) {
 			const token = ChatPortrait.getTokenFromSpeaker(speaker);
@@ -2311,11 +2325,23 @@ export class ChatPortrait {
 
 	static replaceSenderWithTokenName = function (messageSenderElem, speakerInfo) {
 		const speaker = speakerInfo.message.speaker;
+		const alias = speaker.alias;
 		const actorName = (ChatPortrait.getActorNameFromSpeaker(speaker) || "").trim();
-		const name = (ChatPortrait.getTokenNameFromSpeaker(speaker) || "").trim();
-		if (actorName !== name) {
-			ChatPortrait.replaceMatchingTextNodes(messageSenderElem[0], actorName, name);
-		}
+		const prototypeTokenName = (ChatPortrait.getPrototypeTokenNameFromSpeaker(speaker) || "").trim();
+		const tokenName = (ChatPortrait.getTokenNameFromSpeaker(speaker) || "").trim();
+		debug(`replaceSenderWithTokenName | Alias '${alias}'`);
+		debug(`replaceSenderWithTokenName | Actor Name '${actorName }'`);
+		debug(`replaceSenderWithTokenName | Prototype Token Name '${prototypeTokenName}'`);
+		debug(`replaceSenderWithTokenName | Token Name '${tokenName}'`);
+		if (tokenName && tokenName !== alias) {
+			debug(`replaceSenderWithTokenName | Use token name replaced '${alias}' with '${tokenName}'`);
+			ChatPortrait.replaceMatchingTextNodes(messageSenderElem[0], tokenName, alias);
+		} 
+		// else {
+		// 	if (actorName !== name) {
+		// 		ChatPortrait.replaceMatchingTextNodes(messageSenderElem[0], actorName, name);
+		// 	}
+		// }
 	};
 
 	static replaceMatchingTextNodes = function (parent, match, replacement) {
