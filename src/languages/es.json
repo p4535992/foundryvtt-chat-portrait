@@ -160,5 +160,9 @@
 	"chat-portrait.dialogs.nosystemfound.content": "Este sistema no es totalmente compatible actualmente. Esto significa que el módulo no sabe cómo manejar mejor los elementos de este sistema, pero aún puede operar de manera limitada.<br><br>Puede configurar los ajustes del módulo usted mismo, pero requiere un poco de conocimiento técnico. <br><br>Si tiene alguna pregunta, haga ping a <strong>Wasp#2005</strong> en el Discord de Foundry.",
 	"chat-portrait.dialogs.systemfound.content": "Anteriormente, este sistema no era compatible, pero en una actualización reciente se agregó como un sistema compatible.<br><br>¿Desea cargar la configuración predeterminada de la pila de elementos de este sistema?",
 	"chat-portrait.settings.displayPlayerName.name": "Mostrar el nombre del jugador por debajo del nombre del actor",
-	"chat-portrait.settings.displayPlayerName.hint": "Mostrar el nombre del jugador por debajo del nombre del actor para todos los mensajes IC. ES \"ABAJO\" NO \"SIGUIENTE\" PARA ADMINISTRAR MEJOR EL NOMBRE LARGO. ATENCIÓN: Si está utilizando \"Mejoras de chat de Illandril\", probablemente no necesite esto."
+	"chat-portrait.settings.displayPlayerName.hint": "Mostrar el nombre del jugador por debajo del nombre del actor para todos los mensajes IC. ES \"ABAJO\" NO \"SIGUIENTE\" PARA ADMINISTRAR MEJOR EL NOMBRE LARGO. ATENCIÓN: Si está utilizando \"Mejoras de chat de Illandril\", probablemente no necesite esto.",
+	"chat-portrait.buttonHint": "Clica para hablar fuera de personaje en el siguiente mensaje. Doble clic para hacerlo hasta que vuelvas a clicar.",
+	"chat-portrait.self-locked": "Te has bloqueado a ti mismo para hablar fuera de personaje.",
+	"chat-portrait.locked": "{module} te ha bloqueado en este hablante.",
+	"chat-portrait.unlocked": "Nada te está impidiendo hablar como este personaje."
 }
