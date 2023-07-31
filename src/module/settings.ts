@@ -447,7 +447,7 @@ export const registerSettings = function () {
 		scope: "client",
 		config: true,
 		type: String,
-		default: '".+"'
+		default: '\".+\"',
 	});
 
 	game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakAs", {
