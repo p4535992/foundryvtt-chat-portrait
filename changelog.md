@@ -64,6 +64,10 @@
 
 - Some css tweak
 
+### 0.9.0
+
+- Upgrade fvtt11
+
 ### 0.8.11
 
 - Bug fix [multiple portrait when chat merged by DF Chat Enhancements](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/118)

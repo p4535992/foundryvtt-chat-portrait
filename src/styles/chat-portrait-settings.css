@@ -8,118 +8,118 @@ input[name="chat-portrait.customStylingMessageImage"] {
 }
 */
 textarea[name="chat-portrait.customStylingMessageText"] {
-	flex: none !important;
-	height: 200px;
+  flex: none !important;
+  height: 200px;
 }
 
 textarea[name="chat-portrait.customStylingMessageImage"] {
-	flex: none !important;
-	height: 200px;
+  flex: none !important;
+  height: 200px;
 }
 
 .chat-portrait-flexrow {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /* Speaking as embedded */
 
 .chat-portrait--currentSpeaker {
-	height: 45px;
-	flex: 0 !important;
-	padding: 7px 0 0 0;
-	opacity: 1;
-	margin: 0 0 0 3px;
-	transition: all 0.5s;
+  height: 45px;
+  flex: 0 !important;
+  padding: 7px 0 0 0;
+  opacity: 1;
+  margin: 0 0 0 3px;
+  transition: all 0.5s;
 }
 
 .chat-portrait--currentSpeaker + #chat-controls {
-	padding: 0 0 0.5em 0;
+  padding: 0 0 0.5em 0;
 }
 
 .chat-portrait--currentSpeaker.hide {
-	opacity: 0;
+  opacity: 0;
 }
 
 .chat-portrait--currentSpeaker--locked.fa-unlock {
-	opacity: 0.2;
+  opacity: 0.2;
 }
 
 .chat-portrait--currentSpeaker--locked.fa-lock {
-	opacity: 1;
+  opacity: 1;
 }
 
 .chat-portrait--currentSpeaker--locked {
-	transition: all 0.5s;
-	float: right;
-	font-size: var(--font-size-24);
-	position: relative;
-	padding: 2px 7px 2px 12px;
+  transition: all 0.5s;
+  float: right;
+  font-size: var(--font-size-24);
+  position: relative;
+  padding: 2px 7px 2px 12px;
 }
 
 .chat-portrait--currentSpeaker--button {
-	transition: all 0.5s;
-	float: right;
-	font-size: var(--font-size-24);
-	position: relative;
-	padding: 2px 0px 2px 7px;
+  transition: all 0.5s;
+  float: right;
+  font-size: var(--font-size-24);
+  position: relative;
+  padding: 2px 0px 2px 7px;
 }
 
 .chat-portrait--currentSpeaker--buttonInset {
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	position: absolute;
-	right: -15%;
-	bottom: -5%;
-	font-size: 12px;
-	color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  position: absolute;
+  right: -15%;
+  bottom: -5%;
+  font-size: 12px;
+  color: whitesmoke;
 }
 
 .chat-portrait--currentSpeaker--text {
-	transition: all 0.5s;
-	font-size: var(--font-size-20);
-	line-height: 28px;
-	position: relative;
-	bottom: 0.35em;
-	display: inline;
-	width: 10em;
-	padding: 5px;
+  transition: all 0.5s;
+  font-size: var(--font-size-20);
+  line-height: 28px;
+  position: relative;
+  bottom: 0.35em;
+  display: inline;
+  width: 10em;
+  padding: 5px;
 }
 
 .chat-portrait--currentSpeaker--icon {
-	transition: all 0.5s;
-	font-size: var(--font-size-20);
-	height: 28px;
-	border: none;
+  transition: all 0.5s;
+  font-size: var(--font-size-20);
+  height: 28px;
+  border: none;
 }
 
 .chat-portrait--currentSpeaker #context-menu {
-	max-height: 50vh;
-	overflow-y: auto;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .chat-portrait--currentSpeaker--text.shadow {
-	text-shadow: 0 0 6px gold;
+  text-shadow: 0 0 6px gold;
 }
 .chat-portrait--currentSpeaker--icon.shadow {
-	filter: drop-shadow(0 0 3px gold);
+  filter: drop-shadow(0 0 3px gold);
 }
 
 .chat-portrait--warning {
-	animation: warning-shadow ease-in-out 2s infinite;
+  animation: warning-shadow ease-in-out 2s infinite;
 }
 
 @keyframes warning-shadow {
-	0% {
-		filter: drop-shadow(0 0 0px red);
-	}
+  0% {
+    filter: drop-shadow(0 0 0px red);
+  }
 
-	50% {
-		filter: drop-shadow(0 0 16px red);
-	}
+  50% {
+    filter: drop-shadow(0 0 16px red);
+  }
 
-	100% {
-		filter: drop-shadow(0 0 0px red);
-	}
+  100% {
+    filter: drop-shadow(0 0 0px red);
+  }
 }

@@ -1,6 +1,6 @@
 export default {
-    SYSTEM_ID: "",
-    imageReplacerDamageType: [],
-    imageReplacerWeaponProperties: [],
-    imageReplacerIconizer: []
+  SYSTEM_ID: "",
+  imageReplacerDamageType: [],
+  imageReplacerWeaponProperties: [],
+  imageReplacerIconizer: [],
 };

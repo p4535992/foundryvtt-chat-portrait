@@ -19,67 +19,67 @@ import CONSTANTS from "./module/constants.js";
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once("init", async () => {
-    console.log(`${CONSTANTS.MODULE_NAME} | Initializing ${CONSTANTS.MODULE_NAME}`);
-    // Register custom module settings
-    registerSettings();
-    initHooks();
-    // Assign custom classes and constants here
-    // Register custom module settings
-    //registerSettings();
-    //fetchParams();
-    // Preload Handlebars templates
-    await preloadTemplates();
-    // Register custom sheets (if any)
+  console.log(`${CONSTANTS.MODULE_NAME} | Initializing ${CONSTANTS.MODULE_NAME}`);
+  // Register custom module settings
+  registerSettings();
+  initHooks();
+  // Assign custom classes and constants here
+  // Register custom module settings
+  //registerSettings();
+  //fetchParams();
+  // Preload Handlebars templates
+  await preloadTemplates();
+  // Register custom sheets (if any)
 });
 /* ------------------------------------ */
 /* Setup module							*/
 /* ------------------------------------ */
 Hooks.once("setup", function () {
-    // Do anything after initialization but before ready
-    //setupModules();
-    setupHooks();
-    //registerSettings();
+  // Do anything after initialization but before ready
+  //setupModules();
+  setupHooks();
+  //registerSettings();
 });
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
 Hooks.once("ready", () => {
-    // Do anything once the module is ready
-    // if (!game.modules.get("lib-wrapper")?.active && game.user.isGM){
-    // 	ui.notifications.error(`The '${MODULE_NAME}' module requires to install and activate the 'libWrapper' module.`);
-    // 	return;
-    // }
-    readyHooks();
+  // Do anything once the module is ready
+  // if (!game.modules.get("lib-wrapper")?.active && game.user.isGM){
+  // 	ui.notifications.error(`The '${MODULE_NAME}' module requires to install and activate the 'libWrapper' module.`);
+  // 	return;
+  // }
+  readyHooks();
 });
 /**
  * Initialization helper, to set API.
  * @param api to set to game module.
  */
 export function setApi(api) {
-    const data = game.modules.get(CONSTANTS.MODULE_NAME);
-    data.api = api;
+  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  data.api = api;
 }
 /**
  * Returns the set API.
  * @returns Api from games module.
  */
 export function getApi() {
-    const data = game.modules.get(CONSTANTS.MODULE_NAME);
-    return data.api;
+  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  return data.api;
 }
 /**
  * Initialization helper, to set Socket.
  * @param socket to set to game module.
  */
 export function setSocket(socket) {
-    const data = game.modules.get(CONSTANTS.MODULE_NAME);
-    data.socket = socket;
+  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  data.socket = socket;
 }
 /*
  * Returns the set socket.
  * @returns Socket from games module.
  */
 export function getSocket() {
-    const data = game.modules.get(CONSTANTS.MODULE_NAME);
-    return data.socket;
+  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  return data.socket;
 }

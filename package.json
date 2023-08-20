@@ -1,8 +1,8 @@
 {
-	"name": "better-rolltables",
-	"title": "Better Roll Tables",
-	"description": "Adding functionality to roll tables, especially to roll treasure and magic items",
-	"version": "1.9.3",
+	"name": "chat-portrait",
+	"title": "Chat Portrait",
+	"description": "Display the Actor's portrait and colors on the Chat Message.",
+	"version": "0.9.0",
 	"main": "module.js",
 	"license": "SEE LICENSE IN LICENSE",
 	"private": true,

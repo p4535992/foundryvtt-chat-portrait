@@ -3,17 +3,17 @@ import "./api.js";
 import { debug } from "./lib/lib.js";
 import { setSocket } from "../main.js";
 export const SOCKET_HANDLERS = {
-// TODO ADD SOCKET HANLDER
+  // TODO ADD SOCKET HANLDER
 };
 export let chatPortraitSocket;
 export function registerSocket() {
-    debug("Registered chatPortraitSocket");
-    if (chatPortraitSocket) {
-        return chatPortraitSocket;
-    }
-    //@ts-ignore
-    chatPortraitSocket = socketlib.registerModule(CONSTANTS.MODULE_NAME);
-    // TODO add some socket method ?
-    setSocket(chatPortraitSocket);
+  debug("Registered chatPortraitSocket");
+  if (chatPortraitSocket) {
     return chatPortraitSocket;
+  }
+  //@ts-ignore
+  chatPortraitSocket = socketlib.registerModule(CONSTANTS.MODULE_NAME);
+  // TODO add some socket method ?
+  setSocket(chatPortraitSocket);
+  return chatPortraitSocket;
 }

@@ -1,136 +1,136 @@
 {
-	"id": "chat-portrait",
-	"title": "Chat Portrait",
-	"description": "Display the Actor's portrait and colors on the Chat Message.",
-	"version": "0.9.0",
-	"authors": [
-		{
-			"name": "Shoyu Vanilla"
-		},
-		{
-			"name": "p4535992",
-			"url": "https://github.com/p4535992",
-			"discord": "",
-			"twitter": "",
-			"patreon": "",
-			"github": "p4535992",
-			"ko-fi": "",
-			"reddit": "",
-			"email": ""
-		}
-	],
-	"type": "module",
-	"socket": true,
-	"includes": [
-		"./assets/**",
-		"./lang/**",
-		"./languages/**",
-		"./scripts/**",
-		"./styles/**",
-		"./templates/**",
-		"./module.json",
-		"./README.md",
-		"./icons/**",
-		"./packs/**"
-	],
-	"media": [
-		{
-			"type": "icon",
-			"location": ""
-		},
-		{
-			"type": "cover",
-			"location": ""
-		},
-		{
-			"type": "screenshot",
-			"location": ""
-		},
-		{
-			"type": "background",
-			"location": "assets/parchment.jpg"
-		},
-		{
-			"type": "background",
-			"location": "assets/parchment-white.jpg"
-		}
-	],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "languages/en.json"
-		},
-		{
-			"lang": "ko",
-			"name": "한국어 (Korean)",
-			"path": "languages/ko.json"
-		},
-		{
-			"lang": "pt-BR",
-			"name": "Português (Brasil)",
-			"path": "languages/pt-BR.json"
-		},
-		{
-			"lang": "es",
-			"name": "Español",
-			"path": "languages/es.json"
-		},
-		{
-			"lang": "de",
-			"name": "Deutsch (German)",
-			"path": "languages/de.json"
-		},
-		{
-			"lang": "ja",
-			"name": "日本語",
-			"path": "languages/ja.json"
-		},
-		{
-			"lang": "fr",
-			"name": "Français",
-			"path": "languages/fr.json"
-		},
-		{
-			"lang": "it",
-			"name": "Italian",
-			"path": "languages/it.json"
-		}
-	],
-	"packs": [],
-	"systems": [],
-	"scripts": [],
-	"esmodules": ["main.js"],
-	"styles": [
-		"styles/chat-portrait-settings.css",
-		"styles/chat-portrait-style-a5e.css",
-		"styles/chat-portrait-style-generic.css",
-		"styles/chat-portrait-style-dnd5e.css",
-		"styles/chat-portrait-style-pf2e.css",
-		"styles/chat-portrait-style-swade.css",
-		"styles/dd.css"
-	],
-	"compatibility": {
-		"minimum": 10,
-		"verified": 10,
-		"maximum": 11
-	},
-	"manifestPlusVersion": "1.2.1",
-	"url": "https://github.com/p4535992/foundryvtt-chat-portrait",
-	"manifest": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/latest/download/module.json",
-	"download": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/latest/download/module.zip",
-	"readme": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/v0.9.0/README.md",
-	"changelog": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/v0.9.0/changelog.md",
-	"bugs": "https://github.com/p4535992/foundryvtt-chat-portrait/issues",
-	"allowBugReporter": true,
-	"relationships": {
-		"systems": [],
-		"requires": [],
-		"conflicts": [
-			{
-				"id": "simply-portraits",
-				"reason": "Redundancy of features you can disable 'Simply Portraits' module if you want"
-			}
-		]
-	}
+  "id": "chat-portrait",
+  "title": "Chat Portrait",
+  "description": "Display the Actor's portrait and colors on the Chat Message.",
+  "version": "0.9.0",
+  "authors": [
+    {
+      "name": "Shoyu Vanilla"
+    },
+    {
+      "name": "p4535992",
+      "url": "https://github.com/p4535992",
+      "discord": "",
+      "twitter": "",
+      "patreon": "",
+      "github": "p4535992",
+      "ko-fi": "",
+      "reddit": "",
+      "email": ""
+    }
+  ],
+  "type": "module",
+  "socket": true,
+  "includes": [
+    "./assets/**",
+    "./lang/**",
+    "./languages/**",
+    "./scripts/**",
+    "./styles/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md",
+    "./icons/**",
+    "./packs/**"
+  ],
+  "media": [
+    {
+      "type": "icon",
+      "location": ""
+    },
+    {
+      "type": "cover",
+      "location": ""
+    },
+    {
+      "type": "screenshot",
+      "location": ""
+    },
+    {
+      "type": "background",
+      "location": "assets/parchment.jpg"
+    },
+    {
+      "type": "background",
+      "location": "assets/parchment-white.jpg"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "ko",
+      "name": "한국어 (Korean)",
+      "path": "languages/ko.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "languages/pt-BR.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "languages/es.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch (German)",
+      "path": "languages/de.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "languages/ja.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "languages/fr.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "languages/it.json"
+    }
+  ],
+  "packs": [],
+  "systems": [],
+  "scripts": [],
+  "esmodules": ["module.js"],
+  "styles": [
+    "styles/chat-portrait-settings.css",
+    "styles/chat-portrait-style-a5e.css",
+    "styles/chat-portrait-style-generic.css",
+    "styles/chat-portrait-style-dnd5e.css",
+    "styles/chat-portrait-style-pf2e.css",
+    "styles/chat-portrait-style-swade.css",
+    "styles/dd.css"
+  ],
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 11
+  },
+  "manifestPlusVersion": "1.2.1",
+  "url": "https://github.com/p4535992/foundryvtt-chat-portrait",
+  "manifest": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.0/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.0/module.zip",
+  "readme": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/README.md",
+  "changelog": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/changelog.md",
+  "bugs": "https://github.com/p4535992/foundryvtt-chat-portrait/issues",
+  "allowBugReporter": true,
+  "relationships": {
+    "systems": [],
+    "requires": [],
+    "conflicts": [
+      {
+        "id": "simply-portraits",
+        "reason": "Redundancy of features you can disable 'Simply Portraits' module if you want"
+      }
+    ]
+  }
 }

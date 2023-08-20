@@ -1,13 +1,12 @@
 export class ImageReplacerData {
-    constructor() {
-        this.iconMainReplacer = "";
-        this.iconsDamageType = [];
-    }
+  constructor() {
+    this.iconMainReplacer = "";
+    this.iconsDamageType = [];
+  }
 }
 export class ChatPortraitCustomData {
-    constructor() {
-        this.customIconPortraitImage = "";
-    }
+  constructor() {
+    this.customIconPortraitImage = "";
+  }
 }
-export class ImageReplaceVoiceData {
-}
+export class ImageReplaceVoiceData {}

@@ -1,91 +1,91 @@
 .message img.chat-portrait-message-portrait-dnd5e {
-	flex: 0 0 0px;
-	margin-right: 5px;
-	margin-bottom: 3px;
-	/* object-fit: cover; */
+  flex: 0 0 0px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  /* object-fit: cover; */
 }
 
 .chat-portrait-playerName-dnd5e {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 .chat-portrait-playerName-dnd5e::before {
-	content: " [";
+  content: " [";
 }
 
 .chat-portrait-playerName-dnd5e::after {
-	content: "]";
+  content: "]";
 }
 
 .chat-portrait-text-size-name-dnd5e {
-	display: flex;
-	margin: auto;
+  display: flex;
+  margin: auto;
 }
 
 .chat-portrait-image-size-name-dnd5e {
-	/* display: flex;
+  /* display: flex;
   margin: auto; */
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .chat-portrait-indicator-dnd5e {
-	display: inline-block;
-	margin: 0 3px 0 0;
-	padding: 0 3px;
-	line-height: 1rem;
-	border: 1px solid #999;
-	border-radius: 3px;
-	background: #999;
+  display: inline-block;
+  margin: 0 3px 0 0;
+  padding: 0 3px;
+  line-height: 1rem;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #999;
 }
 
 .chat-portrait-whisper-to-dnd5e * {
-	display: inline-block;
-	margin: 1px 3px 1px 0;
-	padding: 0 3px;
-	line-height: 1rem;
-	border: 1px solid #999;
-	border-radius: 3px;
-	background: #999;
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  padding: 0 3px;
+  line-height: 1rem;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #999;
 }
 
 .message .chat-portrait-message-header-dnd5e {
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 .message .chat-portrait-message-header-dnd5e .message-metadata {
-	/* flex: 0 0 auto; */
-	margin-left: 1rem;
+  /* flex: 0 0 auto; */
+  margin-left: 1rem;
 }
 
 .message .chat-portrait-message-header-dnd5e .chat-portrait-whisper-to-dnd5e {
-	line-height: 1rem;
-	margin-bottom: 0.5rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .message .chat-portrait-message-header-dnd5e {
-	/* line-height: 0px !important; */
-	margin: 0;
-	padding: 0;
-	border: none;
+  /* line-height: 0px !important; */
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .message .chat-portrait-text-header-name-dnd5e {
-	margin-left: inherit;
-	padding: 0;
-	border: none;
-	white-space: break-spaces !important;
-	line-height: 20px;
-	/* color: var(--color-text-dark-secondary); */
-	align-items: center;
+  margin-left: inherit;
+  padding: 0;
+  border: none;
+  white-space: break-spaces !important;
+  line-height: 20px;
+  /* color: var(--color-text-dark-secondary); */
+  align-items: center;
 }
 
 .message .chat-portrait-message-content-dnd5e {
-	margin: 0;
-	padding: 0;
-	border: none;
-	line-height: 20px;
-	/* color: var(--color-text-dark-secondary); */
-	align-items: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 20px;
+  /* color: var(--color-text-dark-secondary); */
+  align-items: center;
 }
 
 /* .chat-portrait-text-size-name-dnd5e .chat-portrait-system-dnd5e {

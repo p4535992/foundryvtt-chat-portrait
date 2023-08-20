@@ -10,15 +10,15 @@ import swade from "./systems/swade.js";
  * FOLLOW THE CONVENTION IN THE D&D 5E SYSTEM FILE
  */
 export const SYSTEMS = {
-    get DATA() {
-        return {
-            // ↓ ADD SYSTEMS HERE ↓
-            a5e,
-            dnd5e,
-            generic,
-            pf2e,
-            swade
-            // ↑ ADD SYSTEMS HERE ↑
-        }?.[game.system.id];
-    }
+  get DATA() {
+    return {
+      // ↓ ADD SYSTEMS HERE ↓
+      a5e,
+      dnd5e,
+      generic,
+      pf2e,
+      swade,
+      // ↑ ADD SYSTEMS HERE ↑
+    }?.[game.system.id];
+  },
 };
