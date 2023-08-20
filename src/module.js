@@ -13,7 +13,7 @@
 // Import TypeScript modules
 import { registerSettings } from "./module/settings.js";
 import { preloadTemplates } from "./module/preloadTemplates.js";
-import { initHooks, readyHooks, setupHooks } from "./module/module.js";
+import { initHooks, readyHooks, setupHooks } from "./module/main.js";
 import CONSTANTS from "./module/constants.js";
 /* ------------------------------------ */
 /* Initialize module					*/

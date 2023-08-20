@@ -1,7 +1,7 @@
 import CONSTANTS from "./constants.js";
 import "./api.js";
 import { debug } from "./lib/lib.js";
-import { setSocket } from "../main.js";
+import { setSocket } from "../module.js";
 export const SOCKET_HANDLERS = {
   // TODO ADD SOCKET HANLDER
 };

@@ -1,7 +1,7 @@
 import "./lib/lib.js";
 import { ChatPortrait } from "./ChatPortrait.js";
 import CONSTANTS from "./constants.js";
-import { setApi } from "../main.js";
+import { setApi } from "../module.js";
 import API from "./api.js";
 import { registerSocket } from "./socket.js";
 import { initSpeakingAs, overrideMessage, updateSpeaker } from "./apps/speaking-as.js";
