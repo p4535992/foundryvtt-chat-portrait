@@ -44,8 +44,8 @@ Now the community can "come" to me a little, testing the css on their browser an
 So the steps to follow to create or update a system are:
 
 1) Creation or update of the style file in the [styles](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles) directory the file must respect the `chat-portrait-style-XXX.css` nomenclature where XXX is the system id e.g. "dnd5e".
-2) Creation or update of the typescript file for the mapping of the "ImageReplacer" feature if you do not want to use this feature create the file as empty and I'll take care of integrating the version with the empty arrays. **In the minimal case** you just need to copy the contents of the file [generic.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems/generic.ts) and insert the id of your system in the property "SYSTEM_ID" remember that you have to rename the file with the system id.
-3) Insert the system if absent in the configuration file [systems.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/module/systems.ts)
+2) Creation or update of the typescript file for the mapping of the "ImageReplacer" feature if you do not want to use this feature create the file as empty and I'll take care of integrating the version with the empty arrays. **In the minimal case** you just need to copy the contents of the file [generic.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/scripts/systems/generic.js) and insert the id of your system in the property "SYSTEM_ID" remember that you have to rename the file with the system id.
+3) Insert the system if absent in the configuration file [systems.ts](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/scripts/systems.js)
 4) Open a pr on contact me in some way, by open a issue ecc.
 
 NOTE: You can use other modules like [Custom CSS](https://github.com/cswendrowski/FoundryVTT-Custom-CSS) for manage the css classes, the module help you by defining two css classes you can customize for the purpose of this module `chat-portrait-text-size-name` for the text chat message (_the 'Setup additional custom styling on the text chat message' setting_) and `chat-portrait-image-size-name` for the image prepend the text chat message (_the 'Setup additional custom styling on the image prepend the text chat message' setting_)
@@ -79,7 +79,7 @@ const chatPortraitCustomData = {
 }
 
 /// WARNING: internal data - do not use if possible
-// data schema is defined in: src/module/ChatPortraitModels.ts (or module/ChatPortraitModels.js)
+// data schema is defined in: src/scripts/ChatPortraitModels.ts (or scripts/ChatPortraitModels.js)
 ```
 
 ### Example

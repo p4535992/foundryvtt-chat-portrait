@@ -11,10 +11,10 @@
  */
 // Import JavaScript modules
 // Import TypeScript modules
-import { registerSettings } from "./module/settings.js";
-import { preloadTemplates } from "./module/preloadTemplates.js";
-import { initHooks, readyHooks, setupHooks } from "./module/main.js";
-import CONSTANTS from "./module/constants.js";
+import { registerSettings } from "./scripts/settings.js";
+import { preloadTemplates } from "./scripts/preloadTemplates.js";
+import { initHooks, readyHooks, setupHooks } from "./scripts/main.js";
+import CONSTANTS from "./scripts/constants.js";
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */

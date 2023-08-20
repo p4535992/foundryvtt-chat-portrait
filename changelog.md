@@ -64,7 +64,7 @@
 
 - Some css tweak
 
-### 0.9.0
+### 0.9.0-1
 
 - Upgrade fvtt11
 
