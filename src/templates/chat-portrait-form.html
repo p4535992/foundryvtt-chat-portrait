@@ -206,12 +206,12 @@
             <p class="notes">{{localize "chat-portrait.settings.displaySettingWhisperToOther.hint"}}</p>
         </div>
 
+        <!--
         <div class="form-group">
             <label>{{localize "chat-portrait.settings.displayUnknown.name"}}</label>
             <select name="displayUnknown" style="flex: 1;">
                 {{#select displayUnknownList}}
                 {{#each displayUnknownList}}
-                <!--<option value="{{@index}}" {{#if this.selected}}selected="selected" {{/if}}>{{this.value}}</option>-->
                 <option value="{{this.value}}" {{#if this.selected}}selected="selected" {{/if}}>{{this.value}}</option>
                 {{/each}}
                 {{/select}}
@@ -233,15 +233,13 @@
 
         <div class="form-group">
             <label>{{localize "chat-portrait.settings.displayUnknownPlaceHolderItemIcon.name"}}</label>
-            <!--
-            <input type="text" name="displayUnknownPlaceHolderItemIcon" value="{{displayUnknownPlaceHolderItemIcon}}" style="flex: 1; text-align: left;"/>
-            -->
             <div class="form-fields">
                 {{filePicker target="displayUnknownPlaceHolderItemIcon" type="image"}}
                 <input class="image" type="text" name="displayUnknownPlaceHolderItemIcon" placeholder="path/image.png" value="{{displayUnknownPlaceHolderItemIcon}}"/>
             </div>
             <p class="notes">{{localize "chat-portrait.settings.displayUnknownPlaceHolderItemIcon.hint"}}</p>
         </div>
+        -->
 
         <div class="form-group">
             <label>{{localize "chat-portrait.settings.customStylingMessageSystem.name"}}</label>

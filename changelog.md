@@ -1,10 +1,16 @@
-### 0.9.0 
+### 0.9.2
+
+- Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/33
+- Removed the old unknown feature in favor of other external module like "anonymus" and "archon"
+- Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/35
+
+### 0.9.0-1
 
 - First release for v11
 
-### 0.8.56 
+### 0.8.56
 
-- Update labels 
+- Update labels
 
 ### 0.8.40-41-42-423-44-45
 
@@ -14,17 +20,17 @@
 
 - Synced with "Speaking As" project
 
-### 0.8.38 
+### 0.8.38
 
-- Little css fix on pf2e ?? 
-- Try to Bug fix : https://github.com/p4535992/foundryvtt-chat-portrait/issues/22 
-- Try to Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/25 
+- Little css fix on pf2e ??
+- Try to Bug fix : https://github.com/p4535992/foundryvtt-chat-portrait/issues/22
+- Try to Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/25
 
 ### 0.8.37
 
 - Little updates
 
-### 0.8.36 
+### 0.8.36
 
 - Little Pathfinder2e css fix
 
@@ -395,6 +401,8 @@ background color with narrator tools
 
 - Add another module setting for use a custom styling for the text and resolved this issue [Font Class of the Styling](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait/issues/49)
 -
+
+
 ### 0.3.5
 
 - Add css class for a "better"  display of the text on the chat

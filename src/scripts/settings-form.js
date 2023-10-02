@@ -115,30 +115,30 @@ export class SettingsForm {
   static setDisplayPlayerName(value) {
     game.settings.set(CONSTANTS.MODULE_NAME, "displayPlayerName", value);
   }
-  static getDisplayUnknown() {
-    return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknown");
-  }
-  static setDisplayUnknown(value) {
-    game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknown", value);
-  }
-  static getDisplayUnknownPlaceHolderActorName() {
-    return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName");
-  }
-  static setDisplayUnknownPlaceHolderActorName(value) {
-    game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", value);
-  }
-  static getDisplayUnknownPlaceHolderItemName() {
-    return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName");
-  }
-  static setDisplayUnknownPlaceHolderItemName(value) {
-    game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", value);
-  }
-  static getDisplayUnknownPlaceHolderItemIcon() {
-    return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon");
-  }
-  static setDisplayUnknownPlaceHolderItemIcon(value) {
-    game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", value);
-  }
+//   static getDisplayUnknown() {
+//     return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknown");
+//   }
+//   static setDisplayUnknown(value) {
+//     game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknown", value);
+//   }
+//   static getDisplayUnknownPlaceHolderActorName() {
+//     return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName");
+//   }
+//   static setDisplayUnknownPlaceHolderActorName(value) {
+//     game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", value);
+//   }
+//   static getDisplayUnknownPlaceHolderItemName() {
+//     return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName");
+//   }
+//   static setDisplayUnknownPlaceHolderItemName(value) {
+//     game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", value);
+//   }
+//   static getDisplayUnknownPlaceHolderItemIcon() {
+//     return game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon");
+//   }
+//   static setDisplayUnknownPlaceHolderItemIcon(value) {
+//     game.settings.set(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", value);
+//   }
   static getDisplaySettingOTHER() {
     return game.settings.get(CONSTANTS.MODULE_NAME, "displaySettingOTHER");
   }

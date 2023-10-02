@@ -22,31 +22,7 @@ export class ChatPortraitChatCard extends ChatMessage {
    * @private
    */
   updateBinding(message, html, speakerInfo, imageReplacer) {
-    // IMPLEMENTATION WARNING: DO NOT STORE html into the class properties (NO this.html AT ALL)
-    // Foundry will sometimes call renderChatMessage() multiple times with un-bound HTML,
-    // and we can't do anything except rely on closures to handle those events.
-    // this.id = message.id;
     this.speaker = game.actors?.get(message.speaker.actor);
-    // this.roll = message?.roll ? message?.roll : message?.document?.roll;
-    //message.BetterRoll = this.roll;
-    // Hide Save DCs
-    // const actor = this.speaker;
-    // if ((!actor && !game.user?.isGM) || actor?.permission != 3) {
-    // 	html.find(".hideSave").text(i18n("displayUnknownPlaceHolderActorName"));
-    // }
-    // Setup the events for card buttons (the permanent ones, not the hover ones)
-    //this._setupCardButtons(html);
-    // Setup hover buttons when hovered (for optimization)
-    // Just like with html, we cannot save hoverInitialized to the object
-    // let hoverInitialized = false;
-    // html.hover(async () => {
-    // 	if (!hoverInitialized) {
-    // 		hoverInitialized = true;
-    // 		await this._setupOverlayButtons(html);
-    // 		this._onHover(html);
-    // 		console.log("BetterRolls5e | Hover Buttons Initialized");
-    // 	}
-    // })
     ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
   }
   /**

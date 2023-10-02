@@ -242,7 +242,8 @@ ChatLink.hoverIn = (event, speaker) => {
       token._object._onHoverIn(event);
       ChatLink.lastHoveredToken = token;
     } else {
-      warn(`Can't hover in the chat portrait of the token '${token}'`);
+        // Bug fix : https://github.com/p4535992/foundryvtt-chat-portrait/issues/35
+    //   warn(`Can't hover in the chat portrait of the token '${token}'`);
     }
   }
 };

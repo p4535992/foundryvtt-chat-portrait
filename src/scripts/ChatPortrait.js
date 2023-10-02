@@ -510,12 +510,10 @@ export class ChatPortrait {
       if (ChatPortrait.settings.textSizeName > 0) {
         const size = ChatPortrait.settings.textSizeName;
         messageSender.style.fontSize = size + "px";
-        if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-          messageSender.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
-        }
-      } else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-        messageSender.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
       }
+    //   if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+    //     messageSender.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
+    //   }
       // TODO can't remember why i'm doing this
       // if (!headerTextElement.classList.contains(`chat-portrait-text-size-name-${gameSystemId}`)) {
       // 	headerTextElement.classList.add(`chat-portrait-text-size-name-${gameSystemId}`);
@@ -525,12 +523,10 @@ export class ChatPortrait {
       if (ChatPortrait.settings.textSizeName > 0) {
         const size = ChatPortrait.settings.textSizeName;
         headerTextElement.style.fontSize = size + "px";
-        if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-          headerTextElement.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
-        }
-      } else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-        headerTextElement.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
       }
+    //   if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+    //     headerTextElement.innerText = ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'Unknown Actor';
+    //   }
       // Add click listener to image and text
       ChatLink.prepareEventImage(chatMessage, html, speaker, gameSystemId);
       // Update size item image by settings
@@ -549,41 +545,38 @@ export class ChatPortrait {
             elementItemImage.width = size;
             elementItemImage.height = size;
           }
-          if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-            elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
-          }
-          if (!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
-            elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
-          }
-        }
-      } else if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-        for (let i = 0; i < elementItemImageList.length; i++) {
-          const elementItemImage = elementItemImageList[i];
-          if (!elementItemImage) {
-            continue;
-          }
-          elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
-          const size = ChatPortrait.settings.portraitSizeItem;
-          if (size && size > 0) {
-            elementItemImage.width = size;
-            elementItemImage.height = size;
-          }
           if (!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
             elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
           }
         }
       }
       // Update hide info about the weapon
-      if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-        for (let i = 0; i < elementItemNameList.length; i++) {
-          const elementItemName = elementItemNameList[i];
-          elementItemName.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName; //'Unknown Weapon';
-        }
-        for (let i = 0; i < elementItemContentList.length; i++) {
-          const elementItemContent = elementItemContentList[i];
-          elementItemContent.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName; //'Unknown Weapon';
-        }
-      }
+    //   if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+    //     for (let i = 0; i < elementItemImageList.length; i++) {
+    //       const elementItemImage = elementItemImageList[i];
+    //       if (!elementItemImage) {
+    //         continue;
+    //       }
+    //       elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
+    //       const size = ChatPortrait.settings.portraitSizeItem;
+    //       if (size && size > 0) {
+    //         elementItemImage.width = size;
+    //         elementItemImage.height = size;
+    //       }
+    //       if (!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
+    //         elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
+    //       }
+    //     }
+    //
+    //     for (let i = 0; i < elementItemNameList.length; i++) {
+    //       const elementItemName = elementItemNameList[i];
+    //       elementItemName.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName; //'Unknown Weapon';
+    //     }
+    //     for (let i = 0; i < elementItemContentList.length; i++) {
+    //       const elementItemContent = elementItemContentList[i];
+    //       elementItemContent.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName; //'Unknown Weapon';
+    //     }
+    //   }
       // Check for Ability/Skills/Tools/Saving Throw for avoid the double portrait
       if (elementItemNameList.length > 0) {
         for (let i = 0; i < elementItemNameList.length; i++) {
@@ -732,7 +725,7 @@ export class ChatPortrait {
                 }
                 if (!elementItemImage.src || elementItemImage.src?.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
                   // TODO DA RIVEDERE
-                  elementItemImage.src = ""; // ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
+                  elementItemImage.src = "";
                   if (messageHtmlContent) {
                     // PATCH MODULE MERCHANT SHEET
                     const itemName =
@@ -814,7 +807,7 @@ export class ChatPortrait {
                     (!elementItemImage.src || elementItemImage.src?.includes(CONSTANTS.DEF_TOKEN_IMG_NAME))
                   ) {
                     // TODO DA RIVEDERE
-                    elementItemImage.src = ""; // ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
+                    elementItemImage.src = "";
                     if (messageHtmlContent) {
                       // PATCH MODULE MERCHANT SHEET
                       const itemName =
@@ -1029,9 +1022,9 @@ export class ChatPortrait {
                 elementItemImage.width = size;
                 elementItemImage.height = size;
               }
-              if (!elementItemImage.src || elementItemImage.src?.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
-                elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
-              }
+            //   if (!elementItemImage.src || elementItemImage.src?.includes(CONSTANTS.DEF_TOKEN_IMG_NAME)) {
+            //     elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
+            //   }
               if (elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)) {
                 elementItemImage.classList.remove(`chat-portrait-message-portrait-${gameSystemId}`);
               }
@@ -1050,29 +1043,29 @@ export class ChatPortrait {
               if (ChatPortrait.useImageReplacer(html)) {
                 // REMOVED SEEM OVERKILL
                 /*
-                                const elementItemImage:HTMLImageElement = <HTMLImageElement> document.createElement("img");
-                                if(!elementItemImage){
-                                    continue;
-                                }
-                                const size: number = ChatPortrait.settings.portraitSizeItem;
-                                if(size && size > 0){
-                                    elementItemImage.width = size;
-                                    elementItemImage.height = size;
-                                }
-                                if( !doNotImageReplacer && (!elementItemImage.src || elementItemImage.src?.includes(CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME))){
-                                    elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
-                                }
-                                if(!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)){
-                                    elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
-                                }
-                                if(!isRollTable) elementItemText.prepend(elementItemImage);
-                                */
+                const elementItemImage:HTMLImageElement = <HTMLImageElement> document.createElement("img");
+                if(!elementItemImage){
+                    continue;
+                }
+                const size: number = ChatPortrait.settings.portraitSizeItem;
+                if(size && size > 0){
+                    elementItemImage.width = size;
+                    elementItemImage.height = size;
+                }
+                if( !doNotImageReplacer && (!elementItemImage.src || elementItemImage.src?.includes(CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME))){
+                    elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon;
+                }
+                if(!elementItemImage.classList.contains(`chat-portrait-message-portrait-${gameSystemId}`)){
+                    elementItemImage.classList.add(`chat-portrait-message-portrait-${gameSystemId}`);
+                }
+                if(!isRollTable) elementItemText.prepend(elementItemImage);
+                */
               }
             }
           }
-          if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
-            elementItemText.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName;
-          }
+        //   if (ChatPortrait.shouldOverrideMessageUnknown(messageData)) {
+        //     elementItemText.innerText = ChatPortrait.settings.displayUnknownPlaceHolderItemName;
+        //   }
         }
       }
       ChatPortrait.setCustomStylingText(html, messageData, authorColor, gameSystemId);
@@ -1509,10 +1502,10 @@ export class ChatPortrait {
       displaySetting: SettingsForm.getDisplaySetting(),
       useAvatarImage: SettingsForm.getUseAvatarImage(),
       displayPlayerName: SettingsForm.getDisplayPlayerName(),
-      displayUnknown: SettingsForm.getDisplayUnknown(),
-      displayUnknownPlaceHolderActorName: SettingsForm.getDisplayUnknownPlaceHolderActorName(),
-      displayUnknownPlaceHolderItemName: SettingsForm.getDisplayUnknownPlaceHolderItemName(),
-      displayUnknownPlaceHolderItemIcon: SettingsForm.getDisplayUnknownPlaceHolderItemIcon(),
+      // displayUnknown: SettingsForm.getDisplayUnknown(),
+      // displayUnknownPlaceHolderActorName: SettingsForm.getDisplayUnknownPlaceHolderActorName(),
+      // displayUnknownPlaceHolderItemName: SettingsForm.getDisplayUnknownPlaceHolderItemName(),
+      // displayUnknownPlaceHolderItemIcon: SettingsForm.getDisplayUnknownPlaceHolderItemIcon(),
       displaySettingOTHER: SettingsForm.getDisplaySettingOTHER(),
       displaySettingOOC: SettingsForm.getDisplaySettingOOC(),
       displaySettingIC: SettingsForm.getDisplaySettingIC(),
@@ -1557,10 +1550,10 @@ export class ChatPortrait {
       displaySetting: "allCards",
       useAvatarImage: false,
       displayPlayerName: false,
-      displayUnknown: "none",
-      displayUnknownPlaceHolderActorName: "Unknown Actor",
-      displayUnknownPlaceHolderItemName: "Unknown Item",
-      displayUnknownPlaceHolderItemIcon: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+    //   displayUnknown: "none",
+    //   displayUnknownPlaceHolderActorName: "Unknown Actor",
+    //   displayUnknownPlaceHolderItemName: "Unknown Item",
+    //   displayUnknownPlaceHolderItemIcon: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
       displaySettingOTHER: true,
       displaySettingOOC: true,
       displaySettingIC: true,
@@ -2065,6 +2058,7 @@ ChatPortrait.getPrototypeTokenNameFromSpeaker = function (speaker) {
   return speaker.alias;
 };
 ChatPortrait.getTokenNameFromSpeaker = function (speaker) {
+    // TODO token before actor ?
   if (speaker.token) {
     const token = ChatPortrait.getTokenFromSpeaker(speaker);
     if (token) {
@@ -2074,6 +2068,9 @@ ChatPortrait.getTokenNameFromSpeaker = function (speaker) {
   if (speaker.actor) {
     const actor = game.actors?.get(speaker.actor);
     if (actor) {
+        if(game.modules.get('anonymous')?.active) {
+            return game.modules.get('anonymous').api.getName(actor);
+        }
       //@ts-ignore
       if (actor?.prototypeToken) {
         //@ts-ignore
@@ -2089,7 +2086,8 @@ ChatPortrait.getTokenNameFromSpeaker = function (speaker) {
   if (game.user?.isGM) {
     return speaker.alias;
   }
-  return ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'???';
+  // return ChatPortrait.settings.displayUnknownPlaceHolderActorName; //'???';
+  return "";
 };
 ChatPortrait.getTokenFromSpeaker = function (speaker) {
   let token = null;
@@ -2268,6 +2266,7 @@ ChatPortrait.shouldOverrideMessageUnknown = function (message) {
     actor = ChatPortrait.getActorFromSpeaker(speaker);
     mytype = actor?.type;
   }
+  /* REMOVED IN FAVOR OF ANONYMUS MODULE
   const setting = game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknown");
   if (setting !== "none") {
     //const user = game.users.get(message.user);
@@ -2293,6 +2292,12 @@ ChatPortrait.shouldOverrideMessageUnknown = function (message) {
       }
     } else {
       error("Impossibile to get message user");
+    }
+  }
+  */
+  if(game.modules.get('anonymous')?.active) {
+    if(!game.modules.get('anonymous').api.playersSeeName(actor)){
+        return true;
     }
   }
   return false;

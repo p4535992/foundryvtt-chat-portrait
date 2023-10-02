@@ -1,8 +1,8 @@
 # Chat Portrait
 
-![Latest Release Download Count](https://img.shields.io/github/downloads/p4535992/foundryvtt-chat-portrait/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) 
+![Latest Release Download Count](https://img.shields.io/github/downloads/p4535992/foundryvtt-chat-portrait/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge)
 
-[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fchat-portrait&colorB=006400&style=for-the-badge)](https://forge-vtt.com/bazaar#package=chat-portrait) 
+[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fchat-portrait&colorB=006400&style=for-the-badge)](https://forge-vtt.com/bazaar#package=chat-portrait)
 
 ![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fp4535992%2Ffoundryvtt-chat-portrait%2Fmaster%2Fsrc%2Fmodule.json&label=Foundry%20Version&query=$.compatibility.verified&colorB=orange&style=for-the-badge)
 
@@ -37,7 +37,7 @@ To install this module manually:
 
 ## How help to make the Integration multisystem for my system ?
 
-Since version 0.7.0, the module has been rewritten to allow for each system to have a css file to define the style and a description file of the mapping for the "ImageReplacer" feature. 
+Since version 0.7.0, the module has been rewritten to allow for each system to have a css file to define the style and a description file of the mapping for the "ImageReplacer" feature.
 
 Now the community can "come" to me a little, testing the css on their browser and help me understand which combination is the best, i file css si trovano nella directory degli [styles](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles), here a example for the [dnd5e system](https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/src/styles/chat-portrait-style-dnd5e.css)
 
@@ -54,7 +54,7 @@ The module will continue to allow the use of custom CSS if desired.
 
 ## Known Issue\Limitation
 
-- Integration multisystem it's very hard to find the time for this, for now i'm supporting only the system i use or ask by issue request, but anyone can point out what system has problem. i have prepared  a base code for support multysistem, i will not actively developing on the short term. 
+- Integration multisystem it's very hard to find the time for this, for now i'm supporting only the system i use or ask by issue request, but anyone can point out what system has problem. i have prepared  a base code for support multysistem, i will not actively developing on the short term.
 
 - Better integration with midi-qol and CUB for their mechanism of Unknown creature, but there is no conflict because it's just css and html modification on the chat message so you can use without any issue beyween this modules
 
@@ -75,7 +75,7 @@ const chatPortraitCustomData = {
     // [DEPRECATED use instead the 'customImageReplacerData'] Customize your own imageReplacer (Record<string,string>)
     customImageReplacer,
     // Customize your own imageReplacer ( array of {  name: string; icon: string;})
-    customImageReplacerData: imageReplacerData, 
+    customImageReplacerData: imageReplacerData,
 }
 
 /// WARNING: internal data - do not use if possible
@@ -108,11 +108,11 @@ Use your own code for give me a customized image reference to put on the portrai
 
 ```js
 
-const chatPortraitCustomData = { 
+const chatPortraitCustomData = {
   customIconPortraitImage: "http://myimageurl/test.png", // url or file string reference to the image portrait path
   customImageReplacer: imageReplacer, // [DEPRECATED use instead the 'customImageReplacerData'] Customize your own imageReplacer (Record<string,string>)
   customImageReplacerData: imageReplacerData, // Customize your own imageReplacer ( array of {  name: string; icon: string;})
-}; 
+};
 
 Hooks.call('ChatPortraitReplaceData', chatPortraitCustomData, chatMessage);
 
@@ -127,13 +127,13 @@ How you can use this on your code....
 ```js
 
 Hooks.on('ChatPortraitReplaceData', (chatPortraitCustomData, chatMessage) => {
-   
+
     // Set your own image
 
     chatPortraitCustomData.customIconPortraitImage = ......
 
     // DO SOMETHING AND RETURN A NEW chatPortraitCustomData
-    
+
     return chatPortraitCustomData; // this is blabla
 })
 
@@ -172,16 +172,16 @@ any other system need some fed back from the community
 - **Use Token Image**: Use the actor's Token image instead of the actor's standard image. Note: In the event the token associated with a chat message no longer exists, it will use the actor's prototype token's name. In the event the actor no longer exists, it will try to get the avatar image of the player/GM, and the original chat message's alias (usually the actor's name) to the GM.
 
 - **Do not use Token Image with  the following type of actors** : (e.g. character, npc, ecc. separate by character ','). Remember the actor type is case sensitive. Make sense only with the setting 'Use Token Image' set to true",
- 
+
 - **Use Token Name**: Use the actor's Token name instead of the actor's standard name.
 
 - **Use Avatar Player Image: Use the player's Avatar image instead of the token/actor standard image**. if true ignore the first option if a avatar image is not found is going back to the standard actor/token image of the 'mistery man', this option is ignored if you are the GM or else because everything you click will have the avatar image of the GM expect for the OOC chat message. NOTE: Every OOC message by default activate this mode because make sense no token must be associated with a OOC message even for player.
 
 ![avatar](./wiki/images/use_image_avatar_feature.png)
 
-- **Apply chat portrait on combat tracker**: Apply the recovery of the image on the combat tracker. 
+- **Apply chat portrait on combat tracker**: Apply the recovery of the image on the combat tracker.
 
-  - If you are a GM and the combatant is not owned from any player the 'Use token image' feature is enabled anyway. 
+  - If you are a GM and the combatant is not owned from any player the 'Use token image' feature is enabled anyway.
   - If you are a GM the 'Use Avatar Image feature' is ignored and the 'Use token image' feature is enabled anyway for all the tokens not owned from any player.
   - If you are NOT a GM and is enable the 'Use avatar image' feature and the player owned more than a token in combat the image is the same (the avatar image of the player)
 
@@ -236,29 +236,12 @@ any other system need some fed back from the community
 - **Display chat message of type IC**: Configure custom styling for message of type IC
 
 - **Display chat message of type EMOTE**: Configure custom styling for message of type EMOTE
-  
+
 - **Display chat message of type WHISPER**: Configure custom styling for message of type WHISPER
 
 - **Display chat message of type ROLL**: Configure custom styling for message of type ROLL
- 
+
 - **Display chat message of whisper to other**: Configure custom styling for message of whisper to other
-
-- **Configure which cards should use the unknown custom styling, and which ones should be left as default. Changing this may require you to refresh your window**:
-  - allCards : Affect every message.
-  - selfAndGM : Affect own messages and GM messages.
-  - self : Only affect own messages.
-  - gm : Only affect GM messages.
-  - player : Only affect player messages.
-  - none : Don't affect any messages.
-  - [DEVELOPING] onlyNpc: Affect any messages done from a NPC (need a compatible system with the 'npc' type like D&D5).
-
-![Unknown](./wiki/images/unknown_actor_and_weapon_feature.png)
-
-- **Placeholder for the label unknown Actor name**: by default is 'Unknown Actor' depends on the 'Display Unknown' setting
-
-- **Placeholder for the label unknown item name**: by default is 'Unknown Item' depends on the 'Display Unknown' setting
-
-- **Placeholder for the label unknown item icon**: by default is 'modules/chat-portrait/assets/inv-unidentified.png' depends on the 'Display Unknown' setting
 
 - **[CSS CUSTOM SETTING] Setup additional custom styling on the text chat message** : Setup additional custom styling on the text chat message with CSS language (note override any other prior property)
 

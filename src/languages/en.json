@@ -91,7 +91,7 @@
   "chat-portrait.settings.displayUnknown.choice.gm": "Only affect GM messages.",
   "chat-portrait.settings.displayUnknown.choice.player": "Only affect player messages.",
   "chat-portrait.settings.displayUnknown.choice.none": "Don't affect any messages.",
-  "chat-portrait.settings.displayUnknown.choice.onlyNpc": "Affect any messages done from a NPC (need a compatible system with the 'npc' type like D&D5).",
+  "chat-portrait.settings.displayUnknown.choice.onlyNpc": "Affect NPC messages (need compatible system with the 'npc' type like D&D5).",
   "chat-portrait.settings.displayUnknownPlaceHolderActorName.name": "Placeholder for the label unknown Actor name",
   "chat-portrait.settings.displayUnknownPlaceHolderActorName.hint": "Placeholder for the label unknown Actor name by default is 'Unknown Actor' depends on the 'Display Unknown' setting",
   "chat-portrait.settings.displayUnknownPlaceHolderItemName.name": "Placeholder for the label unknown item name",

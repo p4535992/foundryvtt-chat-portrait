@@ -102,7 +102,7 @@
 	"chat-portrait.settings.displayUnknown.choice.gm": "N'affecte que les messages du MJ.",
 	"chat-portrait.settings.displayUnknown.choice.player": "Affecte seulement les message du joueur.",
 	"chat-portrait.settings.displayUnknown.choice.none": "N'affecte aucun message.",
-	"chat-portrait.settings.displayUnknown.choice.onlyNpc": "Affecter tous les messages faits à partir d'un PNJ (besoin d'un système compatible avec le type 'PNJ' comme D&D5).",
+	"chat-portrait.settings.displayUnknown.choice.onlyNpc": "Affecter PNJ messages (besoin d'un système compatible avec le type 'PNJ' comme D&D5).",
 	"chat-portrait.settings.useTokenName.name": "Utiliser le nom du token",
 	"chat-portrait.settings.displaySettingOTHER.name": "Afficher le message de discussion de type AUTRES",
 	"chat-portrait.settings.displaySettingOOC.hint": "Configurer un style personnalisé pour les messages de type OOC",
