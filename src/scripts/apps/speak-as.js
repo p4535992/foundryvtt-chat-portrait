@@ -44,13 +44,15 @@ export const readySpeakAs = function () {
         if (!tokenTarget) {
           debug(`No target is been found`);
           // targets.speaker.token = "Speak As zzzz";
-          let actorTarget = game.actors?.find((actor) => {
+          let myactors = game.actors.filter((actor) => actor.permission >= 2);
+          let actorTarget = myactors?.find((actor) => {
             return (
               actor?.name === namelist.options[namelist.selectedIndex].text ||
               actor?.id === namelist.options[namelist.selectedIndex].value
             );
           });
           if (actorTarget) {
+            //targets.speaker.token = actorTarget.id;
             targets.speaker.actor = actorTarget.id;
           }
           targets.speaker.alias = namelist.options[namelist.selectedIndex].text;
@@ -127,11 +129,31 @@ export const renderSidebarTabSpeakAs = function (dialog, $element, targets) {
   $("#namelist").attr("title", "Speak As……");
   $("#speakerSwitch").attr("title", "Disable Speak As…… if unchecked");
 };
+function resortCharacter(activeActor, characterList, selectedCharacter) {
+  let newCharacterList = [];
+  for (let index = 0; index < characterList.length; index++) {
+    let check = false;
+    for (let index2 = 0; index2 < activeActor.length; index2++) {
+      if (activeActor[index2] === characterList[index].name) {
+        check = true;
+        break;
+      }
+    }
+    if (selectedCharacter === characterList[index].name) break;
+    if (check) newCharacterList.unshift(characterList[index]);
+    else newCharacterList.push(characterList[index]);
+  }
+  let uniq = [...new Set(newCharacterList)];
+  return uniq;
+}
 function updateSpeakerList() {
   let myUser = game.users?.find((user) => user.id == game.userId);
   let myactors = game.actors?.filter((actor) => actor.permission >= 2);
   myactors = myactors.sort((a, b) => a.name.localeCompare(b.name));
   let selectedCharacter = myactors.find((actor) => actor.id === myUser.character?.id);
+  const users = game.users.filter((user) => user.active);
+  let playerNames = users.map((u) => u.character?.name);
+  myactors = resortCharacter(playerNames, myactors, selectedCharacter?.name);
   let formConfig = ``;
   const options = [];
   if (selectedCharacter) {

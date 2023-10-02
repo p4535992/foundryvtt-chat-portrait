@@ -301,47 +301,47 @@ export const registerSettings = function () {
     type: Boolean,
     default: false,
   });
-//   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknown", {
-//     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.name`,
-//     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.hint`,
-//     scope: "world",
-//     config: true,
-//     default: "none",
-//     type: String,
-//     choices: {
-//       allCards: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.allCards`),
-//       selfAndGM: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.selfAndGM`),
-//       self: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.self`),
-//       gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.gm`),
-//       player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.player`),
-//       none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.none`),
-//       onlyNpc: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.onlyNpc`),
-//     },
-//   });
-//   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", {
-//     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.name`,
-//     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.hint`,
-//     scope: "world",
-//     config: true,
-//     type: String,
-//     default: "Unknown Actor",
-//   });
-//   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", {
-//     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.name`,
-//     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.hint`,
-//     scope: "world",
-//     config: true,
-//     type: String,
-//     default: "Unknown Item",
-//   });
-//   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", {
-//     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.name`,
-//     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.hint`,
-//     scope: "world",
-//     config: true,
-//     type: String,
-//     default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
-//   });
+  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknown", {
+  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.name`,
+  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.hint`,
+  //     scope: "world",
+  //     config: true,
+  //     default: "none",
+  //     type: String,
+  //     choices: {
+  //       allCards: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.allCards`),
+  //       selfAndGM: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.selfAndGM`),
+  //       self: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.self`),
+  //       gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.gm`),
+  //       player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.player`),
+  //       none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.none`),
+  //       onlyNpc: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.onlyNpc`),
+  //     },
+  //   });
+  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", {
+  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.name`,
+  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.hint`,
+  //     scope: "world",
+  //     config: true,
+  //     type: String,
+  //     default: "Unknown Actor",
+  //   });
+  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", {
+  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.name`,
+  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.hint`,
+  //     scope: "world",
+  //     config: true,
+  //     type: String,
+  //     default: "Unknown Item",
+  //   });
+  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", {
+  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.name`,
+  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.hint`,
+  //     scope: "world",
+  //     config: true,
+  //     type: String,
+  //     default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+  //   });
 
   // game.settings.register(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem', {
   //   name: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageSystem.name`,
