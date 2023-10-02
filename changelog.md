@@ -1,4 +1,4 @@
-### 0.9.2
+### 0.9.2-3
 
 - Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/33
 - Removed the old unknown feature in favor of other external module like "anonymus" and "archon"
