@@ -33,7 +33,7 @@ export class ChatPortrait {
       return undefined;
     }
     // PreHook (can abort the interaction with the door)
-    if (Hooks.call("ChatPortraitEnabled") === false) {
+    if (Hooks.call("ChatPortraitEnabled", chatMessage, html, speakerInfo) === false) {
       return html;
     }
     if (!ChatPortrait.shouldOverrideMessageStyling(speakerInfo)) {

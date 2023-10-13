@@ -88,7 +88,7 @@ Use your own code to enable/disable the module chat-portrait...
 
 ```js
 
-Hooks.call('ChatPortraitEnabled');
+Hooks.call('ChatPortraitEnabled', chatMessage, html, speakerInfo);
 // DO SOME CHECK 'BEFORE' APPLY THE CHAT PORTRAIT STYLING
 
 ```
@@ -97,7 +97,7 @@ How you can use this on your code....
 
 ```js
 
-Hooks.on('ChatPortraitEnabled', () => {
+Hooks.on('ChatPortraitEnabled', chatMessage, html, speakerInfo) => {
 
     // DO SOMETHING AND RETURN OR TRUE OR FALSE FOR ENABLE THE MODULE CHAT PORTRAIT
 })
