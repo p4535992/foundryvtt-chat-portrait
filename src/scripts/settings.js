@@ -2,153 +2,153 @@
 import CONSTANTS from "./constants.js";
 import { i18n } from "./lib/lib.js";
 import { SYSTEMS } from "./systems.js";
-// export const CONSTANTS.MODULE_NAME = 'chat-portrait';
-// export const INV_UNIDENTIFIED_BOOK = `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified-book.png`;
+// export const CONSTANTS.MODULE_ID = 'chat-portrait';
+// export const INV_UNIDENTIFIED_BOOK = `modules/${CONSTANTS.MODULE_ID}/assets/inv-unidentified-book.png`;
 // export const CHAT_PORTRAIT_DEF_TOKEN_IMG_NAME = 'mystery-man';
 export const registerSettings = function () {
-  game.settings.registerMenu(CONSTANTS.MODULE_NAME, "resetAllSettings", {
-    name: `${CONSTANTS.MODULE_NAME}.setting.reset.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.setting.reset.hint`,
+  game.settings.registerMenu(CONSTANTS.MODULE_ID, "resetAllSettings", {
+    name: `${CONSTANTS.MODULE_ID}.setting.reset.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.reset.hint`,
     icon: "fas fa-coins",
     type: ResetSettingsDialog,
     restricted: true,
   });
   // =====================================================================
-  // game.settings.registerMenu(CONSTANTS.MODULE_NAME, CONSTANTS.MODULE_NAME, {
-  //   name: i18n(CONSTANTS.MODULE_NAME + '.form'),
-  //   label: i18n(CONSTANTS.MODULE_NAME + '.form-title'),
-  //   hint: i18n(CONSTANTS.MODULE_NAME + '.form-hint'),
+  // game.settings.registerMenu(CONSTANTS.MODULE_ID, CONSTANTS.MODULE_ID, {
+  //   name: i18n(CONSTANTS.MODULE_ID + '.form'),
+  //   label: i18n(CONSTANTS.MODULE_ID + '.form-title'),
+  //   hint: i18n(CONSTANTS.MODULE_ID + '.form-hint'),
   //   icon: 'fas fa-portrait',
   //   type: ChatPortraitForm,
   //   restricted: true,
   // });
   // Form setitngs
-  game.settings.register(CONSTANTS.MODULE_NAME, "useTokenImage", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useTokenImage.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useTokenImage.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useTokenImage", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useTokenImage.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useTokenImage.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "doNotUseTokenImageWithSpecificType", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.doNotUseTokenImageWithSpecificType.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.doNotUseTokenImageWithSpecificType.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "doNotUseTokenImageWithSpecificType", {
+    name: `${CONSTANTS.MODULE_ID}.settings.doNotUseTokenImageWithSpecificType.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.doNotUseTokenImageWithSpecificType.hint`,
     scope: "world",
     config: true,
     type: String,
     default: "",
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useTokenName", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useTokenName.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useTokenName.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useTokenName", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useTokenName.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useTokenName.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useAvatarImage", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useAvatarImage.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useAvatarImage.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useAvatarImage", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useAvatarImage.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useAvatarImage.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displayPlayerName", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displayPlayerName.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displayPlayerName.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displayPlayerName", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displayPlayerName.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displayPlayerName.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "portraitSize", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.portraitSize.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.portraitSize.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "portraitSize", {
+    name: `${CONSTANTS.MODULE_ID}.settings.portraitSize.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.portraitSize.hint`,
     scope: "client",
     config: true,
     type: Number,
     default: 36,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "portraitSizeItem", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.portraitSizeItem.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.portraitSizeItem.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "portraitSizeItem", {
+    name: `${CONSTANTS.MODULE_ID}.settings.portraitSizeItem.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.portraitSizeItem.hint`,
     scope: "client",
     config: true,
     type: Number,
     default: 36,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "borderShape", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.borderShape.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.borderShape.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "borderShape", {
+    name: `${CONSTANTS.MODULE_ID}.settings.borderShape.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.borderShape.hint`,
     scope: "client",
     config: true,
     type: String,
     default: "square",
     choices: {
-      square: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.square`),
-      circle: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.circle`),
-      none: i18n(`${CONSTANTS.MODULE_NAME}.settings.borderShape.choice.none`),
+      square: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.square`),
+      circle: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.circle`),
+      none: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.none`),
     },
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsBorderColor", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsBorderColor.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsBorderColor.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useUserColorAsBorderColor", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsBorderColor.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsBorderColor.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "borderColor", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.borderColor.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.borderColor.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "borderColor", {
+    name: `${CONSTANTS.MODULE_ID}.settings.borderColor.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.borderColor.hint`,
     scope: "client",
     config: true,
     type: String,
     default: "#000000",
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "borderWidth", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.borderWidth.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.borderWidth.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "borderWidth", {
+    name: `${CONSTANTS.MODULE_ID}.settings.borderWidth.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.borderWidth.hint`,
     scope: "client",
     config: true,
     type: Number,
     default: 2,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsChatBackgroundColor", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsChatBackgroundColor.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsChatBackgroundColor.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useUserColorAsChatBackgroundColor", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsChatBackgroundColor.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsChatBackgroundColor.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useUserColorAsChatBorderColor", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsChatBorderColor.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useUserColorAsChatBorderColor.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useUserColorAsChatBorderColor", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsChatBorderColor.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useUserColorAsChatBorderColor.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  // game.settings.register(CONSTANTS.MODULE_NAME, "flavorNextToPortrait", {
-  // 	name: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.name`,
-  // 	hint: `${CONSTANTS.MODULE_NAME}.settings.flavorNextToPortrait.hint`,
+  // game.settings.register(CONSTANTS.MODULE_ID, "flavorNextToPortrait", {
+  // 	name: `${CONSTANTS.MODULE_ID}.settings.flavorNextToPortrait.name`,
+  // 	hint: `${CONSTANTS.MODULE_ID}.settings.flavorNextToPortrait.hint`,
   // 	scope: "client",
   // 	config: true,
   // 	type: Boolean,
   // 	default: false,
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "forceNameSearch", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.forceNameSearch.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.forceNameSearch.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "forceNameSearch", {
+    name: `${CONSTANTS.MODULE_ID}.settings.forceNameSearch.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.forceNameSearch.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  // game.settings.register(CONSTANTS.MODULE_NAME,'hoverTooltip', {
+  // game.settings.register(CONSTANTS.MODULE_ID,'hoverTooltip', {
   //   // name : game.i18n.localize('chat-portrait.settings.hoverTooltip.name'),
   //   // hint : game.i18n.localize('chat-portrait.settings.hoverTooltip.hint'),
   //   scope : 'world',
@@ -157,286 +157,294 @@ export const registerSettings = function () {
   //   default : false,
   //   onChange: value => { ChatLink.updateSettings(); }
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "textSizeName", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.textSizeName.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.textSizeName.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "textSizeName", {
+    name: `${CONSTANTS.MODULE_ID}.settings.textSizeName.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.textSizeName.hint`,
     scope: "client",
     config: true,
     type: Number,
     default: 0,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTag", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTag.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTag.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displayMessageTag", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displayMessageTag.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displayMessageTag.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  // game.settings.register(CONSTANTS.MODULE_NAME, "displayMessageTagNextToName", {
-  // 	name: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.name`,
-  // 	hint: `${CONSTANTS.MODULE_NAME}.settings.displayMessageTagNextToName.hint`,
+  // game.settings.register(CONSTANTS.MODULE_ID, "displayMessageTagNextToName", {
+  // 	name: `${CONSTANTS.MODULE_ID}.settings.displayMessageTagNextToName.name`,
+  // 	hint: `${CONSTANTS.MODULE_ID}.settings.displayMessageTagNextToName.hint`,
   // 	scope: "client",
   // 	config: true,
   // 	type: Boolean,
   // 	default: false,
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useImageReplacer", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacer.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacer.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useImageReplacer", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useImageReplacer.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useImageReplacer.hint`,
     scope: "world",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "useImageReplacerDamageType", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacerDamageType.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.useImageReplacerDamageType.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "useImageReplacerDamageType", {
+    name: `${CONSTANTS.MODULE_ID}.settings.useImageReplacerDamageType.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.useImageReplacerDamageType.hint`,
     scope: "world",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerWeaponProperties", {
-    name: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerWeaponProperties.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerWeaponProperties.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "imageReplacerDamageType", {
+    name: `${CONSTANTS.MODULE_ID}.setting.imageReplacerDamageType.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.imageReplacerDamageType.hint`,
+    scope: "world",
+    config: false,
+    default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerDamageType : [],
+    type: Array,
+  });
+  game.settings.register(CONSTANTS.MODULE_ID, "imageReplacerWeaponProperties", {
+    name: `${CONSTANTS.MODULE_ID}.setting.imageReplacerWeaponProperties.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.imageReplacerWeaponProperties.hint`,
     scope: "world",
     config: false,
     default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerWeaponProperties : [],
     type: Array,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "imageReplacerIconizer", {
-    name: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerIconizer.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.setting.imageReplacerIconizer.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "imageReplacerIconizer", {
+    name: `${CONSTANTS.MODULE_ID}.setting.imageReplacerIconizer.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.imageReplacerIconizer.hint`,
     scope: "world",
     config: false,
     default: SYSTEMS.DATA ? SYSTEMS.DATA.imageReplacerIconizer : [],
     type: Array,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "applyOnCombatTracker", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.applyOnCombatTracker.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.applyOnCombatTracker.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "applyOnCombatTracker", {
+    name: `${CONSTANTS.MODULE_ID}.settings.applyOnCombatTracker.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.applyOnCombatTracker.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  // game.settings.register(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch", {
-  // 	name: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.name`,
-  // 	hint: `${CONSTANTS.MODULE_NAME}.settings.applyPreCreateChatMessagePatch.hint`,
+  // game.settings.register(CONSTANTS.MODULE_ID, "applyPreCreateChatMessagePatch", {
+  // 	name: `${CONSTANTS.MODULE_ID}.settings.applyPreCreateChatMessagePatch.name`,
+  // 	hint: `${CONSTANTS.MODULE_ID}.settings.applyPreCreateChatMessagePatch.hint`,
   // 	scope: "client",
   // 	config: true,
   // 	type: Boolean,
   // 	default: false,
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySetting", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySetting.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySetting.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySetting", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySetting.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySetting.hint`,
     scope: "client",
     config: true,
     default: "allCards",
     type: String,
     choices: {
-      allCards: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.allCards`),
-      selfAndGM: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.selfAndGM`),
-      self: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.self`),
-      gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.gm`),
-      player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.player`),
-      none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displaySetting.choice.none`),
+      allCards: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.allCards`),
+      selfAndGM: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.selfAndGM`),
+      self: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.self`),
+      gm: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.gm`),
+      player: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.player`),
+      none: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.none`),
     },
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingOTHER", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingOTHER.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingOTHER.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingOTHER", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingOTHER.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingOTHER.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingOOC", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingOOC.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingOOC.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingOOC", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingOOC.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingOOC.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingIC", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingIC.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingIC.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingIC", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingIC.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingIC.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingEMOTE", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingEMOTE.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingEMOTE.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingEMOTE", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingEMOTE.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingEMOTE.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingWHISPER", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingWHISPER.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingWHISPER.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingWHISPER", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingWHISPER.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingWHISPER.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingROLL", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingROLL.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingROLL.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingROLL", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingROLL.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingROLL.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: true,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "displaySettingWhisperToOther", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.displaySettingWhisperToOther.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.displaySettingWhisperToOther.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "displaySettingWhisperToOther", {
+    name: `${CONSTANTS.MODULE_ID}.settings.displaySettingWhisperToOther.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.displaySettingWhisperToOther.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknown", {
-  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.name`,
-  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknown.hint`,
+  //   game.settings.register(CONSTANTS.MODULE_ID, "displayUnknown", {
+  //     name: `${CONSTANTS.MODULE_ID}.settings.displayUnknown.name`,
+  //     hint: `${CONSTANTS.MODULE_ID}.settings.displayUnknown.hint`,
   //     scope: "world",
   //     config: true,
   //     default: "none",
   //     type: String,
   //     choices: {
-  //       allCards: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.allCards`),
-  //       selfAndGM: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.selfAndGM`),
-  //       self: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.self`),
-  //       gm: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.gm`),
-  //       player: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.player`),
-  //       none: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.none`),
-  //       onlyNpc: i18n(`${CONSTANTS.MODULE_NAME}.settings.displayUnknown.choice.onlyNpc`),
+  //       allCards: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.allCards`),
+  //       selfAndGM: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.selfAndGM`),
+  //       self: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.self`),
+  //       gm: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.gm`),
+  //       player: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.player`),
+  //       none: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.none`),
+  //       onlyNpc: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.onlyNpc`),
   //     },
   //   });
-  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderActorName", {
-  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.name`,
-  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderActorName.hint`,
+  //   game.settings.register(CONSTANTS.MODULE_ID, "displayUnknownPlaceHolderActorName", {
+  //     name: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderActorName.name`,
+  //     hint: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderActorName.hint`,
   //     scope: "world",
   //     config: true,
   //     type: String,
   //     default: "Unknown Actor",
   //   });
-  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemName", {
-  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.name`,
-  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemName.hint`,
+  //   game.settings.register(CONSTANTS.MODULE_ID, "displayUnknownPlaceHolderItemName", {
+  //     name: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderItemName.name`,
+  //     hint: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderItemName.hint`,
   //     scope: "world",
   //     config: true,
   //     type: String,
   //     default: "Unknown Item",
   //   });
-  //   game.settings.register(CONSTANTS.MODULE_NAME, "displayUnknownPlaceHolderItemIcon", {
-  //     name: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.name`,
-  //     hint: `${CONSTANTS.MODULE_NAME}.settings.displayUnknownPlaceHolderItemIcon.hint`,
+  //   game.settings.register(CONSTANTS.MODULE_ID, "displayUnknownPlaceHolderItemIcon", {
+  //     name: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderItemIcon.name`,
+  //     hint: `${CONSTANTS.MODULE_ID}.settings.displayUnknownPlaceHolderItemIcon.hint`,
   //     scope: "world",
   //     config: true,
   //     type: String,
-  //     default: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+  //     default: `modules/${CONSTANTS.MODULE_ID}/assets/inv-unidentified.png`,
   //   });
 
-  // game.settings.register(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem', {
-  //   name: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageSystem.name`,
-  //   hint: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageSystem.hint`,
+  // game.settings.register(CONSTANTS.MODULE_ID, 'customStylingMessageSystem', {
+  //   name: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageSystem.name`,
+  //   hint: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageSystem.hint`,
   //   scope: 'client',
   //   config: true,
   //   type: Boolean,
   //   default: true,
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "customStylingMessageText", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageText.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageText.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "customStylingMessageText", {
+    name: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageText.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageText.hint`,
     scope: "client",
     config: true,
     type: String,
     default: "",
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "customStylingMessageImage", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageImage.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.customStylingMessageImage.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "customStylingMessageImage", {
+    name: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageImage.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.customStylingMessageImage.hint`,
     scope: "client",
     config: true,
     type: String,
     default: "",
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "disablePortraitForAliasGmMessage", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.disablePortraitForAliasGmMessage.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.disablePortraitForAliasGmMessage.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "disablePortraitForAliasGmMessage", {
+    name: `${CONSTANTS.MODULE_ID}.settings.disablePortraitForAliasGmMessage.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.disablePortraitForAliasGmMessage.hint`,
     scope: "world",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "setUpPortraitForAliasGmMessage", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.setUpPortraitForAliasGmMessage.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.setUpPortraitForAliasGmMessage.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "setUpPortraitForAliasGmMessage", {
+    name: `${CONSTANTS.MODULE_ID}.settings.setUpPortraitForAliasGmMessage.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.setUpPortraitForAliasGmMessage.hint`,
     scope: "world",
     config: true,
     type: String,
     default: "",
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakingAs", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakingAs.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "enableSpeakingAs", {
+    name: `${CONSTANTS.MODULE_ID}.settings.enableSpeakingAs.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.enableSpeakingAs.hint`,
     scope: "client",
     config: true,
     type: Boolean,
     default: false,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.speakingAsWarningCharacters.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.speakingAsWarningCharacters.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters", {
+    name: `${CONSTANTS.MODULE_ID}.settings.speakingAsWarningCharacters.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.speakingAsWarningCharacters.hint`,
     scope: "client",
     config: true,
     type: String,
     default: '".+"',
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "enableSpeakAs", {
-    name: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakAs.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.settings.enableSpeakAs.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "enableSpeakAs", {
+    name: `${CONSTANTS.MODULE_ID}.settings.enableSpeakAs.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.enableSpeakAs.hint`,
     scope: "world",
     config: true,
     type: Boolean,
     default: false,
   });
   // ========================================================================
-  game.settings.register(CONSTANTS.MODULE_NAME, "debug", {
-    name: `${CONSTANTS.MODULE_NAME}.setting.debug.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.setting.debug.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "debug", {
+    name: `${CONSTANTS.MODULE_ID}.setting.debug.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.debug.hint`,
     scope: "world",
     config: true,
     default: false,
     type: Boolean,
   });
-  // game.settings.register(CONSTANTS.MODULE_NAME, 'debugHooks', {
+  // game.settings.register(CONSTANTS.MODULE_ID, 'debugHooks', {
   //   scope: 'world',
   //   config: false,
   //   default: false,
   //   type: Boolean,
   // });
-  game.settings.register(CONSTANTS.MODULE_NAME, "systemFound", {
+  game.settings.register(CONSTANTS.MODULE_ID, "systemFound", {
     scope: "world",
     config: false,
     default: false,
     type: Boolean,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "systemNotFoundWarningShown", {
+  game.settings.register(CONSTANTS.MODULE_ID, "systemNotFoundWarningShown", {
     scope: "world",
     config: false,
     default: false,
     type: Boolean,
   });
-  game.settings.register(CONSTANTS.MODULE_NAME, "preconfiguredSystem", {
-    name: `${CONSTANTS.MODULE_NAME}.setting.preconfiguredSystem.name`,
-    hint: `${CONSTANTS.MODULE_NAME}.setting.preconfiguredSystem.hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, "preconfiguredSystem", {
+    name: `${CONSTANTS.MODULE_ID}.setting.preconfiguredSystem.name`,
+    hint: `${CONSTANTS.MODULE_ID}.setting.preconfiguredSystem.hint`,
     scope: "world",
     config: false,
     default: false,
@@ -449,19 +457,19 @@ class ResetSettingsDialog extends FormApplication {
     super(...args);
     //@ts-ignore
     return new Dialog({
-      title: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.title`),
+      title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.dialogs.resetsettings.title`),
       content:
         '<p style="margin-bottom:1rem;">' +
-        game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.content`) +
+        game.i18n.localize(`${CONSTANTS.MODULE_ID}.dialogs.resetsettings.content`) +
         "</p>",
       buttons: {
         confirm: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.confirm`),
+          label: game.i18n.localize(`${CONSTANTS.MODULE_ID}.dialogs.resetsettings.confirm`),
           callback: async () => {
             const worldSettings = game.settings.storage
               ?.get("world")
-              ?.filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_NAME}.`));
+              ?.filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`));
             for (let setting of worldSettings) {
               console.log(`Reset setting '${setting.key}'`);
               await setting.delete();
@@ -471,7 +479,7 @@ class ResetSettingsDialog extends FormApplication {
         },
         cancel: {
           icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize(`${CONSTANTS.MODULE_NAME}.dialogs.resetsettings.cancel`),
+          label: game.i18n.localize(`${CONSTANTS.MODULE_ID}.dialogs.resetsettings.cancel`),
         },
       },
       default: "cancel",

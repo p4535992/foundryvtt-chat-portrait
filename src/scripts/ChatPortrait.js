@@ -557,7 +557,7 @@ export class ChatPortrait {
       //       if (!elementItemImage) {
       //         continue;
       //       }
-      //       elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_NAME}/assets/inv-unidentified.png`;
+      //       elementItemImage.src = ChatPortrait.settings.displayUnknownPlaceHolderItemIcon; //`modules/${MODULE_ID}/assets/inv-unidentified.png`;
       //       const size = ChatPortrait.settings.portraitSizeItem;
       //       if (size && size > 0) {
       //         elementItemImage.width = size;
@@ -1099,7 +1099,7 @@ export class ChatPortrait {
     const speaker = message.speaker ? message.speaker : speakerInfo;
     const isOOC = ChatPortrait.getMessageTypeVisible(speakerInfo) === CONST.CHAT_MESSAGE_TYPES.OOC;
     const imgFinal = CONSTANTS.DEF_TOKEN_IMG_PATH;
-    const flaggedPreChatSrc = message.flags?.[CONSTANTS.MODULE_NAME]?.src;
+    const flaggedPreChatSrc = message.flags?.[CONSTANTS.MODULE_ID]?.src;
     if (flaggedPreChatSrc) {
       if (message.user && isOOC) {
         const imgAvatar = ChatPortrait.getUserAvatarImageFromChatMessage(message);
@@ -1433,7 +1433,7 @@ export class ChatPortrait {
         if (ChatPortrait.settings.customStylingMessageText) {
           elementItemText.style.cssText = ChatPortrait.settings.customStylingMessageText;
         }
-        // else if (game.settings.get(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem')) {
+        // else if (game.settings.get(CONSTANTS.MODULE_ID, 'customStylingMessageSystem')) {
         //   if (!elementItemText.classList.contains(`chat-portrait-system-${gameSystemId}`)) {
         //     elementItemText.classList.add(`chat-portrait-system-${gameSystemId}`);
         //   }
@@ -1449,7 +1449,7 @@ export class ChatPortrait {
         if (ChatPortrait.settings.customStylingMessageImage) {
           elementItemImage.style.cssText = ChatPortrait.settings.customStylingMessageImage;
         }
-        // else if (game.settings.get(CONSTANTS.MODULE_NAME, 'customStylingMessageSystem')) {
+        // else if (game.settings.get(CONSTANTS.MODULE_ID, 'customStylingMessageSystem')) {
         //   if (!elementItemImage.classList.contains(`chat-portrait-system-${gameSystemId}`)) {
         //     elementItemImage.classList.add(`chat-portrait-system-${gameSystemId}`);
         //   }
@@ -1493,7 +1493,7 @@ export class ChatPortrait {
     }
   }
   static get settings() {
-    //return mergeObject(this.defaultSettings, <ChatPortraitSettings>game.settings.get(MODULE_NAME, 'settings'));
+    //return mergeObject(this.defaultSettings, <ChatPortraitSettings>game.settings.get(MODULE_ID, 'settings'));
     //return mergeObject(this.defaultSettings,{
     return {
       //borderShapeList: Settings.getBorderShapeList(),
@@ -1566,7 +1566,7 @@ export class ChatPortrait {
       //   displayUnknown: "none",
       //   displayUnknownPlaceHolderActorName: "Unknown Actor",
       //   displayUnknownPlaceHolderItemName: "Unknown Item",
-      //   displayUnknownPlaceHolderItemIcon: `modules/${CONSTANTS.MODULE_NAME}/assets/inv-unidentified.png`,
+      //   displayUnknownPlaceHolderItemIcon: `modules/${CONSTANTS.MODULE_ID}/assets/inv-unidentified.png`,
       displaySettingOTHER: true,
       displaySettingOOC: true,
       displaySettingIC: true,
@@ -1670,12 +1670,12 @@ export class ChatPortrait {
     const textToCheck = $(elementItemContent)[0]?.innerText || "";
     const fullTextContent = textToCheck.toLowerCase().trim();
     // TODO special word for integration multisystem and help to identify the chat text
-    const check = i18n(`${CONSTANTS.MODULE_NAME}.labels.check`);
-    const ability = i18n(`${CONSTANTS.MODULE_NAME}.labels.ability`);
-    const skill = i18n(`${CONSTANTS.MODULE_NAME}.labels.skill`);
-    const checkEN = i18n(`${CONSTANTS.MODULE_NAME}.labels.checkEN`);
-    const abilityEN = i18n(`${CONSTANTS.MODULE_NAME}.labels.abilityEN`);
-    const skillEN = i18n(`${CONSTANTS.MODULE_NAME}.labels.skillEN`);
+    const check = i18n(`${CONSTANTS.MODULE_ID}.labels.check`);
+    const ability = i18n(`${CONSTANTS.MODULE_ID}.labels.ability`);
+    const skill = i18n(`${CONSTANTS.MODULE_ID}.labels.skill`);
+    const checkEN = i18n(`${CONSTANTS.MODULE_ID}.labels.checkEN`);
+    const abilityEN = i18n(`${CONSTANTS.MODULE_ID}.labels.abilityEN`);
+    const skillEN = i18n(`${CONSTANTS.MODULE_ID}.labels.skillEN`);
     const innerTextDamageTmp = fullTextContent; //Damage -Slashing
     if (innerTextTmp) {
       // Clean up the string for multisystem (D&D5, PF2, ecc.)
@@ -2280,7 +2280,7 @@ ChatPortrait.shouldOverrideMessageUnknown = function (message) {
     mytype = actor?.type;
   }
   /* REMOVED IN FAVOR OF ANONYMUS MODULE
-  const setting = game.settings.get(CONSTANTS.MODULE_NAME, "displayUnknown");
+  const setting = game.settings.get(CONSTANTS.MODULE_ID, "displayUnknown");
   if (setting !== "none") {
     //const user = game.users.get(message.user);
     let user = game.users?.get(message.user);
@@ -2316,7 +2316,7 @@ ChatPortrait.shouldOverrideMessageUnknown = function (message) {
   return false;
 };
 ChatPortrait.shouldOverrideMessageStyling = function (message) {
-  const setting = game.settings.get(CONSTANTS.MODULE_NAME, "displaySetting");
+  const setting = game.settings.get(CONSTANTS.MODULE_ID, "displaySetting");
   if (setting !== "none") {
     //const user = game.users.get(message.user);
     let user = game.users?.get(message.user);

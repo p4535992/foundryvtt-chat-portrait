@@ -1,3 +1,8 @@
+### 0.9.5 
+
+- Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/41
+- Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/39
+
 ### 0.9.4 
 
 - Fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/38 

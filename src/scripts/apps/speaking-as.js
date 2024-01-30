@@ -1,6 +1,6 @@
 import CONSTANTS from "../constants.js";
 import { i18n, i18nFormat, info } from "../lib/lib.js";
-const CSS_PREFIX = `${CONSTANTS.MODULE_NAME}--`;
+const CSS_PREFIX = `${CONSTANTS.MODULE_ID}--`;
 const CSS_CURRENT_SPEAKER = CSS_PREFIX + "currentSpeaker";
 const CHAT_MESSAGE_SUB_TYPES = {
   NONE: 0,
@@ -262,7 +262,7 @@ export function updateSpeaker() {
   });
 }
 Hooks.once("renderChatLog", () => {
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+  if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakingAs")) {
     const chatControls = document.getElementById("chat-controls");
     // "be last" magic trick from Supe
     setTimeout(async () => {
@@ -307,7 +307,7 @@ Hooks.once("renderChatLog", () => {
 function checkWarn() {
   // Add a warning on key enter if the textarea contains quotes, as if you were talking in character.
   if (
-    game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters") === "" ||
+    game.settings.get(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters") === "" ||
     $(".chat-portrait--currentSpeaker--text").text() !== game.user?.name || // Return if speaking out of character
     ["/ic", "/ooc", "/emote"].some((str) => $("#chat-message").val()?.includes(str)) // Return if the message contains a command that would deliberately make you speak in or out of character
   ) {
@@ -316,13 +316,13 @@ function checkWarn() {
     game.tooltip.deactivate();
     return;
   }
-  const regex = new RegExp(game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters"));
+  const regex = new RegExp(game.settings.get(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters"));
   if (regex.test($("#chat-message").val())) {
     $("#chat-message").addClass(CSS_PREFIX + "warning");
     //@ts-ignore
     game.tooltip.activate($("#chat-message")[0], {
       text: i18nFormat("chat-portrait.speakingAs.buttonHint.warning", {
-        characters: game.settings.get(CONSTANTS.MODULE_NAME, "speakingAsWarningCharacters"),
+        characters: game.settings.get(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters"),
       }),
       direction: "LEFT",
     });

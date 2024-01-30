@@ -10,7 +10,7 @@ const mapCombatTrackerPortrait = new Map();
 export const initHooks = () => {
   // debug("Init Hooks processing");
   Hooks.once("socketlib.ready", registerSocket);
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+  if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakingAs")) {
     initSpeakingAs();
   }
 };
@@ -140,10 +140,10 @@ export const setupHooks = async () => {
         });
       }
     }
-    if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakingAs")) {
       overrideMessage(message);
     }
-    // if (game.settings.get(CONSTANTS.MODULE_NAME, "applyPreCreateChatMessagePatch")) {
+    // if (game.settings.get(CONSTANTS.MODULE_ID, "applyPreCreateChatMessagePatch")) {
     // 	if (options) {
     // 		// Update the speaker
     // 		if (!options.speaker || (!options.speaker.token && !options.speaker.actor)) {
@@ -208,17 +208,17 @@ export const setupHooks = async () => {
     // }
   });
   Hooks.on("controlToken", (token, options) => {
-    if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakingAs")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakingAs")) {
       updateSpeaker();
     }
   });
 };
 export const readyHooks = async () => {
-  if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakAs")) {
+  if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakAs")) {
     readySpeakAs();
   }
   Hooks.on("renderSidebarTab", (dialog, $element, targets) => {
-    if (game.settings.get(CONSTANTS.MODULE_NAME, "enableSpeakAs")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "enableSpeakAs")) {
       renderSidebarTabSpeakAs(dialog, $element, targets);
     }
   });
@@ -226,7 +226,7 @@ export const readyHooks = async () => {
   // When the combat tracker is rendered, we need to completely replace
   // its HTML with a custom version.
   Hooks.on("renderCombatTracker", async (app, html, options) => {
-    if (game.settings.get(CONSTANTS.MODULE_NAME, "applyOnCombatTracker")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, "applyOnCombatTracker")) {
       // If there's as combat, we can proceed.
       if (game.combat) {
         // Retrieve a list of the combatants
@@ -305,15 +305,15 @@ export const readyHooks = async () => {
   });
   Hooks.on("renderSettingsConfig", (app, html, data) => {
     // Add colour pickers to the Configure Game Settings: Module Settings menu
-    const nameBorderColor = `${CONSTANTS.MODULE_NAME}.borderColor`;
-    const colourBorderColor = game.settings.get(CONSTANTS.MODULE_NAME, "borderColor");
+    const nameBorderColor = `${CONSTANTS.MODULE_ID}.borderColor`;
+    const colourBorderColor = game.settings.get(CONSTANTS.MODULE_ID, "borderColor");
     $("<input>")
       .attr("type", "color")
       .attr("data-edit", nameBorderColor)
       .val(colourBorderColor)
       .insertAfter($(`input[name="${nameBorderColor}"]`, html).addClass("color"));
-    const nameCustomStylingMessageText = `${CONSTANTS.MODULE_NAME}.customStylingMessageText`;
-    const customStylingMessageText = game.settings.get(CONSTANTS.MODULE_NAME, "customStylingMessageText");
+    const nameCustomStylingMessageText = `${CONSTANTS.MODULE_ID}.customStylingMessageText`;
+    const customStylingMessageText = game.settings.get(CONSTANTS.MODULE_ID, "customStylingMessageText");
     $(`input[name="${nameCustomStylingMessageText}"]`)
       .attr(
         "placeholder",
@@ -341,8 +341,8 @@ export const readyHooks = async () => {
         textbox.val(value);
         $(this).replaceWith(textbox);
       });
-    const nameCustomStylingMessageImage = `${CONSTANTS.MODULE_NAME}.customStylingMessageImage`;
-    const customStylingMessageImage = game.settings.get(CONSTANTS.MODULE_NAME, "customStylingMessageImage");
+    const nameCustomStylingMessageImage = `${CONSTANTS.MODULE_ID}.customStylingMessageImage`;
+    const customStylingMessageImage = game.settings.get(CONSTANTS.MODULE_ID, "customStylingMessageImage");
     $(`input[name="${nameCustomStylingMessageImage}"]`)
       .attr(
         "placeholder",

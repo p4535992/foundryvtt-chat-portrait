@@ -19,7 +19,7 @@ import CONSTANTS from "./scripts/constants.js";
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once("init", async () => {
-  console.log(`${CONSTANTS.MODULE_NAME} | Initializing ${CONSTANTS.MODULE_NAME}`);
+  console.log(`${CONSTANTS.MODULE_ID} | Initializing ${CONSTANTS.MODULE_ID}`);
   // Register custom module settings
   registerSettings();
   initHooks();
@@ -46,7 +46,7 @@ Hooks.once("setup", function () {
 Hooks.once("ready", () => {
   // Do anything once the module is ready
   // if (!game.modules.get("lib-wrapper")?.active && game.user.isGM){
-  // 	ui.notifications.error(`The '${MODULE_NAME}' module requires to install and activate the 'libWrapper' module.`);
+  // 	ui.notifications.error(`The '${MODULE_ID}' module requires to install and activate the 'libWrapper' module.`);
   // 	return;
   // }
   readyHooks();
@@ -56,7 +56,7 @@ Hooks.once("ready", () => {
  * @param api to set to game module.
  */
 export function setApi(api) {
-  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  const data = game.modules.get(CONSTANTS.MODULE_ID);
   data.api = api;
 }
 /**
@@ -64,7 +64,7 @@ export function setApi(api) {
  * @returns Api from games module.
  */
 export function getApi() {
-  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  const data = game.modules.get(CONSTANTS.MODULE_ID);
   return data.api;
 }
 /**
@@ -72,7 +72,7 @@ export function getApi() {
  * @param socket to set to game module.
  */
 export function setSocket(socket) {
-  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  const data = game.modules.get(CONSTANTS.MODULE_ID);
   data.socket = socket;
 }
 /*
@@ -80,6 +80,6 @@ export function setSocket(socket) {
  * @returns Socket from games module.
  */
 export function getSocket() {
-  const data = game.modules.get(CONSTANTS.MODULE_NAME);
+  const data = game.modules.get(CONSTANTS.MODULE_ID);
   return data.socket;
 }

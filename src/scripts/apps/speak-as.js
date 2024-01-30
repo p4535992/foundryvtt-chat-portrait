@@ -206,7 +206,7 @@ function updateSpeakerList() {
   return addText;
 }
 function check() {
-  // let checkedSetting = game.settings.get(CONSTANTS.MODULE_NAME, "speak-as-checked");
+  // let checkedSetting = game.settings.get(CONSTANTS.MODULE_ID, "speak-as-checked");
   let speaker = document.getElementById("speakerSwitch");
   if (speaker) {
     //@ts-ignore

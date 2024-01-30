@@ -12,7 +12,7 @@ export function registerSocket() {
     return chatPortraitSocket;
   }
   //@ts-ignore
-  chatPortraitSocket = socketlib.registerModule(CONSTANTS.MODULE_NAME);
+  chatPortraitSocket = socketlib.registerModule(CONSTANTS.MODULE_ID);
   // TODO add some socket method ?
   setSocket(chatPortraitSocket);
   return chatPortraitSocket;

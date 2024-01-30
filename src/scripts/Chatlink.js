@@ -6,7 +6,7 @@ export class ChatLink {
     ChatLink.updateSettings();
   }
   static updateSettings() {
-    ChatLink.showTooltip = game.settings.get(CONSTANTS.MODULE_NAME, "hoverTooltip");
+    ChatLink.showTooltip = game.settings.get(CONSTANTS.MODULE_ID, "hoverTooltip");
   }
   static prepareEvent(message, html, speakerInfo, gameSystemId) {
     // let clickable = html.find('.chat-card'); // message-sender
@@ -25,7 +25,7 @@ export class ChatLink {
     // Removed 4535992 just a bug i can avoid to manage
     //ChatLink.formatLink(clickable);
     const speakerName =
-      clickable[0]?.textContent ?? speaker.alias ?? ChatLink.i18n(CONSTANTS.MODULE_NAME + ".genericName");
+      clickable[0]?.textContent ?? speaker.alias ?? ChatLink.i18n(CONSTANTS.MODULE_ID + ".genericName");
     const speakerData = {
       idScene: speaker.scene,
       idActor: speaker.actor,
@@ -71,7 +71,7 @@ export class ChatLink {
     // Removed 4535992 just a bug i can avoid to manage
     //ChatLink.formatLink(clickable);
     const speakerName =
-      clickable[0]?.textContent ?? speaker.alias ?? ChatLink.i18n(CONSTANTS.MODULE_NAME + ".genericName");
+      clickable[0]?.textContent ?? speaker.alias ?? ChatLink.i18n(CONSTANTS.MODULE_ID + ".genericName");
     const speakerData = {
       idScene: speaker.scene,
       idActor: speaker.actor,
@@ -140,7 +140,7 @@ export class ChatLink {
       return false;
     }
     const message = user.isGM
-      ? ChatLink.playerWarning(speakerData) + ` ${ChatLink.i18n(CONSTANTS.MODULE_NAME + ".noTokenFound")}`
+      ? ChatLink.playerWarning(speakerData) + ` ${ChatLink.i18n(CONSTANTS.MODULE_ID + ".noTokenFound")}`
       : ChatLink.playerWarning(speakerData);
     ChatLink.warning(message);
     return false;
@@ -151,10 +151,10 @@ export class ChatLink {
     }
     let sceneNote;
     if (!speakerData.idScene) {
-      sceneNote = ` ${ChatLink.i18n(CONSTANTS.MODULE_NAME + ".noSceneFound")}`;
+      sceneNote = ` ${ChatLink.i18n(CONSTANTS.MODULE_ID + ".noSceneFound")}`;
     } else {
       const tokenScene = game.scenes?.find((s) => s.id === speakerData.idScene);
-      sceneNote = ` ${ChatLink.i18nFormat(CONSTANTS.MODULE_NAME + ".checkScene", {
+      sceneNote = ` ${ChatLink.i18nFormat(CONSTANTS.MODULE_ID + ".checkScene", {
         sceneName: tokenScene?.name,
       })}`;
     }
@@ -226,7 +226,7 @@ export class ChatLink {
 }
 ChatLink.clickTimeout = 250;
 ChatLink.clickCount = 0;
-ChatLink.playerWarning = (data) => ChatLink.i18nFormat(CONSTANTS.MODULE_NAME + ".notInSight", data);
+ChatLink.playerWarning = (data) => ChatLink.i18nFormat(CONSTANTS.MODULE_ID + ".notInSight", data);
 ChatLink.showTooltip = true;
 ChatLink.hoverTimeout = 1000;
 ChatLink.hoverTimer = null;
@@ -260,30 +260,30 @@ ChatLink.hoverOut = (event) => {
 //     static getContent() {
 //         let tips = game.user.isGM ? TooltipHelper.gmTips() : TooltipHelper.playerTips();
 //         let tooltipData = {
-//             title: game.i18n.localize(CONSTANTS.MODULE_NAME+".instructionsTitle"),
+//             title: game.i18n.localize(CONSTANTS.MODULE_ID+".instructionsTitle"),
 //             tips: tips
 //         }
-//         //let template = Handlebars.compile(`{{> modules/${CONSTANTS.MODULE_NAME}/templates/instructions.html}}`);
-//         let template = Handlebars.compile(`{{> modules/${CONSTANTS.MODULE_NAME}/templates/instructions.hbs }}`);
+//         //let template = Handlebars.compile(`{{> modules/${CONSTANTS.MODULE_ID}/templates/instructions.html}}`);
+//         let template = Handlebars.compile(`{{> modules/${CONSTANTS.MODULE_ID}/templates/instructions.hbs }}`);
 //         let content = template(tooltipData);
 //         return content;
 //     }
 //     static gmTips() {
 //         return [
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".gmClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".shiftClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".doubleClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".gmCtrlClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".gmCtrlShiftClick")
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".gmClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".shiftClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".doubleClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".gmCtrlClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".gmCtrlShiftClick")
 //         ]
 //     }
 //     static playerTips() {
 //         return [
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".playerClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".shiftClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".doubleClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".playerCtrlClick"),
-//             game.i18n.localize(CONSTANTS.MODULE_NAME+".playerCtrlShiftClick")
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".playerClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".shiftClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".doubleClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".playerCtrlClick"),
+//             game.i18n.localize(CONSTANTS.MODULE_ID+".playerCtrlShiftClick")
 //         ]
 //     }
 // }

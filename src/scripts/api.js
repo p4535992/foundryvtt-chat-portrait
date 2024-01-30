@@ -8,7 +8,7 @@ const API = {
    * @returns {array}
    */
   get imageReplacerDamageType() {
-    let arr = game.settings.get(CONSTANTS.MODULE_NAME, "imageReplacerDamageType") || [];
+    let arr = game.settings.get(CONSTANTS.MODULE_ID, "imageReplacerDamageType") || [];
     if (arr.length <= 0) {
       arr = SYSTEMS.DATA?.imageReplacerDamageType;
     }
@@ -24,8 +24,8 @@ const API = {
     if (typeof inAttribute !== "string") {
       throw error("setImageReplacerDamageType | inAttribute must be of type string");
     }
-    await game.settings.set(CONSTANTS.MODULE_NAME, "preconfiguredSystem", true);
-    return game.settings.set(CONSTANTS.MODULE_NAME, "imageReplacerDamageType", inAttribute);
+    await game.settings.set(CONSTANTS.MODULE_ID, "preconfiguredSystem", true);
+    return game.settings.set(CONSTANTS.MODULE_ID, "imageReplacerDamageType", inAttribute);
   },
   /**
    * The attributes used to track dynamic attributes in this system
@@ -33,9 +33,9 @@ const API = {
    * @returns {array}
    */
   get imageReplacerWeaponProperties() {
-    let arr = game.settings.get(CONSTANTS.MODULE_NAME, "imageReplacerWeaponProperties") || [];
+    let arr = game.settings.get(CONSTANTS.MODULE_ID, "imageReplacerWeaponProperties") || [];
     if (arr.length <= 0) {
-      arr = SYSTEMS.DATA?.imageReplacerDamageType;
+      arr = SYSTEMS.DATA?.imageReplacerWeaponProperties;
     }
     return arr;
   },
@@ -49,8 +49,8 @@ const API = {
     if (typeof inAttribute !== "string") {
       throw error("setImageReplacerWeaponProperties | inAttribute must be of type string");
     }
-    await game.settings.set(CONSTANTS.MODULE_NAME, "preconfiguredSystem", true);
-    return game.settings.set(CONSTANTS.MODULE_NAME, "imageReplacerWeaponProperties", inAttribute);
+    await game.settings.set(CONSTANTS.MODULE_ID, "preconfiguredSystem", true);
+    return game.settings.set(CONSTANTS.MODULE_ID, "imageReplacerWeaponProperties", inAttribute);
   },
   /**
    * The attributes used to track dynamic attributes in this system
@@ -58,9 +58,9 @@ const API = {
    * @returns {array}
    */
   get imageReplacerIconizer() {
-    let arr = game.settings.get(CONSTANTS.MODULE_NAME, "imageReplacerIconizer") || [];
+    let arr = game.settings.get(CONSTANTS.MODULE_ID, "imageReplacerIconizer") || [];
     if (arr.length <= 0) {
-      arr = SYSTEMS.DATA?.imageReplacerDamageType;
+      arr = SYSTEMS.DATA?.imageReplacerIconizer;
     }
     return arr;
   },
@@ -74,8 +74,8 @@ const API = {
     if (typeof inAttribute !== "string") {
       throw error("setImageReplacerIconizer | inAttribute must be of type string");
     }
-    await game.settings.set(CONSTANTS.MODULE_NAME, "preconfiguredSystem", true);
-    return game.settings.set(CONSTANTS.MODULE_NAME, "imageReplacerIconizer", inAttribute);
+    await game.settings.set(CONSTANTS.MODULE_ID, "preconfiguredSystem", true);
+    return game.settings.set(CONSTANTS.MODULE_ID, "imageReplacerIconizer", inAttribute);
   },
   retrieveSystemId() {
     const sys = SYSTEMS.DATA?.SYSTEM_ID;
