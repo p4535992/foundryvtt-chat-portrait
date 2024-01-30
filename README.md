@@ -14,6 +14,8 @@
 
 [![Translation status](https://weblate.foundryvtt-hub.com/widgets/chat-portrait/-/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/chat-portrait/)
 
+### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
+
 A Foundry VTT module that displays the Actor's portrait images on the chat messages.
 
 This is a upgrade of the project [Chat Portrait by ShoyuVanilla](https://github.com/ShoyuVanilla/FoundryVTT-Chat-Portrait) ty to [ShoyuVanilla](https://github.com/ShoyuVanilla)
