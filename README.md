@@ -307,54 +307,36 @@ npm install
 ```
 ## npm build scripts
 
-### build
+# Build
 
-will build the code and copy all necessary assets into the dist folder and make a symlink to install the result into your foundry data; create a
-`foundryconfig.json` file with your Foundry Data path.
+## Install all packages
 
-```json
-{
-  "dataPath": "~/.local/share/FoundryVTT/"
-}
+```bash
+npm install
 ```
+
+### dev
+
+`dev` will let you develop you own code with hot reloading on the browser
+
+```bash
+npm run dev
+```
+
+### build
 
 `build` will build and set up a symlink between `dist` and your `dataPath`.
 
 ```bash
-npm run-script build
+npm run build
 ```
-
-### NOTE:
-
-You don't need to build the `foundryconfig.json` file you can just copy the content of the `dist` folder on the module folder under `modules` of Foundry
 
 ### build:watch
 
 `build:watch` will build and watch for changes, rebuilding automatically.
 
 ```bash
-npm run-script build:watch
-```
-
-### clean
-
-`clean` will remove all contents in the dist folder (but keeps the link from build:install).
-
-```bash
-npm run-script clean
-```
-### lint and lintfix
-
-`lint` launch the eslint process based on the configuration [here](./.eslintrc)
-
-```bash
-npm run-script lint
-```
-
-`lintfix` launch the eslint process with the fix argument
-
-```bash
-npm run-script lintfix
+npm run build:watch
 ```
 
 ### prettier-format
@@ -365,12 +347,20 @@ npm run-script lintfix
 npm run-script prettier-format
 ```
 
-### package
+### lint
 
-`package` generates a zip file containing the contents of the dist folder generated previously with the `build` command. Useful for those who want to manually load the module or want to create their own release
+`lint` launch the eslint process based on the configuration [here](./.eslintrc.json)
 
 ```bash
-npm run-script package
+npm run-script lint
+```
+
+### lint:fix
+
+`lint:fix` launch the eslint process with the fix argument
+
+```bash
+npm run-script lint:fix
 ```
 
 ## [Changelog](./changelog.md)
