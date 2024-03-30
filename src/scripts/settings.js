@@ -23,6 +23,15 @@ export const registerSettings = function () {
   //   restricted: true,
   // });
   // Form setitngs
+  game.settings.register(CONSTANTS.MODULE_ID, "disableChatPortrait", {
+    name: `${CONSTANTS.MODULE_ID}.settings.disableChatPortrait.name`,
+    hint: `${CONSTANTS.MODULE_ID}.settings.disableChatPortrait.hint`,
+    scope: "client",
+    config: true,
+    type: Boolean,
+    default: false,
+  });
+  // Form setitngs
   game.settings.register(CONSTANTS.MODULE_ID, "useTokenImage", {
     name: `${CONSTANTS.MODULE_ID}.settings.useTokenImage.name`,
     hint: `${CONSTANTS.MODULE_ID}.settings.useTokenImage.hint`,

@@ -176,6 +176,11 @@ export class ChatPortrait {
     if (!elementItemContentList[0]?.innerText.replace(/(\r\n|\r|\n)/g, "").trim()) {
       return html;
     }
+
+    if (ChatPortrait.settings.disableChatPortrait) {
+      doNotPrintPortrait = true;
+    }
+
     if (doNotStyling) {
       /*
             const headerImageElement2 = document.createElement("header");
@@ -1497,6 +1502,7 @@ export class ChatPortrait {
     //return mergeObject(this.defaultSettings,{
     return {
       //borderShapeList: Settings.getBorderShapeList(),
+      disableChatPortrait: SettingsForm.getDisableChatPortrait(),
       useTokenImage: SettingsForm.getUseTokenImage(),
       doNotUseTokenImageWithSpecificType: SettingsForm.getDoNotUseTokenImageWithSpecificType(),
       useTokenName: SettingsForm.getUseTokenName(),

@@ -7,6 +7,12 @@ export class SettingsForm {
   // static getBorderShapeList() {
   //     return game.settings.get(MODULE_ID, 'borderShapeList');
   // }
+  static getDisableChatPortrait() {
+    return game.settings.get(CONSTANTS.MODULE_ID, "disableChatPortrait");
+  }
+  static setDisableChatPortrait(value) {
+    game.settings.set(CONSTANTS.MODULE_ID, "disableChatPortrait", value);
+  }
   static getUseTokenImage() {
     return game.settings.get(CONSTANTS.MODULE_ID, "useTokenImage");
   }

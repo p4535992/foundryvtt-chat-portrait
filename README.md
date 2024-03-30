@@ -400,3 +400,4 @@ Thanks to anyone who helps me with this code! I appreciate the user community's 
 - [Illandril's Chat Enhancements](https://github.com/illandril/FoundryVTT-chat-enhancements/)
 - [Speaking as](https://github.com/MrVauxs/speaking-as)
 - [Speak As……](https://github.com/hktrpg/foundryVTT-speak-as)
+- [Karakara's Chat Enhancements](https://codeberg.org/karakara/foundry-modules/src/branch/main/modules/chat-enhancements)
