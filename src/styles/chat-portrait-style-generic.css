@@ -75,7 +75,7 @@
 */
 
 .chat-portrait-text-size-name-generic {
-    display: flex;
+    /* display: flex; apply suggestion https://github.com/p4535992/foundryvtt-chat-portrait/issues/44 */
     margin: auto;
 }
 

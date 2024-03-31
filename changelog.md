@@ -1,3 +1,7 @@
+### 0.9.7
+
+- apply suggestion https://github.com/p4535992/foundryvtt-chat-portrait/issues/44
+
 ### 0.9.6
 
 - Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/43#issuecomment-2027565042
