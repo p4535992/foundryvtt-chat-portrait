@@ -86,12 +86,12 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0 }={}) {
   if ( clearSourceId ) delete data.flags?.core?.sourceId;
   delete data.flags?.importSource;
   delete data.flags?.exportSource;
-  if ( data._stats?.lastModifiedBy ) data._stats.lastModifiedBy = "packsebuilder0000";
+  if ( data._stats?.lastModifiedBy ) data._stats.lastModifiedBy = "packsbuilder0000";
 
   // Remove empty entries in flags
   if ( !data.flags ) data.flags = {};
   Object.entries(data.flags).forEach(([key, contents]) => {
-    if ( Object.keys(contents).length === 0 ) delete data.flags[key];
+    if (contents && Object.keys(contents).length === 0 ) delete data.flags[key];
   });
 
   if ( data.system?.activation?.cost === 0 ) data.system.activation.cost = null;
@@ -105,6 +105,13 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0 }={}) {
   if ( data.system?.save?.dc === 0 ) data.system.save.dc = null;
   if ( data.system?.capacity?.value === 0 ) data.system.capacity.value = null;
   if ( data.system?.strength === 0 ) data.system.strength = null;
+  // BREAKING CHANGES Dnd5e 3.2.X
+  if ((data.system?.weight || data.system?.weight === 0) && !data.system?.weight?.units) {
+    data.system.weight = {
+      value: typeof data.system.weight === 'number' ? data.system.weight : 0,
+      units: "lb"
+    };
+  }
 
   // Remove mystery-man.svg from Actors
   if ( ["character", "npc"].includes(data.type) && data.img === "icons/svg/mystery-man.svg" ) {

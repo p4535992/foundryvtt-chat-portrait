@@ -279,6 +279,11 @@
     }
   ],
   "globals": {
+    "gsap": true,
+    "ScrollToPlugin": true,
+    "TextPlugin": true,
+    "globalThis": true,
+    "canvas": true,
     "Hooks": true,
     "game": true,
     "Handlebars": true,

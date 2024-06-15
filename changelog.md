@@ -1,3 +1,7 @@
+### 0.9.8
+
+- Update manifest for v12
+
 ### 0.9.7
 
 - apply suggestion https://github.com/p4535992/foundryvtt-chat-portrait/issues/44
