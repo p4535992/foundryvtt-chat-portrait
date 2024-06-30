@@ -500,8 +500,6 @@ export class ChatPortrait {
             const doNotImageReplacer = isMidiDisplaySave;
             if (doNotPrintPortrait) {
                 imgElement.style.display = "none";
-            } else {
-                messageSender.getElementsByClassName(".avatar").style.display = "none";
             }
             ChatPortrait.setImageBorder(imgElement, authorColor);
             // Place the image to left of the header by injecting the HTML

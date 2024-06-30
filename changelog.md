@@ -1,4 +1,4 @@
-### 1.0.0
+### 1.0.0-1
 
 - Some clean up
 - Try to fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/47
