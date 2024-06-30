@@ -1,5 +1,5 @@
 import "../constants.js";
-import { debug, warn } from "../lib/lib.js";
+import Logger from "../lib/Logger.js";
 var color;
 var height;
 var bgcolor;
@@ -8,58 +8,62 @@ var checkedSetting = false;
 export const readySpeakAs = function () {
     const btn = document.querySelector("#speakerSwitch");
     btn?.addEventListener("click", (event) => {
-        //@ts-ignore
+        //
         checkedSetting = document?.getElementById("speakerSwitch")?.checked;
     });
     Hooks.on("chatMessage", (dialog, $element, targets) => {
         let namelist = document.getElementById("namelist");
-        //@ts-ignore
+        //
         let checkedSpeakAS = document.getElementById("speakerSwitch")?.checked;
         if (!checkedSpeakAS) {
-            debug(`checkedSpeakAS is not checked`);
+            Logger.debug(`checkedSpeakAS is not checked`);
             return;
         }
         if (!namelist) {
-            warn(`namelist is not checked`);
+            Logger.warn(`namelist is not checked`);
             return;
         }
         switch (namelist.value) {
             case "userName": {
                 targets.speaker.actor = null;
                 targets.speaker.token = null;
-                //@ts-ignore
+                //
                 targets.speaker.alias = null;
                 break;
             }
             default: {
                 let map = game.scenes?.find((scene) => scene.isView);
-                let tokenTarget = map.tokens.find((token) => {
-                    return (
-                        // token.name === namelist.options[namelist.selectedIndex].text ||
-                        // token.actor?.name === namelist.options[namelist.selectedIndex].text ||
-                        token.id === namelist.options[namelist.selectedIndex].value ||
-                        token.actor?.id === namelist.options[namelist.selectedIndex].value
-                    );
-                });
-                if (!tokenTarget) {
-                    debug(`No target is been found`);
-                    // targets.speaker.token = "Speak As zzzz";
-                    let myactors = game.actors.filter((actor) => actor.permission >= 2);
-                    let actorTarget = myactors?.find((actor) => {
+                if (map) {
+                    let tokenTarget = map.tokens.find((token) => {
                         return (
-                            actor?.name === namelist.options[namelist.selectedIndex].text ||
-                            actor?.id === namelist.options[namelist.selectedIndex].value
+                            // token.name === namelist.options[namelist.selectedIndex].text ||
+                            // token.actor?.name === namelist.options[namelist.selectedIndex].text ||
+                            token.id === namelist.options[namelist.selectedIndex].value ||
+                            token.actor?.id === namelist.options[namelist.selectedIndex].value
                         );
                     });
-                    if (actorTarget) {
-                        //targets.speaker.token = actorTarget.id;
-                        targets.speaker.actor = actorTarget.id;
+                    if (!tokenTarget) {
+                        Logger.debug(`No target is been found`);
+                        // targets.speaker.token = "Speak As zzzz";
+                        let myactors = game.actors.filter((actor) => actor.permission >= 2);
+                        let actorTarget = myactors?.find((actor) => {
+                            return (
+                                actor?.name === namelist.options[namelist.selectedIndex].text ||
+                                actor?.id === namelist.options[namelist.selectedIndex].value
+                            );
+                        });
+                        if (actorTarget) {
+                            //targets.speaker.token = actorTarget.id;
+                            targets.speaker.actor = actorTarget.id;
+                        }
+                        targets.speaker.alias = namelist.options[namelist.selectedIndex].text;
                     }
-                    targets.speaker.alias = namelist.options[namelist.selectedIndex].text;
-                }
-                if (tokenTarget) {
-                    targets.speaker.token = tokenTarget.id;
-                    targets.speaker.alias = namelist.options[namelist.selectedIndex].text;
+                    if (tokenTarget) {
+                        targets.speaker.token = tokenTarget.id;
+                        targets.speaker.alias = namelist.options[namelist.selectedIndex].text;
+                    }
+                } else {
+                    Logger.debug(`No scene is viewed at this moment`);
                 }
                 break;
             }
@@ -77,19 +81,19 @@ export const readySpeakAs = function () {
             return;
         }
         if (width) {
-            //@ts-ignore
+            //
             x[0].style.setProperty("width", width, "important");
         }
         if (color) {
-            //@ts-ignore
+            //
             x[0].style.setProperty("color", color, "important");
         }
         if (height) {
-            //@ts-ignore
+            //
             x[0].style.setProperty("height", height, "important");
         }
         if (bgcolor) {
-            //@ts-ignore
+            //
             x[0].style.setProperty("background", bgcolor, "important");
         }
     });
@@ -111,19 +115,19 @@ export const renderSidebarTabSpeakAs = function (dialog, $element, targets) {
     check();
     var x = document.querySelectorAll("#namelist");
     if (width) {
-        //@ts-ignore
+        //
         x[0].style.setProperty("width", width, "important");
     }
     if (color) {
-        //@ts-ignore
+        //
         x[0].style.setProperty("color", color, "important");
     }
     if (height) {
-        //@ts-ignore
+        //
         x[0].style.setProperty("height", height, "important");
     }
     if (bgcolor) {
-        //@ts-ignore
+        //
         x[0].style.setProperty("background", bgcolor, "important");
     }
     $("#namelist").attr("title", "Speak As……");
@@ -209,7 +213,7 @@ function check() {
     // let checkedSetting = game.settings.get(CONSTANTS.MODULE_ID, "speak-as-checked");
     let speaker = document.getElementById("speakerSwitch");
     if (speaker) {
-        //@ts-ignore
+        //
         speaker.checked = checkedSetting;
     }
 }

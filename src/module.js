@@ -19,14 +19,14 @@ import CONSTANTS from "./scripts/constants.js";
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once("init", async () => {
-    console.log(`${CONSTANTS.MODULE_ID} | Initializing ${CONSTANTS.MODULE_ID}`);
+    // console.log(`${CONSTANTS.MODULE_ID} | Initializing ${CONSTANTS.MODULE_ID}`);
     // Register custom module settings
     registerSettings();
     initHooks();
     // Assign custom classes and constants here
     // Register custom module settings
-    //registerSettings();
-    //fetchParams();
+    // registerSettings();
+    // fetchParams();
     // Preload Handlebars templates
     await preloadTemplates();
     // Register custom sheets (if any)
@@ -36,9 +36,9 @@ Hooks.once("init", async () => {
 /* ------------------------------------ */
 Hooks.once("setup", function () {
     // Do anything after initialization but before ready
-    //setupModules();
+    // setupModules();
     setupHooks();
-    //registerSettings();
+    // registerSettings();
 });
 /* ------------------------------------ */
 /* When ready							*/

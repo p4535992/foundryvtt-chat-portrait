@@ -1,6 +1,7 @@
 import { ChatPortrait } from "./ChatPortrait.js";
 import CONSTANTS from "./constants.js";
-import { warn } from "./lib/lib.js";
+import Logger from "./lib/Logger.js";
+
 export class ChatLink {
     static init() {
         ChatLink.updateSettings();
@@ -189,7 +190,7 @@ export class ChatLink {
         }
     }
     static doPanToToken(user, token) {
-        //@ts-ignore
+        //
         const scale = canvas.scene?._viewPosition.scale;
         canvas.animatePan({ x: token.x, y: token.y, scale: scale, duration: 500 });
         if (token && token.isVisible) {
@@ -223,7 +224,7 @@ export class ChatLink {
         return result;
     }
     static warning(message) {
-        warn(message, true);
+        Logger.warn(message, true);
     }
 }
 ChatLink.clickTimeout = 250;
@@ -238,22 +239,22 @@ ChatLink.hoverIn = (event, speaker) => {
     const token = ChatPortrait.getTokenFromSpeaker(speaker);
     if (token && token.visible) {
         event.fromChat = true;
-        //@ts-ignore
+        //
         if (token._object) {
-            //@ts-ignore
+            //
             token._object._onHoverIn(event);
             ChatLink.lastHoveredToken = token;
         } else {
             // Bug fix : https://github.com/p4535992/foundryvtt-chat-portrait/issues/35
-            //   warn(`Can't hover in the chat portrait of the token '${token}'`);
+            //   Logger.warn(`Can't hover in the chat portrait of the token '${token}'`);
         }
     }
 };
 ChatLink.hoverOut = (event) => {
-    //@ts-ignore
+    //
     if (ChatLink.lastHoveredToken && ChatLink.lastHoveredToken._hover) {
         event.fromChat = true;
-        //@ts-ignore
+        //
         ChatLink.lastHoveredToken._onHoverOut(event);
         ChatLink.lastHoveredToken = null;
     }

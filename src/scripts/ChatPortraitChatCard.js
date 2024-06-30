@@ -1,5 +1,5 @@
-import { log } from "./lib/lib.js";
 import { ChatPortrait } from "./ChatPortrait.js";
+import Logger from "./lib/Logger.js";
 /**
  * Class that encapsulates a better rolls card at runtime.
  * When a chat message enters the chat it should be binded
@@ -39,14 +39,14 @@ export class ChatPortraitChatCard extends ChatMessage {
         // Check if the card already exists
         const existing = message.ChatPortraitCardBinding;
         if (existing) {
-            log("Retrieved existing card");
+            Logger.log("Retrieved existing card");
             //existing.updateBinding(message, chatCard);
             existing.updateBinding(message, html, speakerInfo, imageReplacer);
             // Pulse the card to make it look more obvious
             // Wait for the event queue before doing so to allow CSS calculations to work,
             // otherwise the border color will be incorrectly transparent
             window.setTimeout(() => {
-                //@ts-ignore
+                //
                 gsap?.from(html.get(), {
                     "border-color": "red",
                     "box-shadow": "0 0 6px inset #ff6400",

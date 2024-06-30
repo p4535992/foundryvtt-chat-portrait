@@ -2,7 +2,7 @@
     "id": "chat-portrait",
     "title": "Chat Portrait",
     "description": "Display the Actor's portrait and colors on the Chat Message.",
-    "version": "0.9.8",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Shoyu Vanilla"
@@ -19,20 +19,7 @@
             "email": ""
         }
     ],
-    "type": "module",
     "socket": true,
-    "includes": [
-        "./assets/**",
-        "./lang/**",
-        "./languages/**",
-        "./scripts/**",
-        "./styles/**",
-        "./templates/**",
-        "./module.json",
-        "./README.md",
-        "./icons/**",
-        "./packs/**"
-    ],
     "media": [
         {
             "type": "icon",
@@ -98,7 +85,6 @@
         }
     ],
     "packs": [],
-    "systems": [],
     "scripts": [],
     "esmodules": ["module.js"],
     "styles": [
@@ -112,12 +98,12 @@
     ],
     "compatibility": {
         "minimum": 11,
-        "verified": 11,
+        "verified": 12,
         "maximum": 12
     },
     "url": "https://github.com/p4535992/foundryvtt-chat-portrait",
-    "manifest": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.8/module.json",
-    "download": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.8/module.zip",
+    "manifest": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.9/module.json",
+    "download": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/0.9.9/module.zip",
     "readme": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/README.md",
     "changelog": "https://github.com/p4535992/foundryvtt-chat-portrait/blob/master/changelog.md",
     "bugs": "https://github.com/p4535992/foundryvtt-chat-portrait/issues",
@@ -130,7 +116,7 @@
                 "reason": "Redundancy of features you can disable 'Simply Portraits' module if you want"
             }
         ],
-        "recommended": [
+        "optional": [
             {
                 "id": "illandril-chat-enhancements",
                 "type": "module"

@@ -1,5 +1,5 @@
 import CONSTANTS from "./constants.js";
-import { error } from "./lib/lib.js";
+import Logger from "./lib/Logger.js";
 import { SYSTEMS } from "./systems.js";
 const API = {
     /**
@@ -22,7 +22,7 @@ const API = {
      */
     async setImageReplacerDamageType(inAttribute) {
         if (typeof inAttribute !== "string") {
-            throw error("setImageReplacerDamageType | inAttribute must be of type string");
+            throw Logger.error("setImageReplacerDamageType | inAttribute must be of type string");
         }
         await game.settings.set(CONSTANTS.MODULE_ID, "preconfiguredSystem", true);
         return game.settings.set(CONSTANTS.MODULE_ID, "imageReplacerDamageType", inAttribute);

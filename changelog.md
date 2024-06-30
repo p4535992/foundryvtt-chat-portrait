@@ -1,3 +1,9 @@
+### 1.0.0
+
+- Some clean up
+- Try to fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/47
+- Try to fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/46
+
 ### 0.9.8
 
 - Update manifest for v12

@@ -1,6 +1,6 @@
 // import { ChatPortraitForm } from './ChatPortraitForm';
 import CONSTANTS from "./constants.js";
-import { i18n } from "./lib/lib.js";
+import Logger from "./lib/Logger.js";
 import { SYSTEMS } from "./systems.js";
 // export const CONSTANTS.MODULE_ID = 'chat-portrait';
 // export const INV_UNIDENTIFIED_BOOK = `modules/${CONSTANTS.MODULE_ID}/assets/inv-unidentified-book.png`;
@@ -15,9 +15,9 @@ export const registerSettings = function () {
     });
     // =====================================================================
     // game.settings.registerMenu(CONSTANTS.MODULE_ID, CONSTANTS.MODULE_ID, {
-    //   name: i18n(CONSTANTS.MODULE_ID + '.form'),
-    //   label: i18n(CONSTANTS.MODULE_ID + '.form-title'),
-    //   hint: i18n(CONSTANTS.MODULE_ID + '.form-hint'),
+    //   name: CONSTANTS.MODULE_ID + '.form',
+    //   label: CONSTANTS.MODULE_ID + '.form-title',
+    //   hint: CONSTANTS.MODULE_ID + '.form-hint',
     //   icon: 'fas fa-portrait',
     //   type: ChatPortraitForm,
     //   restricted: true,
@@ -96,9 +96,9 @@ export const registerSettings = function () {
         type: String,
         default: "square",
         choices: {
-            square: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.square`),
-            circle: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.circle`),
-            none: i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.none`),
+            square: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.square`),
+            circle: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.circle`),
+            none: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.borderShape.choice.none`),
         },
     });
     game.settings.register(CONSTANTS.MODULE_ID, "useUserColorAsBorderColor", {
@@ -254,12 +254,12 @@ export const registerSettings = function () {
         default: "allCards",
         type: String,
         choices: {
-            allCards: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.allCards`),
-            selfAndGM: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.selfAndGM`),
-            self: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.self`),
-            gm: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.gm`),
-            player: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.player`),
-            none: i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.none`),
+            allCards: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.allCards`),
+            selfAndGM: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.selfAndGM`),
+            self: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.self`),
+            gm: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.gm`),
+            player: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.player`),
+            none: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displaySetting.choice.none`),
         },
     });
     game.settings.register(CONSTANTS.MODULE_ID, "displaySettingOTHER", {
@@ -326,13 +326,13 @@ export const registerSettings = function () {
     //     default: "none",
     //     type: String,
     //     choices: {
-    //       allCards: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.allCards`),
-    //       selfAndGM: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.selfAndGM`),
-    //       self: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.self`),
-    //       gm: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.gm`),
-    //       player: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.player`),
-    //       none: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.none`),
-    //       onlyNpc: i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.onlyNpc`),
+    //       allCards: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.allCards`),
+    //       selfAndGM: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.selfAndGM`),
+    //       self: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.self`),
+    //       gm: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.gm`),
+    //       player: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.player`),
+    //       none: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.none`),
+    //       onlyNpc: Logger.i18n(`${CONSTANTS.MODULE_ID}.settings.displayUnknown.choice.onlyNpc`),
     //     },
     //   });
     //   game.settings.register(CONSTANTS.MODULE_ID, "displayUnknownPlaceHolderActorName", {
@@ -462,9 +462,9 @@ export const registerSettings = function () {
 };
 class ResetSettingsDialog extends FormApplication {
     constructor(...args) {
-        //@ts-ignore
+        //
         super(...args);
-        //@ts-ignore
+        //
         return new Dialog({
             title: game.i18n.localize(`${CONSTANTS.MODULE_ID}.dialogs.resetsettings.title`),
             content:
@@ -480,7 +480,7 @@ class ResetSettingsDialog extends FormApplication {
                             ?.get("world")
                             ?.filter((setting) => setting.key.startsWith(`${CONSTANTS.MODULE_ID}.`));
                         for (let setting of worldSettings) {
-                            console.log(`Reset setting '${setting.key}'`);
+                            Logger.log(`Reset setting '${setting.key}'`);
                             await setting.delete();
                         }
                         //window.location.reload();

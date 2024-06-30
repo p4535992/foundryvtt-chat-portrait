@@ -1,5 +1,5 @@
 import CONSTANTS from "../constants.js";
-import { i18n, i18nFormat, info } from "../lib/lib.js";
+import Logger from "../lib/Logger.js";
 const CSS_PREFIX = `${CONSTANTS.MODULE_ID}--`;
 const CSS_CURRENT_SPEAKER = CSS_PREFIX + "currentSpeaker";
 const CHAT_MESSAGE_SUB_TYPES = {
@@ -36,7 +36,7 @@ function getThisSceneTokenObjForActor(actorID) {
 }
 function getTokenObj(id) {
     if (!canvas.ready) {
-        info(`getTokenObj(${id}) bailed - canvas is not ready yet`);
+        Logger.info(`getTokenObj(${id}) bailed - canvas is not ready yet`);
         return undefined;
     }
     return canvas.tokens?.get(id);
@@ -73,16 +73,16 @@ const hoverIn = (event, speaker) => {
     let token = getThisSceneTokenObj(speaker);
     if (token && token.isVisible) {
         event.fromChat = true;
-        //@ts-ignore
+        //
         token._onHoverIn(event);
-        //@ts-ignore
+        //
         lastHoveredToken = token;
     }
 };
 const hoverOut = (event) => {
     if (lastHoveredToken) {
         event.fromChat = true;
-        //@ts-ignore
+        //
         lastHoveredToken._onHoverOut(event);
         lastHoveredToken = null;
     }
@@ -92,7 +92,7 @@ const panToSpeaker = (speaker) => {
 };
 const panToToken = (token) => {
     if (token && token.isVisible) {
-        //@ts-ignore
+        //
         const scale = Math.max(1, canvas.stage?.scale.x);
         canvas.animatePan({ ...token.center, scale, duration: 1000 });
     }
@@ -112,8 +112,8 @@ function updateMessageData(messageData, ...args) {
 function convertToOoc(messageData) {
     // For all types of messages, change the speaker to the GM.
     // Convert in-character message to out-of-character, and remove the actor and token.
-    const isInCharacter = CONST.CHAT_MESSAGE_TYPES.IC === messageData.type;
-    const newType = isInCharacter ? CONST.CHAT_MESSAGE_TYPES.OOC : messageData.type;
+    const isInCharacter = CONST.CHAT_MESSAGE_STYLES.IC === messageData.style;
+    const newType = isInCharacter ? CONST.CHAT_MESSAGE_STYLES.OOC : messageData.style;
     const newActor = isInCharacter ? null : messageData.speaker.actor;
     const newToken = isInCharacter ? null : messageData.speaker.token;
     const newTokenD = isInCharacter ? null : messageData.token;
@@ -138,7 +138,7 @@ export function overrideMessage(messageData) {
             break;
         }
         default: {
-            //@ts-ignore
+            //
             convertToOoc(messageData, true);
             break;
         }
@@ -202,7 +202,7 @@ export function updateSpeaker() {
             (game.user?.isGM && game.settings.get("CautiousGamemastersPack", "gmSpeakerMode") === 2) ||
             (!game.user?.isGM && game.settings.get("CautiousGamemastersPack", "playerSpeakerMode") === 2)
         ) {
-            //@ts-ignore
+            //
             tokenDocument = game.user?.character?.prototypeToken;
             name = game.user?.character?.name;
             lockReason = `${game.i18n.format("chat-portrait.locked", { module: "Cautious Gamemaster's Pack" })}`;
@@ -210,7 +210,7 @@ export function updateSpeaker() {
     }
     // If a token is available and the user can speak as the character.
     if (tokenDocument && name !== game.user?.name) {
-        //@ts-ignore
+        //
         image = `<img src="${tokenDocument.texture?.src}" class="${CSS_CURRENT_SPEAKER}--icon" style="transform: scale(${tokenDocument.texture.scaleX})">`;
     } else {
         image = `<img src="${game.user?.avatar}" class="${CSS_CURRENT_SPEAKER}--icon">`;
@@ -238,7 +238,7 @@ export function updateSpeaker() {
                 hoverIn(event, speakerObject);
             },
             (event) => {
-                //@ts-ignore
+                //
                 hoverOut(event, speakerObject);
             },
         )
@@ -268,7 +268,7 @@ Hooks.once("renderChatLog", () => {
         setTimeout(async () => {
             chatControls.parentNode?.insertBefore(currentSpeakerDisplay, chatControls);
             // Apparently game.i18n.localize is not loaded when the button is added so it's here instead.
-            $(`.${CSS_CURRENT_SPEAKER}--button`).attr("data-tooltip", i18n("chat-portrait.buttonHint"));
+            $(`.${CSS_CURRENT_SPEAKER}--button`).attr("data-tooltip", Logger.i18n("chat-portrait.buttonHint"));
         }, 0);
         const currentSpeakerToggleMenu = new ContextMenu($(chatControls?.parentNode), "." + CSS_CURRENT_SPEAKER, []);
         const originalRender = currentSpeakerToggleMenu.render.bind(currentSpeakerToggleMenu);
@@ -294,7 +294,7 @@ Hooks.once("renderChatLog", () => {
             });
             $("#chat-message").on("keydown", () => {
                 $("#chat-message").removeClass(CSS_PREFIX + "warning");
-                //@ts-ignore
+                //
                 game.tooltip.deactivate();
             });
         }, 0);
@@ -312,23 +312,23 @@ function checkWarn() {
         ["/ic", "/ooc", "/emote"].some((str) => $("#chat-message").val()?.includes(str)) // Return if the message contains a command that would deliberately make you speak in or out of character
     ) {
         $("#chat-message").removeClass(CSS_PREFIX + "warning");
-        //@ts-ignore
+        //
         game.tooltip.deactivate();
         return;
     }
     const regex = new RegExp(game.settings.get(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters"));
     if (regex.test($("#chat-message").val())) {
         $("#chat-message").addClass(CSS_PREFIX + "warning");
-        //@ts-ignore
+        //
         game.tooltip.activate($("#chat-message")[0], {
-            text: i18nFormat("chat-portrait.speakingAs.buttonHint.warning", {
+            text: Logger.i18nFormat("chat-portrait.speakingAs.buttonHint.warning", {
                 characters: game.settings.get(CONSTANTS.MODULE_ID, "speakingAsWarningCharacters"),
             }),
             direction: "LEFT",
         });
     } else {
         $("#chat-message").removeClass(CSS_PREFIX + "warning");
-        //@ts-ignore
+        //
         game.tooltip.deactivate();
     }
 }

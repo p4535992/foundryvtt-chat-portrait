@@ -1,4 +1,3 @@
-import "./lib/lib.js";
 import { ChatPortrait } from "./ChatPortrait.js";
 import CONSTANTS from "./constants.js";
 import { setApi } from "../module.js";
@@ -44,26 +43,26 @@ export const setupHooks = async () => {
                 speakerInfo.message.speaker.alias = currentSpeakerBackUp.alias;
             }
         }
-        //@ts-ignore
+        //
         if (!message.speaker.token && currentSpeakerBackUp?.token) {
-            //@ts-ignore
+            //
             if (currentSpeakerBackUp.scene) {
-                //@ts-ignore
+                //
                 message.speaker.scene = currentSpeakerBackUp.scene;
             }
-            //@ts-ignore
+            //
             if (currentSpeakerBackUp.actor) {
-                //@ts-ignore
+                //
                 message.speaker.actor = currentSpeakerBackUp.actor;
             }
-            //@ts-ignore
+            //
             if (currentSpeakerBackUp.token) {
-                //@ts-ignore
+                //
                 message.speaker.token = currentSpeakerBackUp.token;
             }
-            //@ts-ignore
+            //
             if (currentSpeakerBackUp.alias) {
-                //@ts-ignore
+                //
                 message.speaker.alias = currentSpeakerBackUp.alias;
             }
         }
@@ -87,9 +86,9 @@ export const setupHooks = async () => {
     //   if(render.render){
     //     const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
     //     let speakerInfo = message.speaker;
-    //     //@ts-ignore
+    //     //
     //     if(!speakerInfo.alias && speakerInfo.document?.alias){
-    //       //@ts-ignore
+    //       //
     //       speakerInfo.alias = speakerInfo.document?.alias;
     //     }
     //     await ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
@@ -97,9 +96,9 @@ export const setupHooks = async () => {
     //       content: html.html()
     //     };
     //     message.update(updates);
-    //     //@ts-ignore
+    //     //
     //     speakerInfo.message = {};
-    //      //@ts-ignore
+    //      //
     //     speakerInfo.message = message;
     //   }
     // });
@@ -108,7 +107,7 @@ export const setupHooks = async () => {
     //   user: game.user,
     //   speaker: speakerInfo,
     //   content: message.content,
-    //   //@ts-ignore
+    //   //
     //   whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
     // };
     // await ChatMessage.create(chatData,{});
@@ -122,15 +121,15 @@ export const setupHooks = async () => {
      * Catch chat message creations and add some more data if we need to
      */
     Hooks.on("preCreateChatMessage", (message, options, render, userId) => {
-        //@ts-ignore
+        //
         // const src = ChatPortrait.getTokenFromSpeaker(message.speaker);
         let speakerInfo = {};
-        //@ts-ignore
+        //
         if (message.speaker?.token) {
-            //@ts-ignore
+            //
             const src = ChatPortrait.loadImagePathForChatMessage(message.speaker);
             if (src) {
-                //@ts-ignore
+                //
                 message.updateSource({
                     flags: {
                         "chat-portrait": {
@@ -176,9 +175,9 @@ export const setupHooks = async () => {
         // 	// if(render.render){
         // 	//   const html:JQuery<HTMLElement> = $("<div>" + message.content + "</div>");
         // 	//   let speakerInfo = message.speaker;
-        // 	//   //@ts-ignore
+        // 	//   //
         // 	//   if(!speakerInfo.alias && speakerInfo.document?.alias){
-        // 	//     //@ts-ignore
+        // 	//     //
         // 	//     speakerInfo.alias = speakerInfo.document?.alias;
         // 	//   }
         // 	//   await ChatPortrait.onRenderChatMessage(message, html, speakerInfo, imageReplacer);
@@ -186,9 +185,9 @@ export const setupHooks = async () => {
         // 	//     content: html.html()
         // 	//   };
         // 	//   message.update(updates);
-        // 	//   //@ts-ignore
+        // 	//   //
         // 	//   speakerInfo.message = {};
-        // 	//    //@ts-ignore
+        // 	//    //
         // 	//   speakerInfo.message = message;
         // 	//   if(flag){
         // 	//     let chatData:any = {
@@ -196,7 +195,7 @@ export const setupHooks = async () => {
         // 	//       user: game.user,
         // 	//       speaker: speakerInfo,
         // 	//       content: message.content,
-        // 	//       //@ts-ignore
+        // 	//       //
         // 	//       whisper: message.whisper ? message.whisper : speakerInfo.document.whisper,
         // 	//     };
         // 	//     flag = false;
@@ -235,7 +234,7 @@ export const readyHooks = async () => {
                     // Add class to trigger drag events.
                     const $combatant = html.find(`.combatant[data-combatant-id="${c.id}"]`);
                     //$combatant.addClass('actor-elem');
-                    //@ts-ignore
+                    //
                     const img = $combatant.find(".token-image")[0];
                     const tokenID = c.token?.id;
                     let imgPath = CONSTANTS.DEF_TOKEN_IMG_PATH;
