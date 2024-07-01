@@ -97,7 +97,7 @@
         "styles/dd.css"
     ],
     "compatibility": {
-        "minimum": 11,
+        "minimum": 12,
         "verified": 12,
         "maximum": 12
     },
