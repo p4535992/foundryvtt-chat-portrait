@@ -42,7 +42,7 @@
 	"chat-portrait.settings.displaySettingOOC.name": "Afficher un message de discussion de type OOC",
 	"chat-portrait.settings.displaySettingIC.hint": "Configurer un style personnalisé pour les messages de type IC",
 	"chat-portrait.settings.displaySettingEMOTE.hint": "Configurer le style personnalisé pour le message de type EMOTE",
-	"chat-portrait.settings.displaySettingWHISPER.name": "Afficher le message de conversation de type EMOTE",
+	"chat-portrait.settings.displaySettingWHISPER.name": "Afficher le message de conversation de type MURMURER",
 	"chat-portrait.settings.displaySettingWHISPER.hint": "Configurer le style personnalisé pour le message de type MURMURER",
 	"chat-portrait.settings.displayMessageTag.name": "Ajoute une balise textuelle aux messages de discussion",
 	"chat-portrait.settings.useImageReplacer.name": "Utiliser la fonction de remplacement d'image",
