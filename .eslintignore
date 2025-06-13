@@ -8,7 +8,6 @@ jsconfig.json
 .github/
 dist/
 docs/
-wiki/
 external/
 src/languages/
 src/assets/

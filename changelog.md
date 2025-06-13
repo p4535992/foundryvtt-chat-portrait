@@ -1,3 +1,7 @@
+### 13.0.0 (BETA)
+
+- Just update the manifest json
+
 ### 1.0.0-1
 
 - Some clean up
@@ -18,14 +22,14 @@
 - Patch: https://github.com/p4535992/foundryvtt-chat-portrait/issues/42
 
 
-### 0.9.5 
+### 0.9.5
 
 - Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/41
 - Bug fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/39
 
-### 0.9.4 
+### 0.9.4
 
-- Fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/38 
+- Fix: https://github.com/p4535992/foundryvtt-chat-portrait/issues/38
 
 ### 0.9.2-3
 
