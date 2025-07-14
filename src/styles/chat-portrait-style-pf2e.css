@@ -98,3 +98,11 @@
   display: block;
   margin: auto;
 } */
+
+/* Disable Pf2e Chat Portrait */
+#sidebar-content .portrait.token {
+    display: none;
+}
+#chat-notifications .portrait.token {
+    display: none;
+}

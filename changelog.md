@@ -1,3 +1,7 @@
+### 13.0.1 
+
+- Add Disable Pf2e Chat Portrait has suggestyed here https://github.com/p4535992/foundryvtt-chat-portrait/issues/53#issuecomment-3070376349
+
 ### 13.0.0 (BETA)
 
 - Just update the manifest json
