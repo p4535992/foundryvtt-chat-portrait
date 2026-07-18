@@ -1,3 +1,7 @@
+### 14.0.0 
+
+- Update manifest
+
 ### 13.0.2
 
 - Update Japanese
