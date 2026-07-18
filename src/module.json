@@ -98,8 +98,8 @@
     ],
     "compatibility": {
         "minimum": 13,
-        "verified": 13,
-        "maximum": 13
+        "verified": 14,
+        "maximum": 14
     },
     "url": "https://github.com/p4535992/foundryvtt-chat-portrait",
     "manifest": "https://github.com/p4535992/foundryvtt-chat-portrait/releases/download/13.0.2/module.json",
